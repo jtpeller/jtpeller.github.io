@@ -1,0 +1,47 @@
+
+body {
+    background-color: rgb(29, 31, 34);
+}
+
+.banner {
+    background-color: rgb(41, 44, 49);
+    color: white;
+    text-align: center;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+/* allow bootstrap carousel without images */
+.carousel-caption { position: static; }
+.carousel-item {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.link {
+    color: cyan;
+}
+
+.link:hover {
+    color: rgb(0, 119, 119);
+}
+
+.link-title {
+    color: cyan;
+}
+
+.link-title:hover {
+    color: rgb(0, 119, 119);
+}
+
+#main-content {
+    background-color:rgb(41, 46, 53);
+    color: white;
+    min-height: calc(100vh - 25rem);
+}
+
+#project-carousel {
+    background-color:rgb(32, 33, 43);
+    border: 1px solid grey;
+    border-radius: 10px;
+}
