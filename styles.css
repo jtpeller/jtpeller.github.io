@@ -1,6 +1,6 @@
 
 body {
-    background-color: rgb(29, 31, 34);
+    background-color: rgb(34, 37, 41);
 }
 
 .banner {
@@ -35,13 +35,13 @@ body {
 }
 
 #main-content {
-    background-color:rgb(41, 46, 53);
+    background-color:rgb(34, 37, 41);
     color: white;
     min-height: calc(100vh - 25rem);
 }
 
 #project-carousel {
-    background-color:rgb(32, 33, 43);
+    background-color:rgb(37, 38, 43);
     border: 1px solid grey;
     border-radius: 10px;
 }
