@@ -19,65 +19,71 @@
         <section class="me">
             <h1>Welcome to my site</h1>
         </section>
+        <div class="my-links">
+            <a href="https://github.com/jtpeller"><img class='logo-link' src="resources/github.png" alt="GitHub" title="My GitHub Link" ></a>
+            <a href="https://www.linkedin.com/in/jeremy-p-15331522b/"><img class='logo-link' src="resources/linkedin.png" alt="LinkedIn" title="My LinkedIn" ></a>
+        </div>
     </div>
     <div class="container" id="main-content">
-        <section id="projects">
-            <h2 class="text-center">Projects</h2>
-            <hr>
-            <p>Here are links to my other projects that you can view in your browser.</p>
-            <div id="project-carousel" class="carousel slide" data-bs-ride="carousel">
-                <!-- slide indicators -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <!-- carousel items -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5><a class='link-title' href="/r6siege">R6siege</a></h5>
-                            <p>A website I wrote for Ubisoft's Rainbow Six Siege game.</p>
+        <br>
+        <div class="row" id="wrapper">
+            <section class='col my-box' id="projects">
+                <h2 class="text-center">Projects</h2>
+                <hr>
+                <h4>Here are links to my projects viewable in your browser.</h4>
+                <div id="project-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <!-- slide indicators -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <!-- carousel items -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5><a class='link-title' href="/r6siege">R6siege</a></h5>
+                                <p>A website I wrote for Ubisoft's Rainbow Six Siege game.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5><a class='link-title' href="/geography-quiz">Geography Quiz</a></h5>
+                                <p>A simple website that allows users to test their geography skills.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5><a class='link-title' href="#">Coming soon!</a></h5>
+                                <p>...</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5><a class='link-title' href="/geography-quiz">Geography Quiz</a></h5>
-                            <p>A simple website that allows users to test their geography skills.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5><a class='link-title' href="#">Coming soon!</a></h5>
-                            <p>...</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- left/right buttons -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#project-carousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#project-carousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-
-            <p>Other projects can be found at my <a class='link' href="https://www.github.com/jtpeller">github link</a></p>
-            <br>
-        </section>
-        <section id="about">
-            <h2 class="text-center">About me</h2>
-            <hr>
-            <p>I am an entry-level programmer looking to program more than just simple applications like this one.</p>
-        </section>
+                    <!-- left/right buttons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#project-carousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#project-carousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <br>
+                <p>My other projects are found in my GitHub link in the header</p>
+            </section>
+            <section class="col my-box" id="about">
+                <h2 class="text-center">About me</h2>
+                <hr>
+                <h5>I am an entry-level programmer looking to program more than just simple things like this site.</h5>
+            </section>
+        </div>
     </div>
 </body>
 

@@ -1,14 +1,15 @@
-
+/* ELEMENTS */
 body {
     background-color: rgb(34, 37, 41);
 }
 
+/* CLASSES */
 .banner {
     background-color: rgb(41, 44, 49);
     color: white;
     text-align: center;
     padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-bottom: 2rem;
 }
 
 /* allow bootstrap carousel without images */
@@ -34,6 +35,22 @@ body {
     color: rgb(0, 119, 119);
 }
 
+.logo-link {
+    max-width: 25px;
+    max-height: 25px;
+}
+
+.my-box {
+    margin: 10px;
+}
+
+.my-links {
+    text-align: right;
+    margin-right: 15rem;
+    margin-top: 5rem;
+}
+
+/* IDs */
 #main-content {
     background-color:rgb(34, 37, 41);
     color: white;
