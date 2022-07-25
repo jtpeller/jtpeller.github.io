@@ -1,11 +1,13 @@
 /* ELEMENTS */
-body {
-    background-color: rgb(34, 37, 41);
+body,
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    height: 100% !important;
 }
 
 /* CLASSES */
 .banner {
-    background-color: rgb(41, 44, 49);
+    background-color: rgba(41, 44, 49, 0.7);
     color: white;
     text-align: center;
     padding-top: 10rem;
@@ -20,19 +22,19 @@ body {
 }
 
 .link {
-    color: cyan;
+    color: rgb(0, 255, 255);
 }
 
 .link:hover {
-    color: rgb(0, 119, 119);
+    color: rgb(0, 195, 255);
 }
 
 .link-title {
-    color: cyan;
+    color: rgb(0, 255, 255);
 }
 
 .link-title:hover {
-    color: rgb(0, 119, 119);
+    color: rgb(0, 195, 255);
 }
 
 .logo-link {
@@ -46,19 +48,19 @@ body {
 
 .my-links {
     text-align: right;
-    margin-right: 15rem;
+    margin-right: 3rem;
     margin-top: 5rem;
 }
 
 /* IDs */
 #main-content {
-    background-color:rgb(34, 37, 41);
+    background-color:rgba(34, 37, 41, 0.70);
     color: white;
-    min-height: calc(100vh - 25rem);
+    min-height: calc(100vh - 24rem);
 }
 
 #project-carousel {
-    background-color:rgb(37, 38, 43);
+    background-color:rgba(37, 38, 43, 0.7);
     border: 1px solid grey;
     border-radius: 10px;
 }
