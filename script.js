@@ -1,4 +1,9 @@
 window.onload = function () {
+    gradient();
+    arrow();
+}
+
+function gradient() {
     //
     // background gradient
     //
@@ -74,4 +79,26 @@ window.onload = function () {
 
     generateBackgroundGradient();
     setInterval(generateBackgroundGradient, 150);
+}
+
+function arrow() {
+    let arrow = document.getElementById('arrow');
+    let maxStep = 15;
+    let step = 0;
+    let dx = 0.1;
+    let time = 10;     // how many ms before next 'frame'
+    
+    function updatePosition() {
+        arrow.style.paddingRight = step + 'px';
+        step += dx;
+        if (step > maxStep) {
+            dx = -dx;
+            step += 2*dx;
+        } else if (step < 0) {
+            dx = -dx; 
+            step += 2*dx;
+        }
+    }
+
+    setInterval(updatePosition, time);
 }

@@ -16,27 +16,28 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container"  id="wrapper">
         <div class="banner">
             <section class="me">
                 <h1>Welcome to my site</h1>
-                <h6 style="font-family: Comic Sans MS">
-                    <i>Graphic Design is my Passion</i>
-                </h6>
+                <h2 style="font-family: Comic Sans MS">
+                    <i>Graphic Design is my Passion <span class="snark">(clearly)</span></i>
+                </h2>
             </section>
             <div class="my-links">
+                <span id="arrow">Check out my links &rarr;</span>
                 <a href="https://github.com/jtpeller"><img class='logo-link' src="resources/github.png" alt="GitHub" title="My GitHub Link" ></a>
                 <a href="https://www.linkedin.com/in/jeremy-p-15331522b/"><img class='logo-link' src="resources/linkedin.png" alt="LinkedIn" title="My LinkedIn" ></a>
             </div>
         </div>
         <div class="container" id="main-content">
             <br>
-            <div class="row" id="wrapper">
+            <div class="row">
                 <section class='col my-box' id="projects">
-                    <h2 class="text-center">Projects</h2>
+                    <h3 class="text-center">Projects</h3>
                     <hr>
-                    <h5>Here are links to my projects viewable in your browser.</h5>
-                    <div id="project-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <p>Here are links to my projects viewable in your browser.</p>
+                    <div id="project-carousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
                         <!-- slide indicators -->
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#project-carousel" data-bs-slide-to="0" class="active"
@@ -84,9 +85,11 @@
                     <p>My other projects are found in my GitHub link in the header</p>
                 </section>
                 <section class="col my-box" id="about">
-                    <h2 class="text-center">About me</h2>
+                    <h3 class="text-center">About me</g3>
                     <hr>
-                    <h5>I am an entry-level programmer looking to program more than just simple things like this site.</h5>
+                    <p style="text-align:start">I am recent graduate of Arizona State University with 
+                        a Bachelor's in Computer Science. I am an entry-level programmer looking to 
+                        program more than just simple things like this site.</p>
                 </section>
             </div>
         </div>
