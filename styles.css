@@ -56,12 +56,14 @@ hr {
     list-style: none;
     opacity: 0;
     
-    animation: fadeIn 1.5s steps(240) 1;
+    animation: fadeIn 1s steps(240) 1;
     animation-delay: 1s;
     animation-fill-mode: forwards;
 }
 
-.link-list > li {
+.link-list > li,
+.nav-item,
+.navbar-nav > .navbar-brand {
     display: inline-block;
     padding: 0 0.5rem;
     min-width: 12rem;
@@ -87,6 +89,15 @@ hr {
 .nav-item {
     height: fit-content;
     margin: auto;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left:0;
+    z-index: 1030;
+    background-color:rgb(18, 19, 20);
 }
 
 .my-h4 {

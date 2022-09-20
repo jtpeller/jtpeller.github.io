@@ -48,7 +48,7 @@ function arrow() {
  */
  function initNavbar(header) {
     let nav = header.append('nav')
-    nav.classed('navbar navbar-expand-lg navbar-dark my-bg-dark', true)
+    nav.classed('navbar navbar-expand-lg fixed-top navbar-dark my-bg-dark', true)
 
     let navdiv = nav.append('div')
         .classed('container-fluid', true);
