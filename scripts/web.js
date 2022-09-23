@@ -26,13 +26,28 @@ window.onload = function() {
     //
     content.classed('container', true);
 
+    let rowdiv = content.append('div')
+        .classed('row', true);
 
-    // start with title
-    let title = content.append('h2')
+    // left side contains the main content
+    let left = rowdiv.append('div')
+        .classed('col', true);
+
+    // right side contains the scrollspy list
+    let right = rowdiv.append('div')
+        .classed('col-2', true);
+
+    var listdiv = right.append('div')
+        .classed('list-group list-group-flush fixed-nav', true);
+
+    // title
+    let title = left.append('h2')
         .classed('text-center title', true)
         .text('My Web Pages');
 
-    //content.append('hr');
+    listdiv.append('h4')
+        .classed('my-h4', true)
+        .text('Contents');
 
     //
     // add each site
@@ -47,9 +62,10 @@ window.onload = function() {
             imgs: ["r6s_1.png", "r6s_2.png", "r6s_3.png"],
             long: `
             R6S Roulette is a website that allows users to randomly generate an operator or gun
-            in Ubisoft's game, Tom Clancy's Rainbow Six Siege. It uses datasets that I manually
-            wrote as JSONs. The user can filter out the full dataset via UI elements such as 
-            checkboxes and selection dropdowns.
+            in Ubisoft's game, Tom Clancy's Rainbow Six Siege. This involves datasets that I 
+            manually wrote as JSONs, which are imported and used as the dataset from which 
+            the filtered list is built. The user can filter out the full dataset via UI 
+            elements such as checkboxes and selection dropdowns.
             `
         },
         {
@@ -58,7 +74,7 @@ window.onload = function() {
             desc: 'A clean and simple unit converter',
             imgs: ["uc_1.png", "uc_2.png"],
             long: `
-            My unit converter is a site that allows for the conversion of various unit types,
+            My unit converter is a site that allows for the conversion of various unit types;
             including length, area, volume, mass, time, energy, and temperature. There is a 
             formula that is shown that can be used by the user to approximate the conversion.
             `
@@ -66,7 +82,7 @@ window.onload = function() {
         {
             name: "Geography Quiz",
             link: "geography-quiz",
-            desc: 'Test your geography skills with this site.',
+            desc: 'Test your geography skills with this quiz.',
             imgs: ["geo_1.png", "geo_2.png", "geo_3.png"],
             long: `
             My geography quiz, while in need of a massive UI/UX overhaul, is a quiz that 
@@ -90,14 +106,15 @@ window.onload = function() {
 
 
     for (var i = 0; i < sites.length; i++) {
-        var div = content.append('div');
+        var div = left.append('div');
 
         // title and link
         div.append('h4')
             .classed('my-h4', true)
             .append('a')
             .html(sites[i].name + '&#128279;')
-            .attr('href', link_root+sites[i].link);
+            .attr('href', link_root+sites[i].link)
+            .attr('id', 'site-' + i);
 
         // quick grabber description
         div.append('p')
@@ -153,17 +170,7 @@ window.onload = function() {
             .attr('aria-current', true)
         innerdiv.select('#'+sites[i].name.replaceAll(' ', '-') + '-img-' + 0).classed('active', true);
         
-        // now, add the description
-        var long = row.append('div')
-            .classed('col', true);
-
-        long.append('h4')
-            .classed('my-h4', true)
-            .text('Description')
-            
-        long.append('p').text(sites[i].long);
-
-        // finally, the indicators
+        // the indicators
         var prev = carousel.append('button')
             .classed('carousel-control-prev', true)
             .attr('type', 'button')
@@ -191,6 +198,22 @@ window.onload = function() {
         next.append('span')
             .classed('visually-hidden', true)
             .text('Next');
+
+        // now, add the description
+        var long = row.append('div')
+            .classed('col', true);
+
+        long.append('h4')
+            .classed('my-h4', true)
+            .text('Description')
+            
+        long.append('p').text(sites[i].long);
+
+        // add the list items
+        listdiv.append('a')
+            .classed('list-group-item list-group-item-action dark-item', true)
+            .attr('href', '#site-' + i)
+            .text(sites[i].name);
     }
 
     // what if i did a "fromsite=?" and animated the website accordingly?

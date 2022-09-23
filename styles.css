@@ -26,8 +26,35 @@ hr {
     animation-fill-mode: forwards;
 }
 
+.dark-item {
+    background-color: rgb(18, 19, 20) !important;
+    color: white;
+}
+
+a.dark-item:hover,
+.navbar-brand:hover,
+.nav-link:hover {
+    color: rgb(0, 102, 255) !important;
+}
+
 .grabber {
     padding: 2rem 0;
+}
+
+.fixed-nav {
+    position: fixed;
+    z-index: 1;
+    top: 3rem;
+    width: inherit;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left:0;
+    z-index: 1030;
+    background-color:rgb(18, 19, 20);
 }
 
 .footer {
@@ -54,6 +81,7 @@ hr {
 .link-list {
     margin: auto;
     list-style: none;
+    padding: 0;
     opacity: 0;
     
     animation: fadeIn 1s steps(240) 1;
@@ -91,15 +119,6 @@ hr {
     margin: auto;
 }
 
-.fixed-top {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left:0;
-    z-index: 1030;
-    background-color:rgb(18, 19, 20);
-}
-
 .my-h4 {
     width: 100%;
 	padding-top: 1rem;
@@ -108,8 +127,8 @@ hr {
 }
 
 .title {
-    font-size: 2vw;
-    margin: 3vw 0;
+    font-size: 2rem;
+    margin: 5rem 0 2rem 0;
 }
 
 .title-card {
