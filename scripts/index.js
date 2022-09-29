@@ -41,7 +41,25 @@ window.onload = function () {
     for (var i = 0; i < ll.length; i++) {
         ul.append('li')
             .append('a')
+            .classed('my-link', true)
             .attr('href', ll[i].html)
             .text(ll[i].link);
     }
+
+    // add the subtitles
+    var rng = Math.floor(Math.random() * subtitles.length);
+    chosen = subtitles[rng];
+
+    content.append('div')
+        .classed('subtitle', true)
+        .text(chosen);
 }
+
+var subtitles = [
+    "Now asbestos-free!",
+    "monospace font!",
+    "!important",
+    "How do I rotate text?",
+    "<!DOCTYPE html>",
+    "Stack Overflow!"
+]

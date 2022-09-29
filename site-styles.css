@@ -1,3 +1,10 @@
 html {
-    scroll-padding-top: 70px;
+    scroll-padding-top: 70px;   /* to account for the navbar */
+}
+
+.lang-logo {
+    height: 25px;
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
 }

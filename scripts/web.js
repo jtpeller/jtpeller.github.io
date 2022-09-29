@@ -54,12 +54,13 @@ window.onload = function() {
     //
     var link_root = 'https://jtpeller.github.io/';
     var img_root = 'resources/';
-    sites = [
+    let sites = [
         {
             name: "R6S Roulette",
             link: "r6siege",
             desc: 'A site to change how you play Rainbow Six Siege',
             imgs: ["r6s_1.png", "r6s_2.png", "r6s_3.png"],
+            lang: ['html.png', 'css.png', 'js.png'],
             long: `
             R6S Roulette is a website that allows users to randomly generate an operator or gun
             in Ubisoft's game, Tom Clancy's Rainbow Six Siege. This involves datasets that I 
@@ -73,6 +74,7 @@ window.onload = function() {
             link: "unit-converter",
             desc: 'A clean and simple unit converter',
             imgs: ["uc_1.png", "uc_2.png"],
+            lang: ['html.png', 'css.png', 'js.png'],
             long: `
             My unit converter is a site that allows for the conversion of various unit types;
             including length, area, volume, mass, time, energy, and temperature. There is a 
@@ -84,6 +86,7 @@ window.onload = function() {
             link: "geography-quiz",
             desc: 'Test your geography skills with this quiz.',
             imgs: ["geo_1.png", "geo_2.png", "geo_3.png"],
+            lang: ['html.png', 'css.png', 'js.png'],
             long: `
             My geography quiz, while in need of a massive UI/UX overhaul, is a quiz that 
             allows users to interact with a map of a chosen continent and select the
@@ -96,6 +99,7 @@ window.onload = function() {
             link: "webgl-demos",
             desc: 'The landing page for my WebGL demos',
             imgs: [],//["webgl_1.png", "webgl_2.png", "webgl_3.png", "webgl_4.png", "webgl_5.png"],
+            lang: ['html.png', 'css.png', 'js.png'],
             long: `
             My WebGL demo site is a simple landing page that allows access to all of the
             WebGL demos I have written. These demos range from something simple like
@@ -109,12 +113,21 @@ window.onload = function() {
         var div = left.append('div');
 
         // title and link
-        div.append('h4')
-            .classed('my-h4', true)
-            .append('a')
+        var h4 = div.append('h4')
+            .classed('my-h4', true);
+
+        h4.append('a')
             .html(sites[i].name + '&#128279;')
             .attr('href', link_root+sites[i].link)
-            .attr('id', 'site-' + i);
+            .attr('id', 'site-' + i)
+            .classed('my-link', true);
+
+        for (var j = 0; j < sites[i].lang.length; j++) {
+            h4.append('img')
+                .attr('src', img_root + sites[i].lang[j])
+                .attr('alt', sites[i].lang[j].replaceAll('.png', ''))
+                .classed('lang-logo', true);
+        }
 
         // quick grabber description
         div.append('p')
