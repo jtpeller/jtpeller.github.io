@@ -12,7 +12,7 @@ let header,
     content,
     footer;
 
-window.onload = function() {
+window.onload = function () {
     // define variables
     header = d3.select('#header');
     content = d3.select('#content');
@@ -98,7 +98,7 @@ window.onload = function() {
             name: "WebGL Demos",
             link: "webgl-demos",
             desc: 'The landing page for my WebGL demos',
-            imgs: [],//["webgl_1.png", "webgl_2.png", "webgl_3.png", "webgl_4.png", "webgl_5.png"],
+            imgs: ["webgl_1.png", "webgl_2.png", "webgl_3.png", "webgl_4.png", "webgl_5.png"],
             lang: ['html.png', 'css.png', 'js.png'],
             long: `
             My WebGL demo site is a simple landing page that allows access to all of the
@@ -118,7 +118,7 @@ window.onload = function() {
 
         h4.append('a')
             .html(sites[i].name + '&#128279;')
-            .attr('href', link_root+sites[i].link)
+            .attr('href', link_root + sites[i].link)
             .attr('id', 'site-' + i)
             .classed('my-link', true);
 
@@ -136,85 +136,87 @@ window.onload = function() {
             .text(sites[i].desc);
 
         // there'll be an image carousel to the left, and a longer description to the right
-        var carousel_parent = div.append('div')
-            .classed('w-75 mx-auto', true);
+        if (sites[i].imgs.length > 0) {
+            var carousel_parent = div.append('div')
+                .classed('w-75 mx-auto', true);
 
-        var carouselid = sites[i].name.replaceAll(' ', '-');
+            var carouselid = sites[i].name.replaceAll(' ', '-');
 
-        var carousel = carousel_parent.append('div')
-            .classed('carousel slide carousel-fade', true)
-            .attr('id', carouselid)
-            .attr('data-bs-ride', 'carousel')
+            var carousel = carousel_parent.append('div')
+                .classed('carousel slide carousel-fade', true)
+                .attr('id', carouselid)
+                .attr('data-bs-ride', 'carousel')
 
-        // add ordered list for indicators
-        var indicators = carousel.append('div')
-            .classed('carousel-indicators', true)
+            // add ordered list for indicators
+            var indicators = carousel.append('div')
+                .classed('carousel-indicators', true)
 
-        // inner carousel
-        var innerdiv = carousel.append('div')
-            .classed('carousel-inner', true);
-        
-        for (var j = 0; j < sites[i].imgs.length; j++) {
-            // add indicators for imgs.length
-            indicators.append('button')
+            // inner carousel
+            var innerdiv = carousel.append('div')
+                .classed('carousel-inner', true);
+
+            for (var j = 0; j < sites[i].imgs.length; j++) {
+                // add indicators for imgs.length
+                indicators.append('button')
+                    .attr('type', 'button')
+                    .attr('data-bs-target', '#' + carouselid)
+                    .attr('data-bs-slide-to', j)
+                    .attr('aria-label', 'Slide ' + j);
+
+                // add inner slides & imgs
+                var imgid = sites[i].name.replaceAll(' ', '-') + '-img-' + j;
+                var imgdiv = innerdiv.append('div')
+                    .classed('carousel-item', true)
+                    .attr('id', imgid)
+
+                imgdiv.append('img')
+                    .classed('d-block w-100', true)
+                    .attr('src', img_root + sites[i].imgs[j])
+                    .attr('alt', sites[i].imgs[j])
+            }
+
+            // make sure first is active for inner and indicators
+            indicators.select('button')
+                .classed('active', true)
+                .attr('aria-current', true)
+            innerdiv.select('#' + sites[i].name.replaceAll(' ', '-') + '-img-' + 0).classed('active', true);
+
+            // the indicators
+            var prev = carousel.append('button')
+                .classed('carousel-control-prev', true)
                 .attr('type', 'button')
-                .attr('data-bs-target', '#'+carouselid)
-                .attr('data-bs-slide-to', j)
-                .attr('aria-label', 'Slide ' + j);
+                .attr('data-bs-target', '#' + carouselid)
+                .attr('data-bs-slide', 'prev');
 
-            // add inner slides & imgs
-            var imgid = sites[i].name.replaceAll(' ', '-') + '-img-' + j;
-            var imgdiv = innerdiv.append('div')
-                .classed('carousel-item', true)
-                .attr('id', imgid)
-            
-            imgdiv.append('img')
-                .classed('d-block w-100', true)
-                .attr('src', img_root + sites[i].imgs[j])
-                .attr('alt', sites[i].imgs[j])
+            prev.append('span')
+                .classed('carousel-control-prev-icon', true)
+                .attr('aria-hidden', true);
+
+            prev.append('span')
+                .classed('visually-hidden', true)
+                .text('Previous');
+
+            var next = carousel.append('button')
+                .classed('carousel-control-next', true)
+                .attr('type', 'button')
+                .attr('data-bs-target', '#' + carouselid)
+                .attr('data-bs-slide', 'next');
+
+            next.append('span')
+                .classed('carousel-control-next-icon', true)
+                .attr('aria-hidden', true);
+
+            next.append('span')
+                .classed('visually-hidden', true)
+                .text('Next');
         }
-
-        // make sure first is active for inner and indicators
-        indicators.select('button')
-            .classed('active', true)
-            .attr('aria-current', true)
-        innerdiv.select('#'+sites[i].name.replaceAll(' ', '-') + '-img-' + 0).classed('active', true);
-        
-        // the indicators
-        var prev = carousel.append('button')
-            .classed('carousel-control-prev', true)
-            .attr('type', 'button')
-            .attr('data-bs-target', '#'+carouselid)
-            .attr('data-bs-slide', 'prev');
-
-        prev.append('span')
-            .classed('carousel-control-prev-icon', true)
-            .attr('aria-hidden', true);
-
-        prev.append('span')
-            .classed('visually-hidden', true)
-            .text('Previous');
-
-        var next = carousel.append('button')
-            .classed('carousel-control-next', true)
-            .attr('type', 'button')
-            .attr('data-bs-target', '#'+carouselid)
-            .attr('data-bs-slide', 'next');
-
-        next.append('span')
-            .classed('carousel-control-next-icon', true)
-            .attr('aria-hidden', true);
-
-        next.append('span')
-            .classed('visually-hidden', true)
-            .text('Next');
 
         // now, add the description
         var long = div.append('div')
             .classed('col', true);
 
         long.append('br');
-            
+
         long.append('p').text(sites[i].long);
 
         // add the list items
@@ -225,8 +227,4 @@ window.onload = function() {
     }
 
     // what if i did a "fromsite=?" and animated the website accordingly?
-    // also bootstrap scrollspy? https://getbootstrap.com/docs/5.2/components/scrollspy/
-
-    // finalize with the footer
-    //initFooter(footer, false);
 }
