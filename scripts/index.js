@@ -54,12 +54,3 @@ window.onload = function () {
         .classed('subtitle', true)
         .text(chosen);
 }
-
-var subtitles = [
-    "Now asbestos-free!",
-    "monospace font!",
-    "!important",
-    "How do I rotate text?",
-    "<!DOCTYPE html>",
-    "Stack Overflow!"
-]

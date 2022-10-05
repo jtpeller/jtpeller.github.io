@@ -20,6 +20,18 @@ let ll = [
     }
 ]
 
+var subtitles = [
+    "Now asbestos-free!",
+    "monospace font!",
+    "!important",
+    "Rotated text!",
+    "<!DOCTYPE html>",
+    "Stack Overflow!",
+    `delete ptr;`,
+    "chmod +x virus"
+]
+
+
 function arrow() {
     let arrow = document.getElementById('arrow');
     let maxStep = 15;

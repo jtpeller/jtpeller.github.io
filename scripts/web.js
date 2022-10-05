@@ -59,7 +59,7 @@ window.onload = function() {
             name: "R6S Roulette",
             link: "r6siege",
             desc: 'A site to change how you play Rainbow Six Siege',
-            imgs: ["r6s_1.png", "r6s_2.png", "r6s_3.png"],
+            imgs: ["r6s_1.png", "r6s_2.png", "r6s_3.png", "r6s_4.png", "r6s_5.png", "r6s_6.png"],
             lang: ['html.png', 'css.png', 'js.png'],
             long: `
             R6S Roulette is a website that allows users to randomly generate an operator or gun
@@ -136,11 +136,8 @@ window.onload = function() {
             .text(sites[i].desc);
 
         // there'll be an image carousel to the left, and a longer description to the right
-        var row = div.append('div')
-            .classed('row', true);
-
-        var carousel_parent = row.append('div')
-            .classed('col-8', true);
+        var carousel_parent = div.append('div')
+            .classed('w-75 mx-auto', true);
 
         var carouselid = sites[i].name.replaceAll(' ', '-');
 
@@ -213,12 +210,10 @@ window.onload = function() {
             .text('Next');
 
         // now, add the description
-        var long = row.append('div')
+        var long = div.append('div')
             .classed('col', true);
 
-        long.append('h4')
-            .classed('my-h4', true)
-            .text('Description')
+        long.append('br');
             
         long.append('p').text(sites[i].long);
 
