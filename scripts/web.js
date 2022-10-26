@@ -88,10 +88,9 @@ window.onload = function () {
             imgs: ["geo_1.png", "geo_2.png", "geo_3.png"],
             lang: ['html.png', 'css.png', 'js.png'],
             long: `
-            My geography quiz, while in need of a massive UI/UX overhaul, is a quiz that 
-            allows users to interact with a map of a chosen continent and select the
-            randomly generated country. Each quiz runs through the entire continent,
-            and will track the user's score to the left.
+            My geography quiz is a quiz that allows users to interact with a map of 
+            a chosen continent and select the randomly generated country. Each quiz
+            runs through the entire continent and tracks the user's score.
             `
         },
         {
