@@ -20,6 +20,8 @@ hr {
 /* CLASSES */
 .banner {
     opacity: 0;
+    padding: 12vw;
+    padding-bottom: 10px;
 
     animation: fadeIn 1s ease-in-out 1;
     animation-delay: 250ms;
@@ -136,11 +138,11 @@ a.dark-item:hover,
 }
 
 .subtitle {
+    font-size: 1vw;
     position: absolute;
     text-align: center;
     margin: auto;
-    top: 25%;
-    left: 20%;
+    left: 10%;
     opacity: 0;
 
     color: rgb(204, 204, 0);
@@ -158,19 +160,20 @@ a.dark-item:hover,
 }
 
 .title-card {
-    font-size: 10rem;
-    padding: 12vw;
+    font-size: 8vw;
     padding-bottom: 10px;
 }
 
 .title-box .title-card::after {
+    position: relative;
+
     content: "";
-    width: 6rem;
-    height: 9rem;
+    width: 6vw;
+    height: 9vw;
     background: rgb(235, 235, 235);
     display: inline-block;
     margin: auto;
-    margin-left: 10px;
+    margin-left: 0.1vw;
 
     animation: cursor-blink 2s ease-in infinite;
     animation-delay: 1s;

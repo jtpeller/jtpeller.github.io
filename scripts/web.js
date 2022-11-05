@@ -224,6 +224,4 @@ window.onload = function () {
             .attr('href', '#site-' + i)
             .text(sites[i].name);
     }
-
-    // what if i did a "fromsite=?" and animated the website accordingly?
 }

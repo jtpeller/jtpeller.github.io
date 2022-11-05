@@ -25,6 +25,9 @@ window.onload = function () {
 
     let span = banner.append('span')
         .classed('title-box', true);
+
+    let subtitle = span.append('div')
+        .classed('subtitle', true);
     
     let title = span.append('h1')
         .classed('title-card', true)
@@ -50,7 +53,5 @@ window.onload = function () {
     var rng = Math.floor(Math.random() * subtitles.length);
     chosen = subtitles[rng];
 
-    content.append('div')
-        .classed('subtitle', true)
-        .text(chosen);
+    subtitle.text(chosen);
 }
