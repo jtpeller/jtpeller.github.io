@@ -49,7 +49,12 @@ window.onload = function () {
     let a = [
         {
             title: 'whoami',
-            arr: ['I am a CS major who graduated from Arizona State University in 2022.']
+            arr: [`I am a compsci major who graduated from Arizona State University in 
+                May of 2022. I have experience writing desktop, web, and console applications.
+                I have a passion for writing applications that solve problems or make life easier
+                for people. I believe that programming isn't an assembly line; it is a creative
+                process that requires an imaginative, problem solving mind.  
+            `]
         },
         {
             title: 'Programming Languages',

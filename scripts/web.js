@@ -142,7 +142,7 @@ window.onload = function () {
             var carouselid = sites[i].name.replaceAll(' ', '-');
 
             var carousel = carousel_parent.append('div')
-                .classed('carousel slide carousel-fade', true)
+                .classed('carousel slide carousel-fade carousel-shadow', true)
                 .attr('id', carouselid)
                 .attr('data-bs-ride', 'carousel')
 

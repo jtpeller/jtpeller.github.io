@@ -28,7 +28,10 @@ var subtitles = [
     "<!DOCTYPE html>",
     "Stack Overflow!",
     `delete ptr;`,
-    "chmod +x virus"
+    "chmod +x virus",
+    "whoami",
+    `{:)+<`,
+    `Clicky buttons!`
 ]
 
 
