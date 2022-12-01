@@ -70,18 +70,6 @@ window.onload = function () {
             `
         },
         {
-            name: "Unit Converter",
-            link: "unit-converter",
-            desc: 'A clean and simple unit converter',
-            imgs: ["uc_1.png", "uc_2.png"],
-            lang: ['html.png', 'css.png', 'js.png'],
-            long: `
-            My unit converter is a site that allows for the conversion of various unit types;
-            including length, area, volume, mass, time, energy, and temperature. There is a 
-            formula that is shown that can be used by the user to approximate the conversion.
-            `
-        },
-        {
             name: "Geography Quiz",
             link: "geography-quiz",
             desc: 'Test your geography skills with this quiz.',
@@ -91,6 +79,18 @@ window.onload = function () {
             My geography quiz is a quiz that allows users to interact with a map of 
             a chosen continent and select the randomly generated country. Each quiz
             runs through the entire continent and tracks the user's score.
+            `
+        },
+        {
+            name: "Unit Converter",
+            link: "unit-converter",
+            desc: 'A clean and simple unit converter',
+            imgs: ["uc_1.png", "uc_2.png"],
+            lang: ['html.png', 'css.png', 'js.png'],
+            long: `
+            My unit converter is a site that allows for the conversion of various unit types;
+            including length, area, volume, mass, time, energy, and temperature. There is a 
+            formula that is shown that can be used by the user to approximate the conversion.
             `
         },
         {
