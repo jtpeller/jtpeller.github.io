@@ -58,14 +58,14 @@ window.onload = function () {
         },
         {
             title: 'Programming Languages',
-            arr: ['HTML/CSS/JavaScript','Golang','C/C++','Java','MATLAB','Python']
+            arr: ['HTML/CSS/JavaScript','Golang','C/C++','Java', 'MATLAB','Python']
         },
         {
             title: 'Skills',
             arr: [
-                'D3.js', 'Object Oriented Programming', 'Bootstrap', 'AWT/Swing',
+                'D3.js', 'ReactJS', 'Object Oriented Programming', 'Bootstrap', 
                 'Algorithms', 'Networks', 'Parsing', 'File I/O', 'String Manipulation',
-                'Data Structures', 'Linux', 'Operating Systems'
+                'Data Structures', 'Linux', 'Operating Systems', 'AWT/Swing',
             ]
         },
         {

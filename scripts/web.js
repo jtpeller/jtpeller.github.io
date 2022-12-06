@@ -43,7 +43,7 @@ window.onload = function () {
     // title
     let title = left.append('h2')
         .classed('text-center title', true)
-        .text('My Web Pages');
+        .text('My Websites');
 
     listdiv.append('h4')
         .classed('my-h4', true)
@@ -60,13 +60,26 @@ window.onload = function () {
             link: "r6siege",
             desc: 'A site to change how you play Rainbow Six Siege',
             imgs: ["r6s_1.png", "r6s_2.png", "r6s_3.png", "r6s_4.png", "r6s_5.png", "r6s_6.png"],
-            lang: ['html.png', 'css.png', 'js.png'],
+            lang: ['HTML.png', 'CSS.png', 'JavaScript.png'],
             long: `
-            R6S Roulette is a website that allows users to randomly generate an operator or gun
-            in Ubisoft's game, Tom Clancy's Rainbow Six Siege. This involves datasets that I 
-            manually wrote as JSONs, which are imported and used as the dataset from which 
-            the filtered list is built. The user can filter out the full dataset via UI 
-            elements such as checkboxes and selection dropdowns.
+            R6S Roulette is a website serving multiple purposes. It's primary purpose is to allow
+            users to randomly generate an operator or gun in Ubisoft's game, Tom Clancy's Rainbow 
+            Six Siege. The user can filter out the full dataset via UI elements such as checkboxes
+            and selection dropdowns.Additionally, users can view information about the operators
+            or guns of the game. The data is stored in manually-written JSONs, and imported for use.
+            `
+        },
+        {
+            name: "Tic-Tac-Toe",
+            link: "tic-tac-toe",
+            desc: 'Tic-Tac-Toe written using ReactJS',
+            imgs: ["ttt1.png", "ttt2.png", "ttt3.png"],
+            lang: ['HTML.png', 'CSS.png', 'JavaScript.png', 'ReactJS.svg'],
+            long: `
+            This website is yet another rendition of the tic-tac-toe game. My first application
+            written with ReactJS, it establishes the use of ReactJS basics like 
+            <code>React.createElement</code> and <code>ReactDOM.createRoot</code>
+            to build the site. The AI is based on the minimax algorithm.
             `
         },
         {
@@ -74,7 +87,7 @@ window.onload = function () {
             link: "geography-quiz",
             desc: 'Test your geography skills with this quiz.',
             imgs: ["geo_1.png", "geo_2.png", "geo_3.png"],
-            lang: ['html.png', 'css.png', 'js.png'],
+            lang: ['HTML.png', 'CSS.png', 'JavaScript.png'],
             long: `
             My geography quiz is a quiz that allows users to interact with a map of 
             a chosen continent and select the randomly generated country. Each quiz
@@ -86,7 +99,7 @@ window.onload = function () {
             link: "unit-converter",
             desc: 'A clean and simple unit converter',
             imgs: ["uc_1.png", "uc_2.png"],
-            lang: ['html.png', 'css.png', 'js.png'],
+            lang: ['HTML.png', 'CSS.png', 'JavaScript.png'],
             long: `
             My unit converter is a site that allows for the conversion of various unit types;
             including length, area, volume, mass, time, energy, and temperature. There is a 
@@ -98,11 +111,10 @@ window.onload = function () {
             link: "webgl-demos",
             desc: 'The landing page for my WebGL demos',
             imgs: ["webgl_1.png", "webgl_2.png", "webgl_3.png", "webgl_4.png", "webgl_5.png"],
-            lang: ['html.png', 'css.png', 'js.png'],
+            lang: ['HTML.png', 'CSS.png', 'JavaScript.png'],
             long: `
-            My WebGL demo site is a simple landing page that allows access to all of the
-            WebGL demos I have written. These demos range from something simple like
-            basic animation to more complicated demos such as lighting and shading.
+            My WebGL demos demonstrate my ability to use WebGL. These demos range from something
+            simple like basic animation to more complicated demos such as lighting and shading.
             `
         },
     ]
@@ -124,7 +136,8 @@ window.onload = function () {
         for (var j = 0; j < sites[i].lang.length; j++) {
             h4.append('img')
                 .attr('src', img_root + sites[i].lang[j])
-                .attr('alt', sites[i].lang[j].replaceAll('.png', ''))
+                .attr('alt', sites[i].lang[j].replaceAll('.png', '').replaceAll('.svg', ''))
+                .attr('title', sites[i].lang[j].replaceAll('.png', '').replaceAll('.svg', ''))
                 .classed('lang-logo', true);
         }
 
@@ -216,7 +229,7 @@ window.onload = function () {
 
         long.append('br');
 
-        long.append('p').text(sites[i].long);
+        long.append('p').html(sites[i].long);
 
         // add the list items
         listdiv.append('a')

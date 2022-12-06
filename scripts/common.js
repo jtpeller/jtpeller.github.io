@@ -8,11 +8,11 @@
 let ll = [
     {
         html: 'web.html',
-        link: 'Web Pages'
+        link: 'Web'
     },
     {
         html: 'projects.html',
-        link: 'Other Work'
+        link: 'Desktop + Console'
     },
     {
         html: 'about.html',
@@ -31,7 +31,10 @@ var subtitles = [
     "chmod +x virus",
     "whoami",
     `{:)+<`,
-    `Clicky buttons!`
+    `Clicky buttons!`,
+    `React.createElement`,
+    `ReactDOM.createRoot`,
+    `falsy!`
 ]
 
 

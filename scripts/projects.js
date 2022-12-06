@@ -43,7 +43,7 @@ window.onload = function () {
     // title
     let title = left.append('h2')
         .classed('text-center title', true)
-        .text('Other Work');
+        .text('Desktop + Console Applications');
 
     listdiv.append('h4')
         .classed('my-h4', true)
