@@ -117,9 +117,9 @@ function arrow() {
     }
 }
 
-function initFooter(footer, anim) {
+function initFooter(footer, shouldAnimate) {
     let elem;
-    if (anim) {
+    if (shouldAnimate) {
         elem = footer.append('footer')
             .classed('footer footer-anim text-center text-lg-start mt-auto my-bg-dark', true)
             .style('height', '5em');

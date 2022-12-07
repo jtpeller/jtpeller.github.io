@@ -21,6 +21,16 @@ window.onload = function () {
     // start with navbar
     initNavbar(header);
 
+    // load data for page
+    Promise.all([
+        d3.json('data/about.json')
+    ]).then(function(values) {
+        initPage(values[0].about);
+        console.log(values[0].about);
+    });
+}
+
+function initPage(a) {
     //
     // initialize content
     //
@@ -46,37 +56,7 @@ window.onload = function () {
         .classed('my-h4', true)
         .text('Contents');
 
-    let a = [
-        {
-            title: 'whoami',
-            arr: [`I am a compsci major who graduated from Arizona State University in 
-                May of 2022. I have experience writing desktop, web, and console applications.
-                I have a passion for writing applications that solve problems or make life easier
-                for people. I believe that programming isn't an assembly line; it is a creative
-                process that requires an imaginative, problem solving mind.  
-            `]
-        },
-        {
-            title: 'Programming Languages',
-            arr: ['HTML/CSS/JavaScript','Golang','C/C++','Java', 'MATLAB','Python']
-        },
-        {
-            title: 'Skills',
-            arr: [
-                'D3.js', 'ReactJS', 'Object Oriented Programming', 'Bootstrap', 
-                'Algorithms', 'Networks', 'Parsing', 'File I/O', 'String Manipulation',
-                'Data Structures', 'Linux', 'Operating Systems', 'AWT/Swing',
-            ]
-        },
-        {
-            title: 'Development Environments',
-            arr: [
-                'Visual Studio', 'Visual Studio Code', 'Eclipse'
-            ]
-        }
-    ]
-
-    for (i in a) {
+    for (let i = 0; i < a.length; i++) {
         var div = left.append('div');
 
         // section title
@@ -85,26 +65,11 @@ window.onload = function () {
             .attr('id', 'section-'+i)
             .text(a[i].title);
 
-        // section list
-        var b = i == 1 ? a[i].arr.sort() : a[i].arr;
-        var chunks = chunkify(b, 2, true);
-        console.log(b, chunks);
-
-        // columns
-        var row = div.append('div')
-            .classed('row', true);
-
-        for (var j = 0; j < chunks.length; j++) {
-            var col = row.append('div')
-                .classed('col', true);
-
-            var ul = col.append('ul').classed('list-group list-group-flush', true);
-            var temp = chunks[j];
-            for (var k = 0; k < temp.length; k++) {
-                ul.append('li')
-                    .classed('list-group-item dark-item', true)
-                    .text(temp[k]);
-            }
+        // check how to handle a.arr
+        if (typeof a[i].arr[0] === 'object') {
+            buildVisualList(div, a[i].arr);
+        } else {
+            buildList(div, a[i].arr);
         }
 
         // add this section title to the contents sidebar
@@ -113,4 +78,86 @@ window.onload = function () {
             .attr('href', '#section-'+i)
             .text(a[i].title);
     }
+}
+
+function buildList(loc, arr) {
+    // section list
+    var chunks = chunkify(arr, 2, true);
+
+    // columns
+    var row = loc.append('div')
+        .classed('row', true);
+
+    for (var j = 0; j < chunks.length; j++) {
+        var col = row.append('div')
+            .classed('col', true);
+
+        var ul = col.append('ul').classed('list-group list-group-flush', true);
+        var temp = chunks[j];
+        for (var k = 0; k < temp.length; k++) {
+            ul.append('li')
+                .classed('list-group-item dark-item', true)
+                .text(temp[k]);
+        }
+    }
+}
+
+function buildVisualList(loc, arr) {
+    // each row contains a name and a chart of its proficiency (scale of 1-4)
+    for (var j = 0; j < arr.length; j++) {
+        var row = loc.append('div')
+            .classed('row', true);
+
+        // first col is a.name
+        var col1 = row.append('div')
+            .classed('col-4', true);
+
+        col1.append('p')
+            .classed('text-end', true)
+            .text(arr[j].name);
+
+        var col2 = row.append('div')
+            .classed('col', true);
+
+        buildChart(col2, [0, 6], arr[j].val);
+    }
+}
+
+function buildChart(loc, range, val) {
+    var svg = loc.append('svg')
+        .classed('my-svg', true);
+
+    let margin = {top: 5, left: 50, bottom: 5, right: 50};
+    const width = svg.style('width').replaceAll('px', '');
+    let innerWidth = width - margin.left - margin.right;
+    
+    const height = 20;
+
+    const x_scale = d3.scaleLinear()
+        .domain(range)
+        .range([0, innerWidth]);
+
+    const g = svg.append('g')
+        .attr('transform', `translate(${margin.left}, ${margin.top})`)
+        .attr('id', 'g-bar');
+
+    g.append('rect')
+        .classed('bar-blank', true)
+        .attr('height', height)
+        .attr('width', innerWidth);
+
+    g.append('rect')
+        .classed('bar', true)
+        .attr('height', height)
+        .attr('width', x_scale(val));
+
+    let labels = ['Beginner', 'Intermediate', 'Advanced', 'Master'];
+
+    let xgen = d3.axisBottom(x_scale)
+        .ticks(3)
+        .tickFormat( (d, i) => labels[i]);
+
+    let xaxis = g.append('g')
+        .attr('transform', `translate(0, ${height})`)
+        .call(xgen);
 }

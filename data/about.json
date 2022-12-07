@@ -1,0 +1,109 @@
+{
+    "about": [
+        {
+            "title": "whoami",
+            "arr": [
+                "I am a compsci major who graduated from Arizona State University in May of 2022. I have experience writing desktop, web, and console applications, and have a passion for writing code that solves problems or makes life easier for people. I believe that programming isn't an assembly line; it is a creative process that requires an imaginative, problem solving mind."
+            ]
+        },
+        {
+            "title": "Programming Languages",
+            "arr": [
+                {
+                    "name": "Web (HTML/CSS/JS)",
+                    "val": "3"
+                },
+                {
+                    "name": "Golang",
+                    "val": "2.75"
+                },
+                {
+                    "name": "C/C++",
+                    "val": "2.75"
+                },
+                {
+                    "name": "MATLAB",
+                    "val": "2.5"
+                },
+                {
+                    "name": "Java",
+                    "val": "2"
+                },
+                {
+                    "name": "Python",
+                    "val": "1.25"
+                }
+            ]
+        },
+        {
+            "title": "Skills",
+            "arr": [
+                {
+                    "name": "Algorithms",
+                    "val": "4"
+                },
+                {
+                    "name": "Data Structures",
+                    "val": "4"
+                },
+                {
+                    "name": "D3.js",
+                    "val": "4"
+                },
+                {
+                    "name": "Bootstrap",
+                    "val": "3.75"
+                },
+                {
+                    "name": "Object Oriented Programming",
+                    "val": "3.5"
+                },
+                {
+                    "name": "Parsing",
+                    "val": "2.5"
+                },
+                {
+                    "name": "File I/O",
+                    "val": "2.5"
+                },
+                {
+                    "name": "Linux",
+                    "val": "2.5"
+                },
+                {
+                    "name": "Networks",
+                    "val": "2"
+                },
+                {
+                    "name": "Operating Systems",
+                    "val": "2"
+                },
+                {
+                    "name": "AWT/Swing",
+                    "val": "2"
+                },
+                {
+                    "name": "ReactJS",
+                    "val": "1"
+                }
+            ]
+        },
+        {
+            "title": "Development Environments",
+            "arr": [
+                {
+                    "name": "Visual Studio Code",
+                    "val": "4"
+                },
+                {
+                    "name": "Eclipse",
+                    "val": "3"
+                },
+                {
+                    "name": "Visual Studio",
+                    "val": "2.5"
+                }
+            ]
+        }
+    ]
+}

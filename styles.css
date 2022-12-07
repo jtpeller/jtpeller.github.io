@@ -1,3 +1,7 @@
+:root {
+    --accent-color: rgb(0, 183, 255);
+}
+
 /* ELEMENTS */
 body {
     font-family:  "Lucida Console", monospace;
@@ -49,7 +53,7 @@ a.dark-item:hover,
 .navbar-brand:hover,
 .nav-link:hover,
 .my-link:hover {
-    color: rgb(0, 102, 255) !important;
+    color: var(--accent-color) !important;
 }
 
 .grabber {
@@ -182,6 +186,25 @@ a.dark-item:hover,
 
     animation: cursor-blink 2s ease-in infinite;
     animation-delay: 1s;
+}
+
+/**** SVG CHARTS ****/
+.bar {
+    fill: var(--accent-color);
+}
+
+.bar-blank {
+    fill: white;
+}
+
+.my-svg {
+    width: 600px;
+    height: 75px;
+}
+
+.tick {
+    font-family:  "Lucida Console", monospace;
+    font-size: 12px;
 }
 
 /* IDs */

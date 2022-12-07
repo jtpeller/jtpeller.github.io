@@ -21,7 +21,7 @@ window.onload = function () {
 
     // initialize title
     let banner = content.append('div')
-        .classed('banner', true)
+        .classed('banner', true);
 
     let span = banner.append('span')
         .classed('title-box', true);
