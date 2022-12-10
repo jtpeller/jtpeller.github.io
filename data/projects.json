@@ -59,7 +59,7 @@
             "caps": ["Generating the Fibonacci Numbers", "Generating the Triangle Numbers", "Generating Sequence A000225"],
             "desc": "The ongoing quest to program every sequence in the OEIS database (using Golang)",
             "long": "This is a console program that contains hundreds of algorithms to generate the sequences found in the OEIS database. While some are trivial, such as all 0s, others are more complicated and involve more complex algorithms. This program makes use of arbitrary precision to overcome overflow issues related to large calculations.",
-            "lang": ["golang.png"]
+            "lang": ["Golang.png"]
         },
         {
             "name": "gosort",
@@ -68,29 +68,29 @@
             "imgn": 3,
             "caps": ["Sorting from a file", "Sorting 100,000 numbers", "Sorting 1,000,000 numbers"],
             "desc": "Sorting algorithms written in Golang",
-            "long": "Major sorting algorithms, but they're written in golang. In addition, this program benchmarks the performance of these algorithms, comparing the time to execute each of the sorting algorithms. Concurrency is used to reduce the overall running time of the program.",
-            "lang": ["golang.png"]
+            "long": "Major sorting algorithms, but they're written in Golang. In addition, this program benchmarks the performance of these algorithms, comparing the time to execute each of the sorting algorithms. Concurrency is used to reduce the overall running time of the program.",
+            "lang": ["Golang.png"]
         },
         {
             "name": "num2words",
             "link": "num2words",
             "desc": "A Golang package that converts a number to its English representation.",
             "long": "A package that allows a number in its numerical form to be converted to its English representation. For example, 15552 converts to 'fifteen thousand five hundred fifty two'. A number of any size can be converted because this package makes use of arbitrary precision.",
-            "lang": ["golang.png"]
+            "lang": ["Golang.png"]
         },
         {
             "name": "Rosalind",
             "link": "rosalind",
             "desc": "Algorithms for problems from Rosalind",
             "long": "Rosalind is a bioinformatics programming platform with numerous problems related to bioinformatic algorithms. This repo contains a few solutions that I wrote to solve these problems.",
-            "lang": ["golang.png"]
+            "lang": ["Golang.png"]
         },
         {
             "name": "gobig",
             "link": "gobig",
             "desc": "A simple Go package to make using arbitrary precision in Golang a bit easier",
             "long": "Golang's arbitrary precision is painful to use when performing mathematical operations on numbers. To make using it easier for myself, I wrote this package (primarily to use in my OEIS repo).",
-            "lang": ["golang.png"]
+            "lang": ["Golang.png"]
         }
     ],
     "other":  [
@@ -102,7 +102,7 @@
             "imgn": 4,
             "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "It really is impossible..."],
             "long": "A desktop Java application I wrote shortly after my Sudoku game. I wrote this to work on my AWT/Swing skills. It has an AI opponent, implemented based of the minimax algorithm. Difficulties are based on modifying this algorithm to make mistakes every once in a while. This is the application where I realized that writing GUI desktop applications with Java is severely limited and painful.",
-            "lang": ["java.png"]
+            "lang": ["Java.png"]
         },
         {
             "name": "Java Sudoku",
@@ -112,14 +112,14 @@
             "imgn": 5,
             "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "Winner!", "The options menu has options (that don't do anything)!"],
             "long": "A desktop Java application I wrote in 2019 to teach myself AWT/Swing (along with the Tic-Tac-Toe Java program). It features a 9x9 grid and 4 difficulties. A player can erase their inputs, get hints, or reset the board.",
-            "lang": ["java.png"]
+            "lang": ["Java.png"]
         },
         {
             "name": "csort",
             "link": "csort",
             "desc": "Sorting algorithms written in C++",
             "long": "Similar to my gosort repository, except it is written in C++.",
-            "lang": ["c++.png"]
+            "lang": ["C++.png"]
         }
     ]
 }
