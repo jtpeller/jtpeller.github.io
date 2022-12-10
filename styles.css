@@ -1,5 +1,6 @@
 :root {
     --accent-color: rgb(0, 183, 255);
+    --bg-color: rgb(18, 19, 20);
 }
 
 /* ELEMENTS */
@@ -7,7 +8,7 @@ body {
     font-family:  "Lucida Console", monospace;
     display: flex;
     flex-direction: column;
-	background-color: rgb(18, 19, 20) !important;
+	background-color: var(--bg-color) !important;
 	color: rgb(235, 235, 235) !important;
 }
 
@@ -37,8 +38,8 @@ hr {
 }
 
 .dark-item {
-    background-color: rgb(18, 19, 20) !important;
-    color: white;
+    background-color: var(--bg-color) !important;
+    color: white !important;
 }
 
 a.dark-item,
@@ -73,11 +74,11 @@ a.dark-item:hover,
     right: 0;
     left:0;
     z-index: 1030;
-    background-color:rgb(18, 19, 20);
+    background-color:var(--bg-color);
 }
 
 .footer {
-	background-color: rgb(18, 19, 20) !important;
+	background-color: var(--bg-color) !important;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -108,7 +109,6 @@ a.dark-item:hover,
     animation-fill-mode: forwards;
 }
 
-.link-list > li,
 .nav-item,
 .navbar-nav > .navbar-brand {
     display: inline-block;
@@ -117,11 +117,15 @@ a.dark-item:hover,
     text-align: center;
 }
 
-.link-list li, .nav-item {
+.dropdown-menu {
+    min-width: 12rem;
+}
+
+.nav-item {
     border-right: 1px solid white;
 }
 
-.link-list li:first-child, .navbar-nav .nav-item:first-of-type { 
+.navbar-nav .nav-item:first-of-type { 
     border-left: 1px solid white;
 }
 
@@ -136,6 +140,10 @@ a.dark-item:hover,
 .nav-item {
     height: fit-content;
     margin: auto;
+}
+
+.no-border {
+    border: none !important;
 }
 
 .my-h4 {
@@ -210,6 +218,7 @@ a.dark-item:hover,
 /* IDs */
 #content {
     margin: auto;
+    height: 1500px;
 }
 
 /* KEYFRAMES */

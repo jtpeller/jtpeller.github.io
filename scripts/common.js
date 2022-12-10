@@ -7,18 +7,31 @@
 
 let ll = [
     {
-        html: 'web.html',
-        link: 'Web'
-    },
-    {
         html: 'projects.html',
-        link: 'Desktop + Console'
+        link: 'Projects'
     },
     {
         html: 'about.html',
         link: 'About'
     }
 ]
+
+let dd = [
+    {
+        html: '?proj=web',
+        link: 'Websites'
+    },
+    {
+        html: '?proj=go',
+        link: 'Golang'
+    },
+    {
+        html: '?proj=other',
+        link: 'Other'
+    },
+]
+
+var langs = ["web", "go", "other"];
 
 var subtitles = [
     "Now asbestos-free!",
@@ -64,17 +77,23 @@ function arrow() {
  * initNavbar() -- initializes the navbar for navigating the site
  * @param header  The d3 element to place this in.
  */
- function initNavbar(header) {
+ function initNavbar(header, showBrand = true) {
     let nav = header.append('nav')
-    nav.classed('navbar navbar-expand-lg fixed-top navbar-dark my-bg-dark', true)
+    if (showBrand) {
+        nav.classed('navbar navbar-expand-lg fixed-top navbar-dark my-bg-dark', true)
+    } else {
+        nav.classed('navbar navbar-expand-lg link-list navbar-dark my-bg-dark', true)
+    }
 
     let navdiv = nav.append('div')
         .classed('container-fluid', true);
     
-    let brand = navdiv.append('a')
-        .classed('navbar-brand d-lg-none', true)
-        .attr('href', 'index.html')
-        .text('jtpeller');
+    if (showBrand) {
+        let brand = navdiv.append('a')
+            .classed('navbar-brand d-lg-none', true)
+            .attr('href', 'index.html')
+            .text('jtpeller');    
+    }
     
     //
     // add the hamburger menu button for mobile/thin
@@ -94,6 +113,8 @@ function arrow() {
     //
     // build the links
     //
+
+    // build the title
     let linkdiv = navdiv.append('div')
         .classed('collapse navbar-collapse', true)
         .attr('id', 'navbar-content');
@@ -101,20 +122,45 @@ function arrow() {
     let ul = linkdiv.append('ul')
         .classed('navbar-nav mx-auto mb-2 mb-lg-0', true);
 
-    ul.append('a')
-        .classed('navbar-brand d-none d-lg-block', true)
-        .attr('href', 'index.html')
-        .text('jtpeller');
-
-    for (var i = 0; i < ll.length; i++) {
-        ul.append('li')
-            .classed('nav-item', true)
-            .append('a')
-            .classed('nav-link active', true)
-            .attr('aria-current', 'page')
-            .attr('href', ll[i].html)
-            .text(ll[i].link);
+    if (showBrand) {
+        ul.append('a')
+            .classed('navbar-brand d-none d-lg-block', true)
+            .attr('href', 'index.html')
+            .text('jtpeller');
     }
+
+    // build the projects dropdown
+    let dropdown = ul.append('li')
+        .classed('nav-item dropdown', true);
+        
+    dropdown.append('a')
+        .classed('nav-link dropdown-toggle dark-item', true)
+        .attr('href', '#')
+        .attr('role', 'button')
+        .attr('data-bs-toggle', 'dropdown')
+        .attr('aria-expanded', 'false')
+        .text('Projects');
+
+    let ddul = dropdown.append('ul')
+        .classed('dropdown-menu dark-item', true)
+
+    for (var i = 0; i < dd.length; i++) {
+        ddul.append('li')
+            .classed('text-center', true)
+            .append('a')
+            .classed('dropdown-item dark-item', true)
+            .attr('href', `projects.html${dd[i].html}`)
+            .text(dd[i].link)
+    }
+
+    // build the about link
+    ul.append('li')
+        .classed('nav-item', true)
+        .append('a')
+        .classed('nav-link active', true)
+        .attr('aria-current', 'page')
+        .attr('href', 'about.html')
+        .text('About');
 }
 
 function initFooter(footer, shouldAnimate) {
@@ -137,11 +183,14 @@ function initFooter(footer, shouldAnimate) {
         .classed('text-light', true)
         .append('img')
         .classed('logo-link', true)
-        .attr('src', 'resources/github.png')
+        .attr('src', 'resources/logos/GitHub.png')
         .attr('alt', 'GitHub')
         .attr('title', 'My GitHub Link...');     
 }
 
+function wordCase(str) {
+    return str[0].toUpperCase() + str.slice(1)
+}
 
 // pulled from: https://stackoverflow.com/questions/8188548/splitting-a-js-array-into-n-arrays
 function chunkify(a, n, balanced) {

@@ -8,3 +8,19 @@ html {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.text-shadow {
+    text-shadow: -2px -2px 0 #000000,
+        2px -2px 0 #000000,
+        -2px 2px 0 #000000,
+        2px 2px 0 #000000,
+        -2px 0 0 #000000,
+        2px 0 0 #000000,
+        0 2px 0 #000000,
+        0 -2px 0 #000000;
+}
+
+.carousel .carousel-item img {
+    max-height: 420px;
+    object-fit: contain;
+}

@@ -1,68 +1,125 @@
 {
-    "proj": [
+    "web": [
+        {
+            "name": "R6S Roulette",
+            "link": "r6siege",
+            "desc": "A site to change how you play Rainbow Six Siege",
+            "imgs": "r6s-&d.png",
+            "imgn": 6,
+            "caps": ["Homepage", "Operator Roulette", "Gun Roulette", "Operator Page", "Guns Page", "More Info Page"],
+            "lang": ["HTML.png", "CSS.png", "JavaScript.png", "D3.svg"],
+            "long": "R6S Roulette is a website serving multiple purposes. It's primary purpose is to allow users to randomly generate an operator or gun in Ubisoft's game, Tom Clancy's Rainbow Six Siege. The user can filter out the full dataset via UI elements such as checkboxes and selection dropdowns. Additionally, users can view information about the operatorsor guns of the game. The data is stored in manually-written JSONs, and imported for use." 
+        },
+        {
+            "name": "Tic-Tac-Toe",
+            "link": "tic-tac-toe",
+            "desc": "Tic-Tac-Toe written using ReactJS",
+            "imgs": "ttt-&d.png",
+            "imgn": 3,
+            "caps": ["Main Menu", "Playing against an Impossible AI", "Cat's Game!"],
+            "lang": ["HTML.png", "CSS.png", "JavaScript.png", "ReactJS.svg"],
+            "long": "This website is yet another rendition of the tic-tac-toe game. My first application written with ReactJS, it establishes the use of ReactJS basics like <code>React.createElement</code> and <code>ReactDOM.createRoot</code> to build the site. The AI is based on the minimax algorithm."
+        },
+        {
+            "name": "Geography Quiz",
+            "link": "geography-quiz",
+            "desc": "Test your geography skills with this quiz.",
+            "imgs": "geo-&d.png",
+            "imgn": 3,
+            "caps": ["Main Menu", "Beginning the North America Quiz", "Completed the quiz"],
+            "lang": ["HTML.png", "CSS.png", "JavaScript.png", "D3.svg"],
+            "long": "My geography quiz is a quiz that allows users to interact with a map of a chosen continent and select the randomly generated country. Each quiz runs through the entire continent and tracks the user's score."
+        },
+        {
+            "name": "Unit Converter",
+            "link": "unit-converter",
+            "desc": "A clean and simple unit converter",
+            "imgs": "uc-&d.png",
+            "imgn": 2,
+            "lang": ["HTML.png", "CSS.png", "JavaScript.png", "D3.svg"],
+            "long": "My unit converter is a site that allows for the conversion of various unit types; including length, area, volume, mass, time, energy, and temperature. There is a formula that is shown that can be used by the user to approximate the conversion."
+        },
+        {
+            "name": "WebGL Demos",
+            "link": "webgl-demos",
+            "desc": "The landing page for my WebGL demos",
+            "imgs": "webgl-&d.png",
+            "imgn": 5,
+            "caps": ["Landing Page", "Demo of 2D shapes & simple animation", "Demo of canvas interaction", "Demo of lighting & material properties", "Animating a figure"],
+            "lang": ["HTML.png", "CSS.png", "JavaScript.png", "WebGL.svg"],
+            "long": "My WebGL demos demonstrate my ability to use WebGL. These demos range from something simple like basic animation to more complicated demos such as lighting and shading."
+        }
+    ],
+    "go": [
         {
             "name": "OEIS",
             "link": "OEIS",
+            "imgs": "oeis-&d.png",
+            "imgn": 3,
+            "caps": ["Generating the Fibonacci Numbers", "Generating the Triangle Numbers", "Generating Sequence A000225"],
             "desc": "The ongoing quest to program every sequence in the OEIS database (using Golang)",
-            "long": "This is a console program that contains hundreds of algorithms to generate the sequences found in the OEIS database. While some are trivial, such as all 0s, others are more complicated and involve more complex algorithms.",
-            "lang": ["golang.png"],
-            "skil": ["Algorithms","Arbitrary Precision","Complex Mathematical Operations","Recursion"]
+            "long": "This is a console program that contains hundreds of algorithms to generate the sequences found in the OEIS database. While some are trivial, such as all 0s, others are more complicated and involve more complex algorithms. This program makes use of arbitrary precision to overcome overflow issues related to large calculations.",
+            "lang": ["golang.png"]
         },
         {
-            "name": "Java Tic-Tac-Toe",
-            "link": "TicTacToeJava",
-            "desc": "An implementation of tic-tac-toe in Java",
-            "long": "A desktop Java application I wrote shortly after my Sudoku game. I wrote this to teach myself AWT/Swing in Java. It has an AI computer, implemented based of the minimax algorithm. Difficulties are based on modifying this algorithm to make mistakes every once in a while.",
-            "lang": ["java.png"],
-            "skil": ["AWT/Swing","GUI","Object-Oriented Programming"]
-        },
-        {
-            "name": "Java Sudoku",
-            "link": "SudokuJava",
-            "desc": "An implementation of sudoku in Java",
-            "long": "A desktop Java application I wrote in 2019 to teach myself AWT/Swing (along with the Tic-Tac-Toe Java program).",
-            "lang": ["java.png"],
-            "skil": ["AWT/Swing","GUI","Object-Oriented Programming"]
+            "name": "gosort",
+            "link": "gosort",
+            "imgs": "gosort-&d.png",
+            "imgn": 3,
+            "caps": ["Sorting from a file", "Sorting 100,000 numbers", "Sorting 1,000,000 numbers"],
+            "desc": "Sorting algorithms written in Golang",
+            "long": "Major sorting algorithms, but they're written in golang. In addition, this program benchmarks the performance of these algorithms, comparing the time to execute each of the sorting algorithms. Concurrency is used to reduce the overall running time of the program.",
+            "lang": ["golang.png"]
         },
         {
             "name": "num2words",
             "link": "num2words",
             "desc": "A Golang package that converts a number to its English representation.",
-            "long": "While it might not seem that complicated, this actually allows a number of any size. Arbitrary precision in Golang allowed me to convert a number of any size into English.",
-            "lang": ["golang.png"],
-            "skil": ["String Manipulation","Recursion","Arbitrary Precision"]
+            "long": "A package that allows a number in its numerical form to be converted to its English representation. For example, 15552 converts to 'fifteen thousand five hundred fifty two'. A number of any size can be converted because this package makes use of arbitrary precision.",
+            "lang": ["golang.png"]
+        },
+        {
+            "name": "Rosalind",
+            "link": "rosalind",
+            "desc": "Algorithms for problems from Rosalind",
+            "long": "Rosalind is a bioinformatics programming platform with numerous problems related to bioinformatic algorithms. This repo contains a few solutions that I wrote to solve these problems.",
+            "lang": ["golang.png"]
         },
         {
             "name": "gobig",
             "link": "gobig",
             "desc": "A simple Go package to make using arbitrary precision in Golang a bit easier",
-            "long": "Golang's arbitrary precision is painful to use when performing mathematical operations on numbers. I made it easier for myself. I wrote this package primarily to use in my OEIS repo.",
-            "lang": ["golang.png"],
-            "skil": ["Developing a Go package","Arbitrary Precision"]
+            "long": "Golang's arbitrary precision is painful to use when performing mathematical operations on numbers. To make using it easier for myself, I wrote this package (primarily to use in my OEIS repo).",
+            "lang": ["golang.png"]
+        }
+    ],
+    "other":  [
+        {
+            "name": "Java Tic-Tac-Toe",
+            "link": "TicTacToeJava",
+            "desc": "An implementation of tic-tac-toe in Java",
+            "imgs": "jttt-&d.png",
+            "imgn": 4,
+            "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "It really is impossible..."],
+            "long": "A desktop Java application I wrote shortly after my Sudoku game. I wrote this to work on my AWT/Swing skills. It has an AI opponent, implemented based of the minimax algorithm. Difficulties are based on modifying this algorithm to make mistakes every once in a while. This is the application where I realized that writing GUI desktop applications with Java is severely limited and painful.",
+            "lang": ["java.png"]
         },
         {
-            "name": "Rosalind",
-            "link": "rosalind",
-            "desc": "Algorithms for problems from Rosalind, a bioinformatics programming platform.",
-            "long": "Rosalind is a site that has problems to write algorithms or solutions for. This repo contains a few solutions to those problems.",
-            "lang": ["golang.png"],
-            "skil": ["Algorithms","String Manipulation","Recursion"]
+            "name": "Java Sudoku",
+            "link": "SudokuJava",
+            "desc": "An implementation of sudoku in Java",
+            "imgs": "jsudoku-&d.png",
+            "imgn": 5,
+            "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "Winner!", "The options menu has options (that don't do anything)!"],
+            "long": "A desktop Java application I wrote in 2019 to teach myself AWT/Swing (along with the Tic-Tac-Toe Java program). It features a 9x9 grid and 4 difficulties. A player can erase their inputs, get hints, or reset the board.",
+            "lang": ["java.png"]
         },
         {
             "name": "csort",
             "link": "csort",
             "desc": "Sorting algorithms written in C++",
-            "long": "Those crazy cool sorting algorithms, but they're written in C++.",
-            "lang": ["c++.png"],
-            "skil": ["Algorithms","Sorting","Recursion","Iteration"]
-        },
-        {
-            "name": "gosort",
-            "link": "gosort",
-            "desc": "Sorting algorithms written in Golang",
-            "long": "Those crazy cool sorting algorithms, but they're written in golang.",
-            "lang": ["golang.png"],
-            "skil": ["Algorithms","Sorting","Recursion","Iteration"]
+            "long": "Similar to my gosort repository, except it is written in C++.",
+            "lang": ["c++.png"]
         }
     ]
 }

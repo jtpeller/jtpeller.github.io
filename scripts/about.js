@@ -78,6 +78,12 @@ function initPage(a) {
             .attr('href', '#section-'+i)
             .text(a[i].title);
     }
+
+    // add the "back to top" item in the contents list
+    listdiv.append('a')
+        .classed('list-group-item list-group-item-action dark-item', true)
+        .attr('href', '#')
+        .text('Back to Top')
 }
 
 function buildList(loc, arr) {
