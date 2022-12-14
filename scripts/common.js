@@ -82,7 +82,7 @@ function arrow() {
     if (showBrand) {
         nav.classed('navbar navbar-expand-lg fixed-top navbar-dark my-bg-dark', true)
     } else {
-        nav.classed('navbar navbar-expand-lg link-list navbar-dark my-bg-dark', true)
+        nav.classed('navbar navbar-expand-sm link-list navbar-dark my-bg-dark', true)
     }
 
     let navdiv = nav.append('div')

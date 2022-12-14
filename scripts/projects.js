@@ -29,7 +29,6 @@ window.onload = function () {
 
     if (!langs.includes(lang)) {
         window.location.search = '?proj=web'
-        //window.reload();
     }
 
     // load data for page
