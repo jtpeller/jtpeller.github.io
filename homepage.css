@@ -1,0 +1,188 @@
+footer {
+	background-color: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4em;
+    
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+main {
+    margin: auto;
+    height: 1500px;
+}
+
+.banner {
+    opacity: 0;
+    padding: 12vw;
+    padding-bottom: 10px;
+
+    animation: fadeIn 1s ease-in-out 1;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
+
+    transition: ease all 0.5s;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    display: block;
+    font-size: 4vw;
+    text-align: center;
+    margin: auto;
+
+    padding: 0;
+    opacity: 0;
+    
+    animation: fadeIn 1s steps(240) 1;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
+    transition: color 200ms ease-in-out;
+    transition: ease all .5s;
+}
+
+.nav-btn:hover {
+    color: var(--accent-color) !important;
+}
+
+.subtitle {
+    font-size: 1vw;
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    opacity: 0;
+
+    color: rgb(204, 204, 0);
+
+    transform: rotate(30deg);
+    
+    animation: fadeIn2 1s ease-in-out 1,
+        flashy 1.2s ease-in-out infinite;
+    animation-delay: 500ms;
+    animation-fill-mode: forwards;
+
+    transition: ease all .5s;
+}
+
+
+.title-card {
+    font-size: 8vw;
+    margin: 0;
+    transition: ease all .5s;
+}
+
+.title-box .title-card::after {
+    position: relative;
+
+    content: "";
+    aspect-ratio: 3/4;
+    background: rgb(235, 235, 235);
+    display: inline-block;
+    margin: auto;
+    margin-left: 0.1vw;
+
+    animation: cursor-blink 2s ease-in infinite;
+    animation-delay: 1s;
+    
+    transition: ease all .5s;
+}
+
+/* QUERIES */
+/* Desktop */
+@media only screen and (min-width: 1025px) {
+    .title-card {
+        font-size: 125px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+        left: 10% !important;
+    }
+
+    .title-box .title-card::after {
+        width: 100px;
+    }
+
+    .nav-btn {
+        font-size: 40px;
+    }
+}
+
+/* Laptop, Small Screens */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .banner {
+        margin: 50px 0px 10px 0px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        left: 5% !important;
+    }
+
+    .title-card {
+        font-size: 75px;
+    }
+
+    .title-box .title-card::after {
+        width: 60px;
+    }
+
+    .nav-btn {
+        font-size: 30px;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .banner {
+        margin: 75px 0px 10px 0px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        left: 5% !important;
+    }
+
+    .title-card {
+        font-size: 60px;
+    }
+
+    .title-box .title-card::after {
+        width: 50px;
+    }
+
+    .nav-btn {
+        font-size: 25px;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+    .banner {
+        margin: 100px 0px 10px 0px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+        left: 0% !important;
+    }
+
+    .title-card {
+        font-size: 40px;
+    }
+
+    .title-box .title-card::after {
+        width: 35px;
+    }
+
+    .nav-btn {
+        font-size: 20px;
+    }
+}

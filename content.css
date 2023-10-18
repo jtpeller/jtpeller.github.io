@@ -1,0 +1,185 @@
+/* ELEMENTS */
+html {
+    scroll-padding-top: 70px;   /* to account for the navbar */
+}
+
+/* CLASSES */
+.card {
+    background-color: var(--bg-color);
+    color: white;
+    margin: 10px 0px;
+    padding: 10px;
+    box-shadow: 0px 0px 8px grey;
+}
+
+.card-link {
+    text-decoration: underline;
+}
+
+.container {
+    transition: ease all 0.5s;
+}
+
+.carousel .carousel-item img {
+    max-height: 420px;
+    object-fit: contain;
+}
+
+.grabber {
+    padding: 1rem 0;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left:0;
+    z-index: 1030;
+    background-color: rgb(10, 10, 10);
+}
+
+.lang-logo {
+    height: 25px;
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-item,
+.navbar-nav > .navbar-brand {
+    display: inline-block;
+    padding: 0 0.5rem;
+    min-width: 12rem;
+    text-align: center;
+}
+
+.section-header {
+    width: 100%;
+	padding-top: 1rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1.5px solid grey;
+
+    transition: ease all 0.5s;
+}
+
+.text-shadow {
+    text-shadow: -2px -2px 0 #000000,
+        2px -2px 0 #000000,
+        -2px 2px 0 #000000,
+        2px 2px 0 #000000,
+        -2px 0 0 #000000,
+        2px 0 0 #000000,
+        0 2px 0 #000000,
+        0 -2px 0 #000000;
+}
+
+.title {
+    margin: 5rem 0 2rem 0;
+    transition: ease all 0.5s;
+}
+
+.webpage-button {
+    background-color: black;
+    color: white;
+    padding: 12px;
+    margin: 2px 12px 2px 0px;
+}
+
+/**** SVG CHARTS ****/
+svg {
+    margin: auto;
+}
+
+.axis-label {
+    fill: white;
+}
+
+.bar {
+    fill: var(--accent-color);
+}
+
+.bar-blank {
+    fill: white;
+}
+
+.tick {
+    font-family:  "Lucida Console", monospace;
+    font-size: 16px;
+}
+
+/** QUERIES **/
+/* Desktop */
+@media only screen and (min-width: 1025px) {
+    .title {
+        font-size: 48px;
+    }
+
+    .section-header {
+        font-size: 32px;
+    }
+    
+    .axis-label, .tick {
+        font-size: 20px;
+    }
+
+    .lang-logo {
+        height: 25px;
+    }
+}
+
+/* Laptop, Small Screens */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .title {
+        font-size: 48px;
+    }
+
+    .section-header {
+        font-size: 28px;
+    }
+    
+    .axis-label, .tick {
+        font-size: 20px;
+    }
+
+    .lang-logo {
+        height: 25px;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .title {
+        font-size: 40px;
+    }
+
+    .section-header {
+        font-size: 28px;
+    }
+    
+    .axis-label, .tick {
+        font-size: 20px;
+    }
+
+    .lang-logo {
+        height: 25px;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+    .title {
+        font-size: 32px;
+    }
+    
+    .section-header {
+        font-size: 22px;
+    }
+    
+    .axis-label, .tick {
+        font-size: 24px;
+    }
+
+    .lang-logo {
+        height: 20px;
+    }
+}

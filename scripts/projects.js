@@ -9,110 +9,72 @@
 // global vars
 // 
 let header,
-    content,
-    footer;
+    main;
 
 let lang = "";
+const langs = ["Web", "Go", "Other"];
+const MAX_PER_ROW = 3;
 
 window.onload = function () {
     // define variables
-    header = d3.select('#header');
-    content = d3.select('#content');
-    footer = d3.select('#footer');
+    header = d3.select('header');
+    main = d3.select('main');
 
     // start with navbar
     initNavbar(header);
-
-    // figure out which was the desired project type
-    let type = window.location.search.split('=')
-    lang = type[1];
-
-    if (!langs.includes(lang)) {
-        window.location.search = '?proj=web'
-    }
 
     // load data for page
     Promise.all([
         d3.json('data/projects.json')
     ]).then(function (values) {
-        initPage(values[0][type[1]]);
+        for (var i = 0; i < 3; i++) {
+            lang = langs[i]
+            initPage(values[0][lang.toLowerCase()], main);
+        }
     });
 }
 
-function initPage(proj) {
-    //
-    // initialize content
-    //
-    content.classed('container', true);
-
-    let rowdiv = content.append('div')
-        .classed('row', true);
-
-    // left side contains the main content
-    let left = rowdiv.append('div')
-        .classed('col', true);
-
-    // right side contains the scrollspy list
-    let right = rowdiv.append('div')
-        .classed('col-2', true);
-
-    var listdiv = right.append('div')
-        .classed('list-group list-group-flush fixed-nav', true);
+function initPage(proj, loc) {
+    var proj_div = loc.append('div')
+        .attr('id', `${lang}-div`);
 
     // title
-    let title = left.append('h2')
+    proj_div.append('h1')
         .classed('text-center title', true)
-        .text(`${wordCase(lang)} Projects`);
-
-    listdiv.append('h4')
-        .classed('my-h4', true)
-        .text('Contents');
+        .text(`${lang} Projects`);
 
     //
     // add each project
     //
-    var link_root = lang == 'web' ? 'https://jtpeller.github.io/' : 'https://github.com/jtpeller/';
+    var web_root = 'https://jtpeller.github.io/';
+    var link_root = 'https://github.com/jtpeller/';
     var logo_root = 'resources/logos/';
     var proj_root = `resources/${lang}/`
 
+    var rowdiv = proj_div.append('div')
+        .classed('row', true);
+
     for (var i = 0; i < proj.length; i++) {
-        var div = left.append('div');
+        var col = rowdiv.append('div')
+            .classed('col-sm-12 col-lg-6', true);
 
-        // title and link
-        var h4 = div.append('h4')
-            .classed('my-h4', true);
+        var card = col.append('div')
+            .classed('card card-dark', true);
 
-        h4.append('a')
-            .html(proj[i].name + '&#128279;')
-            .attr('href', link_root + proj[i].link)
-            .attr('id', 'proj-' + i)
-            .classed('my-link', true);
-
-        for (var j = 0; j < proj[i].lang.length; j++) {
-            var name = proj[i].lang[j].replaceAll('.png', '').replaceAll('.svg', '')
-    
-            h4.append('img')
-                .attr('src', logo_root + proj[i].lang[j])
-                .attr('alt', name)
-                .attr('title', name)
-                .classed('lang-logo', true);
-        }
-
-        // quick grabber description
-        div.append('p')
-            .classed('text-center grabber', true)
-            .append('i')
-            .text(proj[i].desc);
-
+        //
         // image carousel
+        //
+        var img_div = card.append('div')
+            .classed('card-img-top', true);
+
         if (proj[i].imgs && proj[i].imgn > 0) {
-            var carousel_parent = div.append('div')
-                .classed('w-75 mx-auto', true);
+            var carousel_parent = img_div.append('div')
+                .classed('w-100 mx-auto', true);
 
             var carouselid = proj[i].name.replaceAll(' ', '-');
 
             var carousel = carousel_parent.append('div')
-                .classed('carousel slide carousel-shadow', true)
+                .classed('carousel slide', true)
                 .attr('id', carouselid)
                 .attr('data-bs-ride', 'carousel')
 
@@ -139,7 +101,7 @@ function initPage(proj) {
                     .attr('id', imgid)
                     .attr('data-bs-interval', 5000)
 
-                var imgname = proj[i].imgs.replace('&d', j+1)
+                var imgname = proj[i].imgs.replace('&d', j + 1)
 
                 itemdiv.append('img')
                     .classed('d-block w-100', true)
@@ -195,24 +157,62 @@ function initPage(proj) {
             d3.selectAll(`button[data-bs-slide-to='0']`).dispatch('click');
         }
 
-        // now, add the description
-        var long = div.append('div')
-            .classed('col', true);
+        //
+        // card body
+        //
 
-        long.append('br');
+        var card_body = card.append('div')
+            .classed('card-body', true);
 
-        long.append('p').html(proj[i].long);
-
-        // add the list items
-        listdiv.append('a')
-            .classed('list-group-item list-group-item-action dark-item', true)
-            .attr('href', '#proj-' + i)
+        // title
+        var name = card_body.append('h2')
+            .classed('card-title section-header', true)
             .text(proj[i].name);
-    }
 
-    // add the "back to top" item in the contents list
-    listdiv.append('a')
-        .classed('list-group-item list-group-item-action dark-item', true)
-        .attr('href', '#')
-        .text('Back to Top')
+        // language & library logos
+        for (var j = 0; j < proj[i].lang.length; j++) {
+            var img = proj[i].lang[j].replaceAll('.png', '').replaceAll('.svg', '')
+
+            name.append('img')
+                .attr('src', logo_root + proj[i].lang[j])
+                .attr('alt', img)
+                .attr('title', img)
+                .classed('lang-logo', true);
+        }
+
+        // card subtitle
+        card_body.append('p')
+            .classed('card-subtitle text-center grabber', true)
+            .append('i')
+            .text(proj[i].desc);
+
+        // description
+        card_body.append('p').html(proj[i].long);
+
+        //
+        // card footer
+        //
+
+        // add the link(s) to the footer
+        var card_footer = card.append('div')
+            .classed('card-body', true)
+
+        if (lang == 'web') {
+            // need to add a link to go to the page
+            card_footer.append('a')
+                .attr('href', web_root + proj[i].link)
+                .attr('id', 'proj-' + i)
+                .classed('webpage-button link', true)
+                .text("See More");
+        }
+
+        card_footer.append('a')
+            .attr('href', link_root + proj[i].link)
+            .append('img')
+            .classed('logo-link link', true)
+            .attr('src', logo_root + 'GitHub.png')
+            .attr('alt', 'GitHub')
+            .attr('title', 'Go to the Project Repository on GitHub')
+            .text("GitHub");
+    }
 }

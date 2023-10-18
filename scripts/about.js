@@ -9,14 +9,12 @@
 // global vars
 // 
 let header,
-    content,
-    footer;
+    main;
 
 window.onload = function () {
     // define variables
-    header = d3.select('#header');
-    content = d3.select('#content');
-    footer = d3.select('#footer');
+    header = d3.select('header');
+    main = d3.select('main');
 
     // start with navbar
     initNavbar(header);
@@ -31,139 +29,111 @@ window.onload = function () {
 }
 
 function initPage(a) {
-    //
-    // initialize content
-    //
-    content.classed('container', true);
+    let content = main.append('div');
+        
+    content.append('h1')
+        .classed('text-center title', true)
+        .text('About Me');
 
+    // handle arr[0], the 'whoami' section
+    content.append('h2')
+        .classed('section-header', true)
+        .text(a[0].title);
+    content.append('p').text(a[0].arr[0]);
+    
+    // create the skills cards
     let rowdiv = content.append('div')
         .classed('row', true);
+    for (let i = 1; i < a.length; i++) {
+        var col = rowdiv.append('div')
+            .classed('col-sm-12 col-lg-6', true);
 
-    let left = rowdiv.append('div')
-        .classed('col', true);
+        var card = col.append('div')
+            .classed('card card-dark', true);
 
-    let right = rowdiv.append('div')
-        .classed('col-2', true);
+        // create the SVG charts
+        let svgdiv = card.append('div')
+            .classed('card-img-top', true);
+        let svg = svgdiv.append('svg');
 
-    var listdiv = right.append('div')
-        .classed('list-group list-group-flush fixed-nav', true);
-
-    left.append('h2')
-        .classed('text-center title', true)
-        .text('About me');
-
-    listdiv.append('h4')
-        .classed('my-h4', true)
-        .text('Contents');
-
-    for (let i = 0; i < a.length; i++) {
-        var div = left.append('div');
+        buildChart(svg, a[i].arr);
 
         // section title
-        div.append('h4')
-            .classed('my-h4', true)
-            .attr('id', 'section-'+i)
+        card.append('h2')
+            .classed('section-header', true)
             .text(a[i].title);
 
-        // check how to handle a.arr
-        if (typeof a[i].arr[0] === 'object') {
-            buildVisualList(div, a[i].arr);
-        } else {
-            buildList(div, a[i].arr);
-        }
-
-        // add this section title to the contents sidebar
-        listdiv.append('a')
-            .classed('list-group-item list-group-item-action dark-item', true)
-            .attr('href', '#section-'+i)
-            .text(a[i].title);
+        card.append('p').text(a[i].desc);
     }
 
-    // add the "back to top" item in the contents list
-    listdiv.append('a')
-        .classed('list-group-item list-group-item-action dark-item', true)
-        .attr('href', '#')
-        .text('Back to Top')
+    main.append('br');
 }
 
-function buildList(loc, arr) {
-    // section list
-    var chunks = chunkify(arr, 2, true);
+function buildChart(svg, data) {
+    // constant SVG values
+    const margin = {top: 10, left: 200, bottom: 125, right: 50};
+    const width = 1000;
+    const height = 600;
 
-    // columns
-    var row = loc.append('div')
-        .classed('row', true);
+    // dimensions for inner chart (the g element)
+    const innerWidth = width - margin.left - margin.right;
+    const innerHeight = height - margin.top - margin.bottom;
 
-    for (var j = 0; j < chunks.length; j++) {
-        var col = row.append('div')
-            .classed('col', true);
+    // ensure SVG is proper dims
+    svg.attr('viewBox', `0 0 ${width} ${height}`)
 
-        var ul = col.append('ul').classed('list-group list-group-flush', true);
-        var temp = chunks[j];
-        for (var k = 0; k < temp.length; k++) {
-            ul.append('li')
-                .classed('list-group-item dark-item', true)
-                .text(temp[k]);
-        }
-    }
-}
+    // set up x & y scale functions to transform data
+    const x_scale = d3.scaleBand()
+        .range([0, innerWidth])
+        .domain(data.map( d => d.name))
+        .padding(0.25);
 
-function buildVisualList(loc, arr) {
-    // each row contains a name and a chart of its proficiency (scale of 1-4)
-    for (var j = 0; j < arr.length; j++) {
-        var row = loc.append('div')
-            .classed('row', true);
+    const y_scale = d3.scaleLinear()
+        .domain([0, 4])
+        .range([innerHeight, 0]);
 
-        // first col is a.name
-        var col1 = row.append('div')
-            .classed('col-4', true);
-
-        col1.append('p')
-            .classed('text-end', true)
-            .text(arr[j].name);
-
-        var col2 = row.append('div')
-            .classed('col', true);
-
-        buildChart(col2, [0, 6], arr[j].val);
-    }
-}
-
-function buildChart(loc, range, val) {
-    var svg = loc.append('svg')
-        .classed('my-svg', true);
-
-    let margin = {top: 5, left: 50, bottom: 5, right: 50};
-    const width = svg.style('width').replaceAll('px', '');
-    let innerWidth = width - margin.left - margin.right;
-    
-    const height = 20;
-
-    const x_scale = d3.scaleLinear()
-        .domain(range)
-        .range([0, innerWidth]);
-
+    // set up bar chart thingy
     const g = svg.append('g')
         .attr('transform', `translate(${margin.left}, ${margin.top})`)
         .attr('id', 'g-bar');
 
-    g.append('rect')
-        .classed('bar-blank', true)
-        .attr('height', height)
-        .attr('width', innerWidth);
-
-    g.append('rect')
+    g.selectAll('rect')
+        .data(data)
+        .join('rect')
         .classed('bar', true)
-        .attr('height', height)
-        .attr('width', x_scale(val));
+        .attr('x', d => x_scale(d.name))
+        .attr('y', d => y_scale(0))
+        .attr('width', x_scale.bandwidth())
+        .transition().duration(750)
+        .attr('height', d => innerHeight - y_scale(0))
 
-    let labels = ['Beginner', 'Intermediate', 'Advanced', 'Master'];
+    svg.selectAll('rect')
+        .transition()
+        .duration(750)
+        .attr('y', d => y_scale(d.val))
+        .attr('height', d => innerHeight - y_scale(d.val))
+        .delay((d,  i) => i*100)
 
-    let xgen = d3.axisBottom(x_scale)
-        .ticks(3)
-        .tickFormat( (d, i) => labels[i]);
+    let xgen = d3.axisBottom(x_scale);
 
-    let xaxis = g.append('g')
-        .attr('transform', `translate(0, ${height})`)
-        .call(xgen);
+    // add x & y axes
+    g.append('g')
+        .attr('transform', `translate(0, ${innerHeight})`)
+        .call(xgen)
+        .selectAll('text')
+        .style('text-anchor', 'end')
+        .attr('transform', 'rotate(-25)')
+
+    g.append('g')
+        .attr('transform', `translate(0, 0)`)
+        .call(d3.axisLeft(y_scale));
+
+    // add axes labels
+    svg.append('text')
+        .attr('class', 'axis-label')
+        .attr('text-anchor', 'center')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('transform', 'rotate(-90)')
+        .text('Years of Experience')
 }

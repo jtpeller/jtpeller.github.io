@@ -8,7 +8,7 @@
             "imgn": 6,
             "caps": ["Homepage", "Operator Roulette", "Gun Roulette", "Operator Page", "Guns Page", "More Info Page"],
             "lang": ["HTML.png", "CSS.png", "JavaScript.png", "D3.svg"],
-            "long": "R6S Roulette is a website serving multiple purposes. It's primary purpose is to allow users to randomly generate an operator or gun in Ubisoft's game, Tom Clancy's Rainbow Six Siege. The user can filter out the full dataset via UI elements such as checkboxes and selection dropdowns. Additionally, users can view information about the operatorsor guns of the game. The data is stored in manually-written JSONs, and imported for use." 
+            "long": "R6S Roulette is a companion web app for the video game <i>Tom Clancy's Rainbow Six Siege</i> by Ubisoft. Users can randomly select an operator or gun, filter out the full dataset via UI elements (e.g., checkboxes, dropdowns), or view information about the game." 
         },
         {
             "name": "Tic-Tac-Toe",
@@ -18,7 +18,7 @@
             "imgn": 3,
             "caps": ["Main Menu", "Playing against an Impossible AI", "Cat's Game!"],
             "lang": ["HTML.png", "CSS.png", "JavaScript.png", "ReactJS.svg"],
-            "long": "This website is yet another rendition of the tic-tac-toe game. My first application written with ReactJS, it establishes the use of ReactJS basics like <code>React.createElement</code> and <code>ReactDOM.createRoot</code> to build the site. The AI is based on the minimax algorithm."
+            "long": "This is yet another rendition of the tic-tac-toe game. My first application written with ReactJS, it establishes the use of ReactJS basics like <code>React.createElement</code> and <code>ReactDOM.createRoot</code> to build the site. The AI is based on the minimax algorithm."
         },
         {
             "name": "Geography Quiz",

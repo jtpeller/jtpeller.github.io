@@ -3,23 +3,32 @@
         {
             "title": "whoami",
             "arr": [
-                "I am a compsci major who graduated from Arizona State University in May of 2022. I have experience writing desktop, web, and console applications, and have a passion for writing code that solves problems or makes life easier for people. I believe that programming isn't an assembly line; it is a creative process that requires an imaginative, problem solving mind."
+                "I am a compsci major who graduated from ASU in 2022. I have experience writing desktop, web, and console applications. I have been working as a Cybersecurity Engineer for Honeywell since June 2023."
             ]
         },
         {
-            "title": "Programming Languages",
+            "title": "Programming Languages & Libraries",
+            "desc": "These are the languages and libraries that I have worked with most frequently. I have spent lots of time working with web technologies, but also with Golang and C/C++",
             "arr": [
                 {
-                    "name": "Web (HTML/CSS/JS)",
-                    "val": "3"
+                    "name": "Web",
+                    "val": "4"
+                },
+                {
+                    "name": "D3.js",
+                    "val": "4"
                 },
                 {
                     "name": "Golang",
-                    "val": "2.75"
+                    "val": "3"
+                },
+                {
+                    "name": "Bootstrap",
+                    "val": "3"
                 },
                 {
                     "name": "C/C++",
-                    "val": "2.75"
+                    "val": "3"
                 },
                 {
                     "name": "MATLAB",
@@ -31,32 +40,25 @@
                 },
                 {
                     "name": "Python",
-                    "val": "1.25"
+                    "val": "1.5"
                 }
             ]
         },
         {
             "title": "Skills",
+            "desc": "Over the time with these languages, I have picked up various skills, including the ability to design and write (hopefully efficient) algorithms, data structures, etc. I have also become acquainted with technologies like Linux, networks, and more.",
             "arr": [
                 {
                     "name": "Algorithms",
                     "val": "4"
                 },
                 {
-                    "name": "Data Structures",
-                    "val": "4"
-                },
-                {
-                    "name": "D3.js",
-                    "val": "4"
-                },
-                {
-                    "name": "Bootstrap",
-                    "val": "3.75"
-                },
-                {
-                    "name": "Object Oriented Programming",
+                    "name": "OOP",
                     "val": "3.5"
+                },
+                {
+                    "name": "Data Structures",
+                    "val": "3"
                 },
                 {
                     "name": "Parsing",
@@ -64,11 +66,7 @@
                 },
                 {
                     "name": "File I/O",
-                    "val": "2.5"
-                },
-                {
-                    "name": "Linux",
-                    "val": "2.5"
+                    "val": "2"
                 },
                 {
                     "name": "Networks",
@@ -79,8 +77,12 @@
                     "val": "2"
                 },
                 {
-                    "name": "AWT/Swing",
+                    "name": "Linux",
                     "val": "2"
+                },
+                {
+                    "name": "AWT/Swing",
+                    "val": "1.5"
                 },
                 {
                     "name": "ReactJS",
@@ -90,18 +92,23 @@
         },
         {
             "title": "Development Environments",
+            "desc": "If you don't include count Notepad++, VS Code has been my longest used development environment. I used Eclipse with Java, and Visual Studio with C/C++, and some C#.",
             "arr": [
                 {
-                    "name": "Visual Studio Code",
+                    "name": "Notepad++",
                     "val": "4"
                 },
                 {
-                    "name": "Eclipse",
-                    "val": "3"
+                    "name": "VSCode",
+                    "val": "4"
                 },
                 {
                     "name": "Visual Studio",
                     "val": "2.5"
+                },
+                {
+                    "name": "Eclipse",
+                    "val": "2"
                 }
             ]
         }

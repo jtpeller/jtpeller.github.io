@@ -1,0 +1,85 @@
+:root {
+    --accent-color: rgb(0, 183, 255);
+    --bg-color: rgb(18, 19, 20);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+body {
+    font-family:  "Lucida Console", monospace;
+    display: flex;
+    flex-direction: column;
+	background-color: var(--bg-color) !important;
+	color: rgb(235, 235, 235) !important;
+}
+
+.link {
+    transition: color 200ms ease-in-out !important;
+}
+
+.link:hover {
+    color: var(--accent-color) !important;
+}
+
+.logo-link {
+    width: 30px;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes cursor-blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flashy {
+    0% {
+        transform: rotate(-30deg) scale(1);
+    }
+    50% {
+        transform: rotate(-30deg) scale(1.2);
+    }
+    100% {
+        transform: rotate(-30deg) scale(1);
+    }
+}
+
+@keyframes fadeIn2 {
+    0% {
+        transform: rotate(-30deg) translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(-30deg) translateY(0);
+        opacity: 1;
+    }
+}

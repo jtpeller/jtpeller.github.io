@@ -16,41 +16,6 @@ let ll = [
     }
 ]
 
-let dd = [
-    {
-        html: '?proj=web',
-        link: 'Websites'
-    },
-    {
-        html: '?proj=go',
-        link: 'Golang'
-    },
-    {
-        html: '?proj=other',
-        link: 'Other'
-    },
-]
-
-var langs = ["web", "go", "other"];
-
-var subtitles = [
-    "Now asbestos-free!",
-    "monospace font!",
-    "!important",
-    "Rotated text!",
-    "<!DOCTYPE html>",
-    "Stack Overflow!",
-    `delete ptr;`,
-    "chmod +x virus",
-    "whoami",
-    `{:)+<`,
-    `Clicky buttons!`,
-    `React.createElement`,
-    `ReactDOM.createRoot`,
-    `falsy!`
-]
-
-
 function arrow() {
     let arrow = document.getElementById('arrow');
     let maxStep = 15;
@@ -79,21 +44,15 @@ function arrow() {
  */
  function initNavbar(header, showBrand = true) {
     let nav = header.append('nav')
-    if (showBrand) {
-        nav.classed('navbar navbar-expand-lg fixed-top navbar-dark my-bg-dark', true)
-    } else {
-        nav.classed('navbar navbar-expand-sm link-list navbar-dark my-bg-dark', true)
-    }
+    nav.classed('navbar navbar-expand-lg fixed-top navbar-dark', true)
 
     let navdiv = nav.append('div')
         .classed('container-fluid', true);
     
-    if (showBrand) {
-        let brand = navdiv.append('a')
-            .classed('navbar-brand d-lg-none', true)
-            .attr('href', 'index.html')
-            .text('jtpeller');    
-    }
+    let brand = navdiv.append('a')
+        .classed('navbar-brand link d-lg-none', true)
+        .attr('href', 'index.html')
+        .text('jtpeller');
     
     //
     // add the hamburger menu button for mobile/thin
@@ -121,113 +80,27 @@ function arrow() {
 
     let ul = linkdiv.append('ul')
         .classed('navbar-nav mx-auto mb-2 mb-lg-0', true);
+    
+    ul.append('a')
+        .classed('navbar-brand link d-none d-lg-block', true)
+        .attr('href', 'index.html')
+        .text('jtpeller');
 
-    if (showBrand) {
-        ul.append('a')
-            .classed('navbar-brand d-none d-lg-block', true)
-            .attr('href', 'index.html')
-            .text('jtpeller');
-    }
-
-    // build the projects dropdown
-    let dropdown = ul.append('li')
-        .classed('nav-item dropdown', true);
-        
-    dropdown.append('a')
-        .classed('nav-link dropdown-toggle dark-item', true)
-        .attr('href', '#')
-        .attr('role', 'button')
-        .attr('data-bs-toggle', 'dropdown')
-        .attr('aria-expanded', 'false')
-        .text('Projects');
-
-    let ddul = dropdown.append('ul')
-        .classed('dropdown-menu dark-item', true)
-
-    for (var i = 0; i < dd.length; i++) {
-        ddul.append('li')
-            .classed('text-center', true)
-            .append('a')
-            .classed('dropdown-item dark-item', true)
-            .attr('href', `projects.html${dd[i].html}`)
-            .text(dd[i].link)
-    }
+    // build the projects link
+    ul.append('li')
+        .classed('nav-item', true)
+        .append('a')
+        .classed('link active', true)
+        .attr('aria-current', 'page')
+        .attr('href', 'projects.html')
+        .text('> Projects');
 
     // build the about link
     ul.append('li')
         .classed('nav-item', true)
         .append('a')
-        .classed('nav-link active', true)
+        .classed('link active', true)
         .attr('aria-current', 'page')
         .attr('href', 'about.html')
-        .text('About');
-}
-
-function initFooter(footer, shouldAnimate) {
-    let elem;
-    if (shouldAnimate) {
-        elem = footer.append('footer')
-            .classed('footer footer-anim text-center text-lg-start mt-auto my-bg-dark', true)
-            .style('height', '5em');
-    } else {
-        elem = footer.append('footer')
-            .classed('footer text-center text-lg-start mt-auto my-bg-dark', true)
-            .style('height', '5em');
-    }
-    
-    let div = elem.append('div')
-        .classed('text-center p-4 container', true);
-
-    div.append('a')
-        .attr('href', 'https://www.github.com/jtpeller')
-        .classed('text-light', true)
-        .append('img')
-        .classed('logo-link', true)
-        .attr('src', 'resources/logos/GitHub.png')
-        .attr('alt', 'GitHub')
-        .attr('title', 'My GitHub Link...');     
-}
-
-function wordCase(str) {
-    return str[0].toUpperCase() + str.slice(1)
-}
-
-// pulled from: https://stackoverflow.com/questions/8188548/splitting-a-js-array-into-n-arrays
-function chunkify(a, n, balanced) {
-    if (n < 2)
-        return [a];
-
-    var len = a.length,
-        out = [],
-        i = 0,
-        size;
-
-    if (len % n === 0) {
-        size = Math.floor(len / n);
-        while (i < len) {
-            out.push(a.slice(i, i += size));
-        }
-    }
-
-    else if (balanced) {
-        while (i < len) {
-            size = Math.ceil((len - i) / n--);
-            out.push(a.slice(i, i += size));
-        }
-    }
-
-    else {
-
-        n--;
-        size = Math.floor(len / n);
-        if (len % size === 0)
-            size--;
-        while (i < size * n) {
-            out.push(a.slice(i, i += size));
-        }
-        out.push(a.slice(size * n));
-
-    }
-
-    return out;
+        .text('> About Me');
 }
