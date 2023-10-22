@@ -9,11 +9,11 @@ a {
 }
 
 body {
-    font-family:  "Lucida Console", monospace;
+    font-family: "Lucida Console", monospace;
     display: flex;
     flex-direction: column;
-	background-color: var(--bg-color) !important;
-	color: rgb(235, 235, 235) !important;
+    background-color: var(--bg-color) !important;
+    color: rgb(235, 235, 235) !important;
 }
 
 .link {
@@ -36,50 +36,3 @@ body {
     text-align: center !important;
 }
 
-
-/* KEYFRAMES */
-@keyframes fadeIn {
-    0% {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes cursor-blink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes flashy {
-    0% {
-        transform: rotate(-30deg) scale(1);
-    }
-    50% {
-        transform: rotate(-30deg) scale(1.2);
-    }
-    100% {
-        transform: rotate(-30deg) scale(1);
-    }
-}
-
-@keyframes fadeIn2 {
-    0% {
-        transform: rotate(-30deg) translateY(20px);
-        opacity: 0;
-    }
-    100% {
-        transform: rotate(-30deg) translateY(0);
-        opacity: 1;
-    }
-}

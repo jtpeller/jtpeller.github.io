@@ -3,6 +3,11 @@ html {
     scroll-padding-top: 70px;   /* to account for the navbar */
 }
 
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
 /* CLASSES */
 .card {
     background-color: var(--bg-color);
@@ -16,13 +21,14 @@ html {
     text-decoration: underline;
 }
 
-.container {
-    transition: ease all 0.5s;
-}
-
 .carousel .carousel-item img {
     max-height: 420px;
     object-fit: contain;
+    aspect-ratio: 1.8;
+}
+
+.container {
+    transition: ease all 0.5s;
 }
 
 .grabber {
@@ -39,8 +45,7 @@ html {
 }
 
 .lang-logo {
-    height: 25px;
-    float: right;
+    height: 40px;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -121,10 +126,6 @@ svg {
     .axis-label, .tick {
         font-size: 20px;
     }
-
-    .lang-logo {
-        height: 25px;
-    }
 }
 
 /* Laptop, Small Screens */
@@ -139,10 +140,6 @@ svg {
     
     .axis-label, .tick {
         font-size: 20px;
-    }
-
-    .lang-logo {
-        height: 25px;
     }
 }
 
@@ -159,10 +156,6 @@ svg {
     .axis-label, .tick {
         font-size: 20px;
     }
-
-    .lang-logo {
-        height: 25px;
-    }
 }
 
 /* Mobile */
@@ -177,9 +170,5 @@ svg {
     
     .axis-label, .tick {
         font-size: 24px;
-    }
-
-    .lang-logo {
-        height: 20px;
     }
 }

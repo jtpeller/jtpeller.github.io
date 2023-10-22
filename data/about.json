@@ -8,7 +8,7 @@
         },
         {
             "title": "Programming Languages & Libraries",
-            "desc": "These are the languages and libraries that I have worked with most frequently. I have spent lots of time working with web technologies, but also with Golang and C/C++",
+            "desc": "These are the languages and libraries that I have worked with most frequently. I have spent lots of time working with web technologies, but also with Golang and C/C++.",
             "arr": [
                 {
                     "name": "Web",
@@ -41,12 +41,20 @@
                 {
                     "name": "Python",
                     "val": "1.5"
+                },
+                {
+                    "name": "ReactJS",
+                    "val": "0.5"
+                },
+                {
+                    "name": "C#",
+                    "val": "0.5"
                 }
             ]
         },
         {
-            "title": "Skills",
-            "desc": "Over the time with these languages, I have picked up various skills, including the ability to design and write (hopefully efficient) algorithms, data structures, etc. I have also become acquainted with technologies like Linux, networks, and more.",
+            "title": "Technologies & Concepts",
+            "desc": "Over the time with these languages, I have spent a lot of time with various concepts, such as designing and writing data structures, (hopefully efficient) algorithms, etc. I have also become acquainted with technologies like operating systems, networks, and more.",
             "arr": [
                 {
                     "name": "Algorithms",
@@ -83,16 +91,12 @@
                 {
                     "name": "AWT/Swing",
                     "val": "1.5"
-                },
-                {
-                    "name": "ReactJS",
-                    "val": "1"
                 }
             ]
         },
         {
             "title": "Development Environments",
-            "desc": "If you don't include count Notepad++, VS Code has been my longest used development environment. I used Eclipse with Java, and Visual Studio with C/C++, and some C#.",
+            "desc": "While I have used Notepad++ for quite a while, VS Code is my preferred development environment. I used Eclipse with Java, and Visual Studio with C, C++, and C#.",
             "arr": [
                 {
                     "name": "Notepad++",

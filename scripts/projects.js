@@ -49,7 +49,7 @@ function initPage(proj, loc) {
     var web_root = 'https://jtpeller.github.io/';
     var link_root = 'https://github.com/jtpeller/';
     var logo_root = 'resources/logos/';
-    var proj_root = `resources/${lang}/`
+    var proj_root = `resources/${lang.toLowerCase()}/`
 
     var rowdiv = proj_div.append('div')
         .classed('row', true);
@@ -96,18 +96,20 @@ function initPage(proj, loc) {
 
                 // add inner slides & imgs
                 var imgid = proj[i].name.replaceAll(' ', '-') + '-img-' + j;
+                var imgname = proj[i].imgs.replace('&d', j + 1);
+                var alt_title = imgname.replaceAll('.webp', '');
+
                 var itemdiv = innerdiv.append('div')
                     .classed('carousel-item', true)
                     .attr('id', imgid)
                     .attr('data-bs-interval', 5000)
-
-                var imgname = proj[i].imgs.replace('&d', j + 1)
-
+                
                 itemdiv.append('img')
                     .classed('d-block w-100', true)
                     .attr('src', proj_root + imgname)
-                    .attr('alt', imgname)
-
+                    .attr('alt', alt_title)
+                    .attr('loading', 'lazy');
+                
                 if (proj[i].caps && proj[i].caps.length > 0) {
                     var capdiv = itemdiv.append('div')
                         .classed('carousel-caption d-none d-md-block', true);
@@ -169,17 +171,6 @@ function initPage(proj, loc) {
             .classed('card-title section-header', true)
             .text(proj[i].name);
 
-        // language & library logos
-        for (var j = 0; j < proj[i].lang.length; j++) {
-            var img = proj[i].lang[j].replaceAll('.png', '').replaceAll('.svg', '')
-
-            name.append('img')
-                .attr('src', logo_root + proj[i].lang[j])
-                .attr('alt', img)
-                .attr('title', img)
-                .classed('lang-logo', true);
-        }
-
         // card subtitle
         card_body.append('p')
             .classed('card-subtitle text-center grabber', true)
@@ -189,15 +180,30 @@ function initPage(proj, loc) {
         // description
         card_body.append('p').html(proj[i].long);
 
+        // language & library logos
+        var logos = card_body.append('div')
+            .classed('text-center my-4', true);
+
+        for (var j = 0; j < proj[i].lang.length; j++) {
+            var img = proj[i].lang[j]
+
+            logos.append('img')
+                .attr('src', logo_root + img + '.svg')
+                .attr('alt', img)
+                .attr('title', img)
+                .classed('lang-logo', true)
+                .attr('loading', 'lazy');
+        }
+
+
         //
         // card footer
         //
-
         // add the link(s) to the footer
         var card_footer = card.append('div')
             .classed('card-body', true)
 
-        if (lang == 'web') {
+        if (lang.toLowerCase() == 'web') {
             // need to add a link to go to the page
             card_footer.append('a')
                 .attr('href', web_root + proj[i].link)
@@ -210,9 +216,10 @@ function initPage(proj, loc) {
             .attr('href', link_root + proj[i].link)
             .append('img')
             .classed('logo-link link', true)
-            .attr('src', logo_root + 'GitHub.png')
+            .attr('src', logo_root + 'github.svg')
             .attr('alt', 'GitHub')
             .attr('title', 'Go to the Project Repository on GitHub')
+            .attr('loading', 'lazy')
             .text("GitHub");
     }
 }

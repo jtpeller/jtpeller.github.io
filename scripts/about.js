@@ -132,8 +132,8 @@ function buildChart(svg, data) {
     svg.append('text')
         .attr('class', 'axis-label')
         .attr('text-anchor', 'center')
-        .attr('x', 0)
-        .attr('y', 0)
-        .attr('transform', 'rotate(-90)')
+        .attr('transform', 'rotate(-90)scale(1.25)')
+        .attr('x', -height/2)
+        .attr('y', margin.left/2-15)
         .text('Years of Experience')
 }
