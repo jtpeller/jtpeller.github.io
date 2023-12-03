@@ -16,40 +16,18 @@ let ll = [
     }
 ]
 
-function arrow() {
-    let arrow = document.getElementById('arrow');
-    let maxStep = 15;
-    let step = 0;
-    let dx = 0.1;
-    let time = 10;     // how many ms before next 'frame'
-    
-    function updatePosition() {
-        arrow.style.paddingRight = step + 'px';
-        step += dx;
-        if (step > maxStep) {
-            dx = -dx;
-            step += 2*dx;
-        } else if (step < 0) {
-            dx = -dx; 
-            step += 2*dx;
-        }
-    }
-
-    setInterval(updatePosition, time);
-}
-
 /**
  * initNavbar() -- initializes the navbar for navigating the site
  * @param header  The d3 element to place this in.
  */
- function initNavbar(header, showBrand = true) {
-    let nav = header.append('nav')
-    nav.classed('navbar navbar-expand-lg fixed-top navbar-dark', true)
+ function initNavbar(header) {
+    let nav = d3.create('nav')
+        .classed('navbar navbar-expand-lg fixed-top navbar-dark', true)
 
     let navdiv = nav.append('div')
         .classed('container-fluid', true);
     
-    let brand = navdiv.append('a')
+    navdiv.append('a')
         .classed('navbar-brand link d-lg-none', true)
         .attr('href', 'index.html')
         .text('jtpeller');
@@ -103,4 +81,6 @@ function arrow() {
         .attr('aria-current', 'page')
         .attr('href', 'about.html')
         .text('> About Me');
+
+    header.append(() => nav.node());
 }

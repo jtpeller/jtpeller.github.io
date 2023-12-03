@@ -17,12 +17,12 @@ const MAX_PER_ROW = 3;
 
 window.onload = function () {
     // define variables
-    header = d3.select('header');
-    main = d3.select('main');
+    header = d3.select('#header');
+    main = d3.select('#main');
 
     // start with navbar
     initNavbar(header);
-
+    
     // load data for page
     Promise.all([
         d3.json('data/projects.json')

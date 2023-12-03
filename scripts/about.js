@@ -13,8 +13,8 @@ let header,
 
 window.onload = function () {
     // define variables
-    header = d3.select('header');
-    main = d3.select('main');
+    header = d3.select('#header');
+    main = d3.select('#main');
 
     // start with navbar
     initNavbar(header);
@@ -28,23 +28,23 @@ window.onload = function () {
     });
 }
 
-function initPage(a) {
-    let content = main.append('div');
-        
-    content.append('h1')
-        .classed('text-center title', true)
-        .text('About Me');
+function initPage(data) {
+    let content = d3.create('div');
 
     // handle arr[0], the 'whoami' section
     content.append('h2')
         .classed('section-header', true)
-        .text(a[0].title);
-    content.append('p').text(a[0].arr[0]);
+        .text(data[0].title);
+    content.append('p').text(data[0].arr[0]);
     
     // create the skills cards
+    content.append('h2')
+        .classed('section-header', true)
+        .text('Skills');
+    
     let rowdiv = content.append('div')
         .classed('row', true);
-    for (let i = 1; i < a.length; i++) {
+    for (let i = 1; i < data.length; i++) {
         var col = rowdiv.append('div')
             .classed('col-sm-12 col-lg-6', true);
 
@@ -56,17 +56,18 @@ function initPage(a) {
             .classed('card-img-top', true);
         let svg = svgdiv.append('svg');
 
-        buildChart(svg, a[i].arr);
+        buildChart(svg, data[i].arr);
 
         // section title
         card.append('h2')
             .classed('section-header', true)
-            .text(a[i].title);
+            .text(data[i].title);
 
-        card.append('p').text(a[i].desc);
+        card.append('p').text(data[i].desc);
     }
+    content.append('br');
 
-    main.append('br');
+    main.append(() => content.node());
 }
 
 function buildChart(svg, data) {
