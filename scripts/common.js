@@ -20,7 +20,7 @@ let ll = [
  * initNavbar() -- initializes the navbar for navigating the site
  * @param header  The d3 element to place this in.
  */
- function initNavbar(header) {
+function initNavbar(header) {
     let nav = d3.create('nav')
         .classed('navbar navbar-expand-lg fixed-top navbar-dark', true)
 

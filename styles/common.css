@@ -1,11 +1,6 @@
 :root {
     --accent-color: rgb(0, 183, 255);
-    --bg-color: rgb(18, 19, 20);
-}
-
-a {
-    color: white;
-    text-decoration: none;
+    --bg-color: rgb(14, 15, 16);
 }
 
 body {
@@ -17,6 +12,8 @@ body {
 }
 
 .link {
+    color: white;
+    text-decoration: none;
     transition: color 200ms ease-in-out !important;
 }
 
@@ -35,4 +32,3 @@ body {
 .text-center {
     text-align: center !important;
 }
-

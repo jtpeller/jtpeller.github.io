@@ -2,6 +2,10 @@ body {
     margin: 0;
 }
 
+html, body {
+    height: 100%;
+}
+
 footer {
 	background-color: transparent;
     position: absolute;
@@ -23,7 +27,8 @@ footer {
 }
 
 .main {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav-btn {
@@ -73,7 +78,7 @@ footer {
 }
 
 .title-card {
-    font-size: 8vw;
+    font-size: 56px;
     margin: 0;    
     opacity: 0;
 
@@ -89,7 +94,7 @@ footer {
 
     content: "";
     aspect-ratio: 3/4;
-    background: rgb(235, 235, 235);
+    background: rgb(245, 245, 245);
     display: inline-block;
     margin: auto;
     margin-left: 0.1vw;

@@ -6,7 +6,7 @@
 // =================================================================
 
 window.onload = function () {
-    let subtitle = document.getElementById('subtitle');
+    let subtitle = document.querySelector('#subtitle');
     var subtitles = [
         "Now asbestos-free!",
         "monospace font!",
