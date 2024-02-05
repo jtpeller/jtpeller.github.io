@@ -3,12 +3,12 @@
         {
             "title": "whoami",
             "arr": [
-                "I am a compsci major who graduated from ASU in 2022. I have experience writing desktop, web, and console applications. I have been working as a Cybersecurity Engineer for Honeywell since June 2023."
+                "I am a compsci major who graduated from ASU in 2022, with experience writing desktop, web, and console applications. Since June 2023, I have been working as a Cybersecurity Engineer for Honeywell Aerospace."
             ]
         },
         {
             "title": "Programming Languages & Libraries",
-            "desc": "These are the languages and libraries that I have worked with most frequently. I have spent lots of time working with web technologies, but also with Golang and C/C++.",
+            "desc": "These are the languages and libraries that I have worked with most frequently. I have spent lots of time working with web technologies, but I do have experience with Golang, Python, C/C++, and Java.",
             "arr": [
                 {
                     "name": "Web",
@@ -54,7 +54,7 @@
         },
         {
             "title": "Technologies & Concepts",
-            "desc": "Over the time with these languages, I have spent a lot of time with various concepts, such as designing and writing data structures, (hopefully efficient) algorithms, etc. I have also become acquainted with technologies like operating systems, networks, and more.",
+            "desc": "I have spent a lot of time with various concepts, such as designing and writing data structures, (hopefully efficient) algorithms, etc. I have also become acquainted with technologies like operating systems, networks, and more.",
             "arr": [
                 {
                     "name": "Algorithms",
@@ -96,14 +96,14 @@
         },
         {
             "title": "Development Environments",
-            "desc": "While I have used Notepad++ for quite a while, VS Code is my preferred development environment. I used Eclipse with Java, and Visual Studio with C, C++, and C#.",
+            "desc": "VS Code is my preferred development environment. I used Eclipse with Java, and Visual Studio with C, C++, and C#.",
             "arr": [
                 {
-                    "name": "Notepad++",
+                    "name": "VSCode",
                     "val": "4"
                 },
                 {
-                    "name": "VSCode",
+                    "name": "Notepad++",
                     "val": "4"
                 },
                 {

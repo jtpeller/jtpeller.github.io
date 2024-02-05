@@ -4,10 +4,14 @@
 // =  Author        : jtpeller
 // =  Date          : September 19, 2022
 // =================================================================
+"use strict";
 
-window.onload = function () {
+/**
+ * event listener to populate the page.
+ */
+document.addEventListener('DOMContentLoaded', function () {
     let subtitle = document.querySelector('#subtitle');
-    var subtitles = [
+    let subtitles = [
         "Now asbestos-free!",
         "monospace font!",
         "!important",
@@ -24,7 +28,7 @@ window.onload = function () {
         `falsy!`
     ];
 
-    var rng = Math.floor(Math.random() * subtitles.length);
-    chosen = subtitles[rng];
+    let rng = Math.floor(Math.random() * subtitles.length);
+    let chosen = subtitles[rng];
     subtitle.innerText = chosen;
-}
+})

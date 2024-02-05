@@ -94,10 +94,11 @@ footer {
 
     content: "";
     aspect-ratio: 3/4;
-    background: rgb(245, 245, 245);
+    background: rgb(255, 255, 255);
     display: inline-block;
     margin: auto;
-    margin-left: 0.1vw;
+    
+    margin-left: 10px;
 
     animation: cursor-blink 2s ease-in infinite;
     animation-delay: 1s;
