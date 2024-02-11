@@ -25,7 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
         `Clicky buttons!`,
         `React.createElement`,
         `ReactDOM.createRoot`,
-        `falsy!`
+        `falsy!`,
+        `WebP or PNG???`,
+        `WebGL?!`,
+        `var(--bg-color)`,
+        `System32`,
+        `/bin/sh`,
     ];
 
     let rng = Math.floor(Math.random() * subtitles.length);

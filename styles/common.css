@@ -25,6 +25,11 @@ body {
     width: 30px;
 }
 
+.btn-logo {
+    width: 20px;
+    margin: 0px 0px 5px 15px;
+}
+
 .no-border {
     border: none !important;
 }

@@ -8,7 +8,7 @@
             "imgn": 5,
             "caps": ["Homepage", "Help Page", "Making a Guess", "Winning the Game", "I beat the bot!"],
             "lang": ["html", "css", "javascript", "bootstrap"],
-            "long": "Verse! is a guess-the-word game where you try to guess the word using the clues from your last guess. The player competes with a bot I wrote, which attempts to guess the word separately using filtering techniques. I wrote this using only vanilla JavaScript, and Bootstrap." 
+            "long": "Verse! is a guess-the-word game where you try to guess the word using the clues from your last guess. The player competes with a bot I wrote, which attempts to guess the word separately using filtering techniques. I wrote this using only vanilla JavaScript and Bootstrap." 
         },
         {
             "name": "R6S Roulette",
@@ -17,27 +17,27 @@
             "imgs": "r6s-&d.webp",
             "imgn": 6,
             "caps": ["Homepage", "Operator Roulette", "Gun Roulette", "Operator Page", "Guns Page", "More Info Page"],
-            "lang": ["html", "css", "javascript", "d3js", "bootstrap"],
-            "long": "R6S Roulette is a companion web app for the video game <i>Tom Clancy's Rainbow Six Siege</i> by Ubisoft. Users can randomly select an operator or gun, filter out the full dataset via UI elements (e.g., checkboxes, dropdowns), or view information about the game." 
+            "lang": ["html", "css", "javascript", "bootstrap", "d3js"],
+            "long": "R6S Roulette is a companion web application for the video game <i>Tom Clancy's Rainbow Six Siege</i> by Ubisoft. Users can randomly select an operator or gun, filter out the full dataset via UI elements (e.g., checkboxes, dropdowns), or view information about the game." 
         },
         {
             "name": "Tic-Tac-Toe",
             "link": "tic-tac-toe",
-            "desc": "Tic-Tac-Toe written using ReactJS",
+            "desc": "Tic-Tac-Toe written using React",
             "imgs": "ttt-&d.webp",
             "imgn": 3,
             "caps": ["Main Menu", "Playing against an Impossible AI", "Cat's Game!"],
-            "lang": ["html", "css", "javascript", "react-js", "bootstrap"],
+            "lang": ["html", "css", "javascript", "bootstrap", "react-js"],
             "long": "This is yet another rendition of the tic-tac-toe game. My first application written with ReactJS, it establishes the use of ReactJS basics like <code>React.createElement</code> and <code>ReactDOM.createRoot</code> to build the site. The AI is based on the minimax algorithm."
         },
         {
             "name": "Geography Quiz",
             "link": "geography-quiz",
-            "desc": "Test your geography skills with this quiz.",
+            "desc": "Test your geography skills!",
             "imgs": "geo-&d.webp",
             "imgn": 3,
             "caps": ["Main Menu", "Beginning the North America Quiz", "Completed the quiz"],
-            "lang": ["html", "css", "javascript", "d3js", "bootstrap"],
+            "lang": ["html", "css", "javascript", "bootstrap", "d3js"],
             "long": "My geography quiz is a quiz that allows users to interact with a map of a chosen continent and select the randomly generated country. Each quiz runs through the entire continent and tracks the user's score."
         },
         {
@@ -46,7 +46,8 @@
             "desc": "A clean and simple unit converter",
             "imgs": "uc-&d.webp",
             "imgn": 2,
-            "lang": ["html", "css", "javascript", "d3js", "bootstrap"],
+            "caps": ["Converting Meters to Kilometers", "Converting Seconds to Hours"],
+            "lang": ["html", "css", "javascript", "bootstrap", "d3js"],
             "long": "My unit converter is a site that allows for the conversion of various unit types; including length, area, volume, mass, time, energy, and temperature. There is a formula that is shown that can be used by the user to approximate the conversion."
         },
         {
@@ -56,7 +57,7 @@
             "imgs": "webgl-&d.webp",
             "imgn": 5,
             "caps": ["Landing Page", "Demo of 2D shapes & simple animation", "Demo of canvas interaction", "Demo of lighting & material properties", "Animating a figure"],
-            "lang": ["html", "css", "javascript", "web-gl", "bootstrap"],
+            "lang": ["html", "css", "javascript", "bootstrap", "web-gl"],
             "long": "My WebGL demos demonstrate my ability to use WebGL. These demos range from something simple like basic animation to more complicated demos such as lighting and shading."
         }
     ],
@@ -110,7 +111,7 @@
             "desc": "An implementation of tic-tac-toe in Java",
             "imgs": "jttt-&d.webp",
             "imgn": 4,
-            "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "It really is impossible..."],
+            "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "It really is unbeatable..."],
             "long": "A desktop Java application I wrote shortly after my Sudoku game. I wrote this to work on my AWT/Swing skills. It has an AI opponent, implemented based of the minimax algorithm. Difficulties are based on modifying this algorithm to make mistakes every once in a while. This is the application where I realized that writing GUI desktop applications with Java is severely limited and painful.",
             "lang": ["java"]
         },

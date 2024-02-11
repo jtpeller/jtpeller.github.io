@@ -4,222 +4,269 @@
 // =  Author        : jtpeller
 // =  Date          : September 19, 2022
 // =================================================================
+"use strict";
 
-//
-// global vars
-// 
-let header,
-    main;
-
-let lang = "";
-const langs = ["Web", "Go", "Other"];
-const MAX_PER_ROW = 3;
-
-window.onload = function () {
-    // define variables
-    header = d3.select('#header');
-    main = d3.select('#main');
+document.addEventListener("DOMContentLoaded", () => {
+    const CARO_INT = 5000;      // interval for carousel transition
+    const utils = new Utils();
+    const langs = ["Web", "Go", "Other"];
+    const root = {
+        web: 'https://jtpeller.github.io/',
+        git: 'https://github.com/jtpeller/',
+        logo: 'resources/logos/',
+        proj: `resources/`,     // this will be updated later
+    }
 
     // start with navbar
-    initNavbar(header);
-    
+    utils.initNavbar(utils.select('#header'));
+
     // load data for page
     Promise.all([
-        d3.json('data/projects.json')
-    ]).then(function (values) {
-        for (var i = 0; i < 3; i++) {
-            lang = langs[i]
-            initPage(values[0][lang.toLowerCase()], main);
+        fetch('data/projects.json')
+    ]).then(function (responses) {
+        return Promise.all(responses.map(function(response) {
+            return response.json();
+        }));
+    }).then(function (values) {
+        for (var i = 0; i < langs.length; i++) {
+            let lang = langs[i]
+            initPage_vanilla(values[0][lang.toLowerCase()], lang, utils.select('#main'));
         }
     });
-}
 
-function initPage(proj, loc) {
-    var proj_div = loc.append('div')
-        .attr('id', `${lang}-div`);
+    function initPage_vanilla(proj, lang, loc) {
+        // update project root
+        root.proj = `resources/${lang.toLowerCase()}/`
 
-    // title
-    proj_div.append('h1')
-        .classed('text-center title', true)
-        .text(`${lang} Projects`);
+        // project div for ${lang} and its title
+        let proj_div = utils.create('div', {id: `${lang}-div`})
+        proj_div.append(utils.create('h1', {
+            classList: 'text-center title',
+            textContent: `${lang} Projects`,
+        }))
 
-    //
-    // add each project
-    //
-    var web_root = 'https://jtpeller.github.io/';
-    var link_root = 'https://github.com/jtpeller/';
-    var logo_root = 'resources/logos/';
-    var proj_root = `resources/${lang.toLowerCase()}/`
+        // add the projects for this ${lang}
+        let row_div = utils.create('div', {
+            classList: 'row',
+        });
 
-    var rowdiv = proj_div.append('div')
-        .classed('row', true);
+        for (let i = 0; i < proj.length; i++) {
+            row_div.append(buildProjectCard(proj[i], lang))
+        }
 
-    for (var i = 0; i < proj.length; i++) {
-        var col = rowdiv.append('div')
-            .classed('col-sm-12 col-lg-6', true);
+        // append everything
+        proj_div.append(row_div)    // append cards to projects
+        loc.append(proj_div);       // append ${lang}'s projects to loc
+    }
 
-        var card = col.append('div')
-            .classed('card card-dark', true);
+    function buildProjectCard(proj, lang) {
+        // card's column in the row
+        let col = utils.create('div', {
+            classList: 'col-sm-12 col-lg-6',
+        })
 
-        //
+        let card = utils.create('div', {
+            classList: 'card card-dark',
+        })
+
         // image carousel
-        //
-        var img_div = card.append('div')
-            .classed('card-img-top', true);
+        let img_div = utils.create('div', {
+            classList: 'card-img-top',
+        })
 
-        if (proj[i].imgs && proj[i].imgn > 0) {
-            var carousel_parent = img_div.append('div')
-                .classed('w-100 mx-auto', true);
+        // create only if there are images to add
+        console.log(proj);
+        if (proj.imgs && proj.imgn > 0) {
+            const cid = proj.name.replaceAll(' ', '-')
 
-            var carouselid = proj[i].name.replaceAll(' ', '-');
+            // carousel parent div
+            let carousel_parent = utils.create('div', {
+                classList: 'w-100 mx-auto',
+            });
 
-            var carousel = carousel_parent.append('div')
-                .classed('carousel slide', true)
-                .attr('id', carouselid)
-                .attr('data-bs-ride', 'carousel')
+            let carousel = utils.create('div', {
+                classList: 'carousel slide',
+                id: cid,
+            });
+            carousel.dataset.bsRide = 'carousel';
 
-            // add ordered list for indicators
-            var indicators = carousel.append('div')
-                .classed('carousel-indicators', true)
+            // ordered list for indicators
+            let indicators = utils.create('div', {classList: 'carousel-indicators'});
 
-            // inner carousel
-            var innerdiv = carousel.append('div')
-                .classed('carousel-inner', true);
+            // inner carousel div
+            let inner_div = utils.create('div', {classList: 'carousel-inner'});
 
-            for (var j = 0; j < proj[i].imgn; j++) {
-                // add indicators for imgs.length
-                indicators.append('button')
-                    .attr('type', 'button')
-                    .attr('data-bs-target', '#' + carouselid)
-                    .attr('data-bs-slide-to', j)
-                    .attr('aria-label', 'Slide ' + j);
+            // loop to add all the images, indicators, etc.
+            for (let j = 0; j < proj.imgn; j++) {
+                // button to move to the next slide (bottom of the carousel)
+                let btn = utils.create('button', {
+                    type: 'button',
+                    ariaLabel: `Slide ${j}`
+                });
+                btn.dataset.bsTarget = `#${cid}`;
+                btn.dataset.bsSlideTo = j;
+                indicators.append(btn);
 
-                // add inner slides & imgs
-                var imgid = proj[i].name.replaceAll(' ', '-') + '-img-' + j;
-                var imgname = proj[i].imgs.replace('&d', j + 1);
-                var alt_title = imgname.replaceAll('.webp', '');
+                // add inner slides/imgs
+                const imgid = proj.name.replaceAll(' ', '-') + '-img-' + j;
+                const imgname = proj.imgs.replace('&d', j+1);
+                const alt = imgname.replaceAll('.webp', '');
+                console.log(imgid, imgname, alt);
 
-                var itemdiv = innerdiv.append('div')
-                    .classed('carousel-item', true)
-                    .attr('id', imgid)
-                    .attr('data-bs-interval', 5000)
-                
-                itemdiv.append('img')
-                    .classed('d-block w-100', true)
-                    .attr('src', proj_root + imgname)
-                    .attr('alt', alt_title)
-                    .attr('loading', 'lazy');
-                
-                if (proj[i].caps && proj[i].caps.length > 0) {
-                    var capdiv = itemdiv.append('div')
-                        .classed('carousel-caption d-none d-md-block', true);
+                var items = utils.create('div', {
+                    classList: j == 0 ? 'carousel-item active' : 'carousel-item',
+                    id: imgid,
+                })
+                items.dataset.bsInterval = CARO_INT;
 
-                    capdiv.append('h5')
-                        .classed('text-shadow', true)
-                        .text(proj[i].caps[j]);
+                // append the image
+                items.append(utils.create('img', {
+                    classList: 'd-block w-100',
+                    src: root.proj + imgname,
+                    alt: alt,
+                    loading: 'lazy'
+                }))
+
+                // append captions
+                if (proj.caps && proj.caps.length > 0) {
+                    let capdiv = utils.create('div', {
+                        classList: 'carousel-caption d-none d-md-block'
+                    })
+
+                    capdiv.append(utils.create('h5', {
+                        classList: 'text-shadow',
+                        textContent: proj.caps[j]
+                    }))
+                    items.append(capdiv)        // append capdiv to items
                 }
+                inner_div.append(items)     // add items to inner_div
             }
 
-            // make sure first is active for inner and indicators
-            indicators.select('button')
-                .classed('active', true)
-                .attr('aria-current', true)
-            innerdiv.select('#' + proj[i].name.replaceAll(' ', '-') + '-img-' + 0).classed('active', true);
+            // append inner div, indicators, prev/next btns, carousel, and img_div
+            carousel.append(indicators);                    // indicators
+            carousel.append(inner_div);                     // inner div
+            carousel.append(createPrevOrNext(true, cid))    // prev btn
+            carousel.append(createPrevOrNext(false, cid))   // next btn
+            carousel_parent.append(carousel);               // carousel < carousel_parent
+            img_div.append(carousel_parent);                // carousel_parent < img_div
 
-            // the indicators
-            var prev = carousel.append('button')
-                .classed('carousel-control-prev', true)
-                .attr('type', 'button')
-                .attr('data-bs-target', '#' + carouselid)
-                .attr('data-bs-slide', 'prev');
-
-            prev.append('span')
-                .classed('carousel-control-prev-icon', true)
-                .attr('aria-hidden', true);
-
-            prev.append('span')
-                .classed('visually-hidden', true)
-                .text('Previous');
-
-            var next = carousel.append('button')
-                .classed('carousel-control-next', true)
-                .attr('type', 'button')
-                .attr('data-bs-target', '#' + carouselid)
-                .attr('data-bs-slide', 'next');
-
-            next.append('span')
-                .classed('carousel-control-next-icon', true)
-                .attr('aria-hidden', true);
-
-            next.append('span')
-                .classed('visually-hidden', true)
-                .text('Next');
-
+            // ensure first button is active for inner/indicators
+            let temp = indicators.querySelector('button')
+            temp.classList.add('active')
+            temp.ariaCurrent = true;
+           
             // start the carousel
-            d3.selectAll(`button[data-bs-slide-to='0']`).dispatch('click');
+            document.querySelectorAll(`button[data-bs-slide-to='0']`).forEach( (elem) => elem.click() );
         }
 
-        //
-        // card body
-        //
+        // create card body
+        let card_body = createCardBody(proj);
+        let card_footer = createCardFooter(proj, lang);
 
-        var card_body = card.append('div')
-            .classed('card-body', true);
+        // append everything
+        col.append(card);
+        card.append(img_div);
+        card.append(card_body);
+        card.append(card_footer);
+        return col;
+    }
 
-        // title
-        var name = card_body.append('h2')
-            .classed('card-title section-header', true)
-            .text(proj[i].name);
+    // creates the previous or next button for the carousel
+    function createPrevOrNext(isPrev, cid) {
+        let output;
+        let val = 'prev'
+        let title = 'Previous'
+        if (!isPrev) {
+            val = 'next';
+            title = "Next";
+        }
+        
+        output = utils.create('button', {
+            classList: `carousel-control-${val}`,
+            type: 'button',
+        })
+        output.dataset.bsTarget = `#${cid}`;
+        output.dataset.bsSlide = val;
 
-        // card subtitle
-        card_body.append('p')
-            .classed('card-subtitle text-center grabber', true)
-            .append('i')
-            .text(proj[i].desc);
+        let span_icon = utils.create('span', {
+            classList: `carousel-control-${val}-icon`,
+            ariaHidden: true,
+        })
+        output.append(span_icon);
 
-        // description
-        card_body.append('p').html(proj[i].long);
+        let span_hidden = utils.create('span', {
+            classList: 'visually-hidden',
+            textContent: title
+        })
+        output.append(span_hidden);
+
+        return output;
+    }
+
+    // creates a card body given the project
+    function createCardBody(proj) {
+        let card_body = utils.create('div', {classList: 'card-body'})
+
+        // append title, subtitle, and description
+        card_body.append(utils.create('h2', {
+            classList: 'card-title section-header',
+            textContent: proj.name
+        }));
+
+        card_body.append(utils.create('p', {
+            classList: 'card-subtitle text-center grabber',
+            textContent: proj.desc,
+        }))
+
+        card_body.append(utils.create('p', {innerHTML: proj.long}))
 
         // language & library logos
-        var logos = card_body.append('div')
-            .classed('text-center my-4', true);
-
-        for (var j = 0; j < proj[i].lang.length; j++) {
-            var img = proj[i].lang[j]
-
-            logos.append('img')
-                .attr('src', logo_root + img + '.svg')
-                .attr('alt', img)
-                .attr('title', img)
-                .classed('lang-logo', true)
-                .attr('loading', 'lazy');
+        let logos = utils.create('div', {classList: 'text-center my-4'});
+        for (let x = 0; x < proj.lang.length; x++) {
+            let img = proj.lang[x];
+            logos.append(utils.create('img', {
+                src: root.logo + img + '.svg',
+                alt: img,
+                title: img,
+                classList: 'lang-logo',
+                loading: 'lazy',
+            }))
         }
+        card_body.append(logos);
 
-
-        //
-        // card footer
-        //
-        // add the link(s) to the footer
-        var card_footer = card.append('div')
-            .classed('card-body', true)
-
-        if (lang.toLowerCase() == 'web') {
-            // need to add a link to go to the page
-            card_footer.append('a')
-                .attr('href', web_root + proj[i].link)
-                .attr('id', 'proj-' + i)
-                .classed('webpage-button link', true)
-                .text("See More");
-        }
-
-        card_footer.append('a')
-            .attr('href', link_root + proj[i].link)
-            .append('img')
-            .classed('logo-link link', true)
-            .attr('src', logo_root + 'github.svg')
-            .attr('alt', 'GitHub')
-            .attr('title', 'Go to the Project Repository on GitHub')
-            .attr('loading', 'lazy')
-            .text("GitHub");
+        return card_body;
     }
-}
+
+    // creates a card footer given the project
+    function createCardFooter(proj, lang) {
+        // .card-body eliminates the bootstrap card-footer bkgd-color & whatnot
+        let footer = utils.create('div', {classList: 'card-body'})
+
+        if (lang == 'Web') {
+            let a = utils.create('a', {
+                classList: 'webpage-button link float-left bg-dark bg-gradient',
+                href: root.web + proj.link,
+                title: `Visit: ${proj.name}`,
+                textContent: 'Visit',
+            })
+            a.append(utils.create('img', {
+                src: 'resources/external-link.svg',
+                alt: '[External Link]',
+                classList: 'btn-logo'
+            }))
+            footer.append(a);
+        }
+
+        let git = utils.create('a', {href: root.git + proj.link})
+        git.append(utils.create('img', {
+            classList: 'logo-link link float-end',
+            src: `${root.logo}github.svg`,
+            alt: "GitHub",
+            title: "Project Repo on GitHub",
+            loading: 'lazy',
+        }));
+        footer.append(git);
+
+        return footer;
+    }
+})

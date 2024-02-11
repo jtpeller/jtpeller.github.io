@@ -33,6 +33,7 @@ img {
 
 .grabber {
     padding: 1rem 0;
+    font-style: italic;
 }
 
 .fixed-top {
@@ -84,7 +85,6 @@ img {
 }
 
 .webpage-button {
-    background-color: black;
     color: white;
     padding: 12px;
     margin: 2px 12px 2px 0px;
@@ -104,6 +104,10 @@ svg {
 }
 
 .bar-blank {
+    fill: white;
+}
+
+.bar-label {
     fill: white;
 }
 

@@ -57,11 +57,12 @@ footer {
 
 .subtitle {
     position: absolute;
-    left: -60px;
+    left: -80px;
     white-space: nowrap;
     overflow: hidden;
     opacity: 0;
     z-index: 1000;
+    text-align: center;
 
     color: rgb(204, 204, 0);    
     animation: fadeIn2 1s ease-in-out 1,

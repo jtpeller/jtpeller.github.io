@@ -96,7 +96,7 @@
         },
         {
             "title": "Development Environments",
-            "desc": "VS Code is my preferred development environment. I used Eclipse with Java, and Visual Studio with C, C++, and C#.",
+            "desc": "VS Code is my preferred development environment. I used Eclipse for my Java projects, and Visual Studio for my C, C++, and C# projects.",
             "arr": [
                 {
                     "name": "VSCode",
