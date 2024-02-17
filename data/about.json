@@ -12,11 +12,11 @@
             "arr": [
                 {
                     "name": "Web",
-                    "val": "4"
+                    "val": "5"
                 },
                 {
                     "name": "D3.js",
-                    "val": "4"
+                    "val": "3"
                 },
                 {
                     "name": "Golang",
@@ -100,11 +100,11 @@
             "arr": [
                 {
                     "name": "VSCode",
-                    "val": "4"
+                    "val": "6"
                 },
                 {
                     "name": "Notepad++",
-                    "val": "4"
+                    "val": "5"
                 },
                 {
                     "name": "Visual Studio",

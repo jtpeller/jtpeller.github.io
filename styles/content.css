@@ -9,6 +9,10 @@ img {
 }
 
 /* CLASSES */
+.bg-nav-dark {
+    background-color: rgb(10, 10, 10);
+}
+
 .card {
     background-color: var(--bg-color);
     color: white;
@@ -42,7 +46,6 @@ img {
     right: 0;
     left:0;
     z-index: 1030;
-    background-color: rgb(10, 10, 10);
 }
 
 .lang-logo {
@@ -95,8 +98,11 @@ svg {
     margin: auto;
 }
 
-.axis-label {
+.y-axis-label {
     fill: white;
+    text-anchor: middle;
+    transform: rotate(-90deg);
+    font-size: 25px;
 }
 
 .bar {
@@ -109,6 +115,8 @@ svg {
 
 .bar-label {
     fill: white;
+    text-anchor: middle;
+    font-size: 25px;
 }
 
 .tick {

@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .padding(0.25);
     
         const y_scale = d3.scaleLinear()
-            .domain([0, 4])
+            .domain([0, 6])
             .range([innerHeight, 0]);
     
         // set up bar chart thingy
@@ -113,9 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .attr('y', (d) => y_scale(d.val))
             .attr('dx', x_scale.bandwidth() / 2)
             .attr('dy', '-15px')
-            .attr('text-anchor', 'middle')
             .attr('dominant-baseline', 'middle')
-            .attr('font-size', '25px')
             .attr('opacity', 0)
             .transition()
                 .delay(750)
@@ -139,11 +137,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
         // add axes labels
         svg.append('text')
-            .attr('class', 'axis-label')
-            .attr('text-anchor', 'center')
-            .attr('transform', 'rotate(-90)scale(1.25)')
-            .attr('x', -height/2)
-            .attr('y', margin.left/2-15)
+            .attr('class', 'y-axis-label')
+            .attr('dominant-baseline', 'middle')
+            .attr('dx', -height/2+35)
+            .attr('dy', margin.left/2)
             .text('Years of Experience')
     }
 })

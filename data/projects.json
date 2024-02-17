@@ -48,7 +48,7 @@
             "imgn": 2,
             "caps": ["Converting Meters to Kilometers", "Converting Seconds to Hours"],
             "lang": ["html", "css", "javascript", "bootstrap", "d3js"],
-            "long": "My unit converter is a site that allows for the conversion of various unit types; including length, area, volume, mass, time, energy, and temperature. There is a formula that is shown that can be used by the user to approximate the conversion."
+            "long": "This site lets users convert various unit types; including length, area, volume, mass, time, energy, and temperature. There is a formula that is shown that can be used by the user to approximate the conversion."
         },
         {
             "name": "WebGL Demos",
@@ -61,7 +61,7 @@
             "long": "My WebGL demos demonstrate my ability to use WebGL. These demos range from something simple like basic animation to more complicated demos such as lighting and shading."
         }
     ],
-    "go": [
+    "console": [
         {
             "name": "OEIS",
             "link": "OEIS",
@@ -85,6 +85,9 @@
         {
             "name": "num2words",
             "link": "num2words",
+            "imgs": "num2words-&d.webp",
+            "imgn": 2,
+            "caps": ["Testing without separators", "Testing with separators"],
             "desc": "A Golang package that converts a number to its English representation.",
             "long": "A package that allows a number in its numerical form to be converted to its English representation. For example, 15552 converts to 'fifteen thousand five hundred fifty two'. A number of any size can be converted because this package makes use of arbitrary precision.",
             "lang": ["golang"]
@@ -92,6 +95,9 @@
         {
             "name": "Rosalind",
             "link": "rosalind",
+            "imgs": "rosalind-&d.webp",
+            "imgn": 3,
+            "caps": ["Running some problems", "Running more problems", "Even more problems!!!"],
             "desc": "Algorithms for problems from Rosalind",
             "long": "Rosalind is a bioinformatics programming platform with numerous problems related to bioinformatic algorithms. This repo contains a few solutions that I wrote to solve these problems.",
             "lang": ["golang"]
@@ -100,11 +106,18 @@
             "name": "gobig",
             "link": "gobig",
             "desc": "A simple Go package to make using arbitrary precision in Golang a bit easier",
-            "long": "Golang's arbitrary precision is painful to use when performing mathematical operations on numbers. To make using it easier for myself, I wrote this package (primarily to use in my OEIS repo).",
+            "long": "Golang's arbitrary precision is painful to use when performing complex mathematical operations with big numbers. To make using it easier for myself, I wrote this package (primarily to use in my OEIS repo). It is essentially a set of wrapper functions that help improve readability and maintainability.",
             "lang": ["golang"]
+        },
+        {
+            "name": "csort",
+            "link": "csort",
+            "desc": "Sorting algorithms written in C++",
+            "long": "This repo hosts several different sorting algorithms written as a C++ library. I also wrote a repo to test this library, found here: <a href='https://github.com/jtpeller/csort_test'>Link</a>.",
+            "lang": ["cpp"]
         }
     ],
-    "other":  [
+    "desktop":  [
         {
             "name": "Java Tic-Tac-Toe",
             "link": "TicTacToeJava",
@@ -124,13 +137,6 @@
             "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "Winner!", "The options menu has options (that don't do anything)!"],
             "long": "A desktop Java application I wrote in 2019 to teach myself AWT/Swing (along with the Tic-Tac-Toe Java program). It features a 9x9 grid and 4 difficulties. A player can erase their inputs, get hints, or reset the board.",
             "lang": ["java"]
-        },
-        {
-            "name": "csort",
-            "link": "csort",
-            "desc": "Sorting algorithms written in C++",
-            "long": "Similar to my gosort repository, except it is written in C++.",
-            "lang": ["cpp"]
         }
     ]
 }

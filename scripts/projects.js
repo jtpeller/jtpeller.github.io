@@ -9,7 +9,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const CARO_INT = 5000;      // interval for carousel transition
     const utils = new Utils();
-    const langs = ["Web", "Go", "Other"];
+    const langs = ["Web", "Console", "Desktop"];
     const root = {
         web: 'https://jtpeller.github.io/',
         git: 'https://github.com/jtpeller/',
@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }).then(function (values) {
         for (var i = 0; i < langs.length; i++) {
             let lang = langs[i]
-            initPage_vanilla(values[0][lang.toLowerCase()], lang, utils.select('#main'));
+            initPage(values[0][lang.toLowerCase()], lang, utils.select('#main'));
         }
     });
 
-    function initPage_vanilla(proj, lang, loc) {
+    function initPage(proj, lang, loc) {
         // update project root
         root.proj = `resources/${lang.toLowerCase()}/`
 
@@ -42,14 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let proj_div = utils.create('div', {id: `${lang}-div`})
         proj_div.append(utils.create('h1', {
             classList: 'text-center title',
-            textContent: `${lang} Projects`,
+            textContent: `${lang} Applications`,
         }))
 
         // add the projects for this ${lang}
-        let row_div = utils.create('div', {
-            classList: 'row',
-        });
-
+        let row_div = utils.create('div', {classList: 'row',});
         for (let i = 0; i < proj.length; i++) {
             row_div.append(buildProjectCard(proj[i], lang))
         }
@@ -61,18 +58,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function buildProjectCard(proj, lang) {
         // card's column in the row
-        let col = utils.create('div', {
-            classList: 'col-sm-12 col-lg-6',
-        })
+        let col = utils.create('div', {classList: 'col-sm-12 col-lg-6'});
 
-        let card = utils.create('div', {
-            classList: 'card card-dark',
-        })
+        let card = utils.create('div', {classList: 'card card-dark'});
 
         // image carousel
-        let img_div = utils.create('div', {
-            classList: 'card-img-top',
-        })
+        let img_div = utils.create('div', {classList: 'card-img-top'});
 
         // create only if there are images to add
         console.log(proj);
@@ -80,9 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const cid = proj.name.replaceAll(' ', '-')
 
             // carousel parent div
-            let carousel_parent = utils.create('div', {
-                classList: 'w-100 mx-auto',
-            });
+            let carousel_parent = utils.create('div', {classList: 'w-100 mx-auto'});
 
             let carousel = utils.create('div', {
                 classList: 'carousel slide',
