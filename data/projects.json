@@ -2,7 +2,7 @@
     "web": [
         {
             "name": "Verse",
-            "link": "wordle",
+            "link": "verse",
             "desc": "Oh, yet another wordle-like game",
             "imgs": "verse-&d.webp",
             "imgn": 5,
