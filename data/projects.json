@@ -47,7 +47,7 @@
             "imgs": "uc-&d.webp",
             "imgn": 2,
             "caps": ["Converting Meters to Kilometers", "Converting Seconds to Hours"],
-            "lang": ["html", "css", "javascript", "bootstrap", "d3js"],
+            "lang": ["html", "css", "javascript", "bootstrap"],
             "long": "This site lets users convert various unit types; including length, area, volume, mass, time, energy, and temperature. There is a formula that is shown that can be used by the user to approximate the conversion."
         },
         {
