@@ -1,14 +1,15 @@
+
 {
     "about": [
         {
             "title": "whoami",
             "arr": [
-                "I am a compsci major who graduated from ASU in 2022, with experience writing desktop, web, and console applications. Since June 2023, I have been working as a Cybersecurity Engineer for Honeywell Aerospace."
+                "I am a compsci major who graduated from ASU in 2022, with experience writing desktop, web, and console applications. Since June 2023, I have been working as a Cybersecurity Engineer for Honeywell Aerospace. I am Security+ certified (SY0-701) as of May 2024. Since December 2024, I am a Systems Engineer II, but I still code in my free time."
             ]
         },
         {
             "title": "Programming Languages & Libraries",
-            "desc": "These are the languages and libraries that I have worked with most frequently. I have spent lots of time working with web technologies, but I do have experience with Golang, Python, C/C++, and Java.",
+            "desc": "These are the languages and libraries that I have worked with most frequently. I have spent lots of time working with web technologies, with additional time spent with Golang, Python, C/C++, and Java.",
             "arr": [
                 {
                     "name": "Web",

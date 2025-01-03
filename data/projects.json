@@ -3,7 +3,7 @@
         {
             "name": "Verse",
             "link": "verse",
-            "desc": "Oh, yet another wordle-like game",
+            "desc": "Oh yay, yet another wordle-like game",
             "imgs": "verse-&d.webp",
             "imgn": 5,
             "caps": ["Homepage", "Help Page", "Making a Guess", "Winning the Game", "I beat the bot!"],
@@ -38,7 +38,7 @@
             "imgn": 3,
             "caps": ["Main Menu", "Beginning the North America Quiz", "Completed the quiz"],
             "lang": ["html", "css", "javascript", "bootstrap", "d3js"],
-            "long": "My geography quiz is a quiz that allows users to interact with a map of a chosen continent and select the randomly generated country. Each quiz runs through the entire continent and tracks the user's score."
+            "long": "My geography quiz allows users to interact with a map of a chosen continent and select the randomly generated country. Each quiz runs through the entire continent and tracks the user's score."
         },
         {
             "name": "Unit Converter",
