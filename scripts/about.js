@@ -1,6 +1,6 @@
 // =================================================================
 // = about.js
-// =  Description   : builds about.html
+// =  Description   : builds about.html (specifically, the chart)
 // =  Author        : jtpeller
 // =  Date          : September 28, 2022
 // =================================================================
@@ -11,53 +11,62 @@ document.addEventListener('DOMContentLoaded', function () {
     const utils = new Utils();
     utils.initNavbar(utils.select('#header'));
 
-    // load data for page
-    Promise.all([d3.json('data/about.json')]).then(function(values) {
-        initPage(values[0].about, utils.select('#main'))
-    });
-
-    function initPage(data, elem) {
-        // whoami section
-        elem.append(utils.create('h2', {
-            classList: 'section-header',
-            textContent: data[0].title,
-        }))
-        elem.append(utils.create('p', {textContent: data[0].arr[0]}))
-
-        // skills header
-        elem.append(utils.create('h2', {
-            classList: 'section-header',
-            textContent: 'Skills',
-        }))
-
-        // skills cards
-        let rowdiv = utils.create('div', {classList: 'row'})
-        for (let i = 1; i < data.length; i++) {
-            let col = utils.create('div', {classList: 'col-sm-12 col-lg-6'});
-            let card = utils.create('div', {classList: 'card card-dark'});
-
-            // SVG charts!
-            let svgdiv = utils.create('div', {classList: 'card-img-top'});
-            let svg = d3.create('svg')
-            buildChart(svg, data[i].arr)
-
-            // append SVG chart to card
-            svgdiv.append(svg.node());
-            card.append(svgdiv);
-
-            // section title
-            card.append(utils.create('h2', {
-                classList: 'section-header',
-                textContent: data[i].title,
-            }))
-            card.append(utils.create('p', {textContent: data[i].desc}));
-
-            col.append(card);
-            rowdiv.append(col);
+    // chart data
+    let chartData = [
+        {
+            name: "Web",
+            val: "4.5"
+        },
+        {
+            name: "Go",
+            val: "4.0"
+        },
+        {
+            name: "Bootstrap",
+            val: "3.5"
+        },
+        {
+            name: "D3.js",
+            val: "3.0"
+        },
+        {
+            name: "C/C++",
+            val: "3.0"
+        },
+        {
+            name: "MATLAB",
+            val: "2.5"
+        },
+        {
+            name: "Java",
+            val: "2.0"
+        },
+        {
+            name: "Python",
+            val: "1.5"
+        },
+        {
+            name: "Bash/Shell",
+            val: "1.0"
+        },
+        {
+            name: "ReactJS",
+            val: "0.5"
+        },
+        {
+            name: "C#",
+            val: "0.5"
         }
-        elem.append(rowdiv);
-        elem.append(utils.create('br'));
-    }
+    ]
+    
+    // build chart
+    let svgdiv = utils.select('#chart-div');
+    let svg = d3.create('svg')
+    buildChart(svg, chartData)
+
+    // append to section
+    svgdiv.append(svg.node());
+    section.append(svgdiv);
     
     function buildChart(svg, data) {
         // constant SVG values

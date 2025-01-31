@@ -8,7 +8,7 @@
             "imgn": 5,
             "caps": ["Homepage", "Help Page", "Making a Guess", "Winning the Game", "I beat the bot!"],
             "lang": ["html", "css", "javascript", "bootstrap"],
-            "long": "Verse! is a guess-the-word game where you try to guess the word using the clues from your last guess. The player competes with a bot I wrote, which attempts to guess the word separately using filtering techniques. I wrote this using only vanilla JavaScript and Bootstrap." 
+            "long": "Verse! is a <b>guess-the-word game</b> where you try to infer the word given the clues from your last guess. The player competes with a bot I wrote, which attempts to guess the word separately using filtering techniques. I wrote this using only <i>vanilla JavaScript and Bootstrap</i>." 
         },
         {
             "name": "R6S Roulette",
@@ -28,7 +28,7 @@
             "imgn": 3,
             "caps": ["Main Menu", "Playing against an Impossible AI", "Cat's Game!"],
             "lang": ["html", "css", "javascript", "bootstrap", "react-js"],
-            "long": "This is yet another rendition of the tic-tac-toe game. My first application written with ReactJS, it establishes the use of ReactJS basics like <code>React.createElement</code> and <code>ReactDOM.createRoot</code> to build the site. The AI is based on the minimax algorithm."
+            "long": "This is yet another rendition of the tic-tac-toe game. My <b>first application written with ReactJS</b>, it establishes the use of ReactJS basics like <code>React.createElement</code> and <code>ReactDOM.createRoot</code> to build the site. The AI is based on the minimax algorithm."
         },
         {
             "name": "Geography Quiz",
@@ -58,7 +58,7 @@
             "imgn": 5,
             "caps": ["Landing Page", "Demo of 2D shapes & simple animation", "Demo of canvas interaction", "Demo of lighting & material properties", "Animating a figure"],
             "lang": ["html", "css", "javascript", "bootstrap", "web-gl"],
-            "long": "My WebGL demos demonstrate my ability to use WebGL. These demos range from something simple like basic animation to more complicated demos such as lighting and shading."
+            "long": "These pages demonstrate my ability to use WebGL. The demos range from something simple like basic animation to more complicated demos such as lighting and shading."
         }
     ],
     "console": [
@@ -68,9 +68,9 @@
             "imgs": "oeis-&d.webp",
             "imgn": 3,
             "caps": ["Generating the Fibonacci Numbers", "Generating the Triangle Numbers", "Generating Sequence A000225"],
-            "desc": "The ongoing quest to program every sequence in the OEIS database (using Golang)",
-            "long": "This is a console program that contains hundreds of algorithms to generate the sequences found in the OEIS database. While some are trivial, such as all 0s, others are more complicated and involve more complex algorithms. This program makes use of arbitrary precision to overcome overflow issues related to large calculations.",
-            "lang": ["golang"]
+            "desc": "The ongoing quest to program every sequence in the OEIS database (using Go)",
+            "long": "This is a console program that contains <i>hundreds of algorithms</i> to generate the sequences found in the <b>OEIS database</b>. While some are trivial, such as all 0s, others are more complicated and involve more complex algorithms. This program makes use of arbitrary precision to overcome overflow issues related to large calculations.",
+            "lang": ["go"]
         },
         {
             "name": "gosort",
@@ -78,9 +78,9 @@
             "imgs": "gosort-&d.webp",
             "imgn": 3,
             "caps": ["Sorting from a file", "Sorting 100,000 numbers", "Sorting 1,000,000 numbers"],
-            "desc": "Sorting algorithms written in Golang",
-            "long": "Major sorting algorithms, but they're written in Golang. In addition, this program benchmarks the performance of these algorithms, comparing the time to execute each of the sorting algorithms. Concurrency is used to reduce the overall running time of the program.",
-            "lang": ["golang"]
+            "desc": "Sorting algorithms written in Go",
+            "long": "This program <b>benchmarks the performance</b> of <i>22 different sorting algorithms</i>. The time to execute each of the sorting algorithms is compared. <b>Concurrency</b> is used to reduce the overall execution time of the program.",
+            "lang": ["go"]
         },
         {
             "name": "num2words",
@@ -88,9 +88,9 @@
             "imgs": "num2words-&d.webp",
             "imgn": 2,
             "caps": ["Testing without separators", "Testing with separators"],
-            "desc": "A Golang package that converts a number to its English representation.",
-            "long": "A package that allows a number in its numerical form to be converted to its English representation. For example, 15552 converts to 'fifteen thousand five hundred fifty two'. A number of any size can be converted because this package makes use of arbitrary precision.",
-            "lang": ["golang"]
+            "desc": "A Go package that converts a number to its English representation.",
+            "long": "I wrote a Go package that converts a number to its English representation. For example, <code>15552</code> converts to <code>fifteen thousand five hundred fifty two</code>. A <i>number of any size</i> can be converted because this package makes use of <b>arbitrary precision</b>.",
+            "lang": ["go"]
         },
         {
             "name": "Rosalind",
@@ -99,35 +99,35 @@
             "imgn": 3,
             "caps": ["Running some problems", "Running more problems", "Even more problems!!!"],
             "desc": "Algorithms for problems from Rosalind",
-            "long": "Rosalind is a bioinformatics programming platform with numerous problems related to bioinformatic algorithms. This repo contains a few solutions that I wrote to solve these problems.",
-            "lang": ["golang"]
+            "long": "<b>Rosalind</b> is a bioinformatics programming platform with numerous problems related to bioinformatics. This repo contains a few solutions that I wrote to solve these problems.",
+            "lang": ["go"]
+        },
+        {
+            "name": "Project Euler",
+            "link": "project-euler",
+            "imgs": "pe-&d.webp",
+            "imgn": 2,
+            "caps": ["Running a few algorithms", "Extremely Exciting Error Explanations!"],
+            "desc": "Solving problems from Project Euler",
+            "long": "<b>Project Euler</b> is a mathematics platform with over 900 problems. These problems range in difficulty and their solutions require designing an efficient algorithm and mathematical skills. This repo contains some solutions that I wrote to solve these problems.",
+            "lang": ["go"]
         },
         {
             "name": "gobig",
             "link": "gobig",
-            "desc": "A simple Go package to make using arbitrary precision in Golang a bit easier",
-            "long": "Golang's arbitrary precision is painful to use when performing complex mathematical operations with big numbers. To make using it easier for myself, I wrote this package (primarily to use in my OEIS repo). It is essentially a set of wrapper functions that help improve readability and maintainability.",
-            "lang": ["golang"]
+            "desc": "A simple Go package to make using arbitrary precision in Go a bit easier",
+            "long": "When using Go's arbitrary precision packages, I found that readability plummeted when performing complex mathematical operations with big numbers. I wrote this package that wraps the built-in arbitrary precision to improve readability, maintainability, and reduce keystrokes.",
+            "lang": ["go"]
         },
         {
             "name": "csort",
             "link": "csort",
             "desc": "Sorting algorithms written in C++",
-            "long": "This repo hosts several different sorting algorithms written as a C++ library. I also wrote a repo to test this library, found here: <a href='https://github.com/jtpeller/csort_test'>Link</a>.",
+            "long": "This <b>C++ library</b> implements several different sorting algorithms. I also wrote a repo to test this library, found here: <a href='https://github.com/jtpeller/csort_test'>Link</a>.",
             "lang": ["cpp"]
         }
     ],
     "desktop":  [
-        {
-            "name": "Java Tic-Tac-Toe",
-            "link": "TicTacToeJava",
-            "desc": "An implementation of tic-tac-toe in Java",
-            "imgs": "jttt-&d.webp",
-            "imgn": 4,
-            "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "It really is unbeatable..."],
-            "long": "A desktop Java application I wrote shortly after my Sudoku game. I wrote this to work on my AWT/Swing skills. It has an AI opponent, implemented based of the minimax algorithm. Difficulties are based on modifying this algorithm to make mistakes every once in a while. This is the application where I realized that writing GUI desktop applications with Java is severely limited and painful.",
-            "lang": ["java"]
-        },
         {
             "name": "Java Sudoku",
             "link": "SudokuJava",
@@ -135,7 +135,17 @@
             "imgs": "jsudoku-&d.webp",
             "imgn": 5,
             "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "Winner!", "The options menu has options (that don't do anything)!"],
-            "long": "A desktop Java application I wrote in 2019 to teach myself AWT/Swing (along with the Tic-Tac-Toe Java program). It features a 9x9 grid and 4 difficulties. A player can erase their inputs, get hints, or reset the board.",
+            "long": "A <b>desktop Java application</b> I wrote in 2019 to teach myself <b>AWT/Swing</b> (along with the Tic-Tac-Toe Java program). It features a 9x9 grid and 4 difficulties. A player can erase their inputs, get hints, or reset the board.",
+            "lang": ["java"]
+        },
+        {
+            "name": "Java Tic-Tac-Toe",
+            "link": "TicTacToeJava",
+            "desc": "An implementation of tic-tac-toe in Java",
+            "imgs": "jttt-&d.webp",
+            "imgn": 4,
+            "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "It really is unbeatable..."],
+            "long": "A <b>desktop Java application</b> I wrote shortly after my Sudoku game. I wrote this to work on my <b>AWT/Swing</b> skills. It has an AI opponent, implemented based of the minimax algorithm. Difficulties are based on modifying this algorithm to make mistakes every once in a while. This is the application where I realized that I did not enjoy writing GUI desktop applications with Java.",
             "lang": ["java"]
         }
     ]
