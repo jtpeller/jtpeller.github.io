@@ -8,7 +8,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const CARO_INT = 5000;      // interval for carousel transition
-    const utils = new Utils();
     const langs = ["Web", "Console", "Desktop"];
     const root = {
         web: 'https://jtpeller.github.io/',
@@ -18,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // start with navbar
-    utils.initNavbar(utils.select('#header'));
+    Utils.initNavbar(Utils.select('#header'));
 
     // load data for page
     Promise.all([
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }).then(function (values) {
         for (var i = 0; i < langs.length; i++) {
             let lang = langs[i]
-            initPage(values[0][lang.toLowerCase()], lang, utils.select('#main'));
+            initPage(values[0][lang.toLowerCase()], lang, Utils.select('#main'));
         }
     });
 
@@ -39,14 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
         root.proj = `resources/${lang.toLowerCase()}/`
 
         // project div for ${lang} and its title
-        let proj_div = utils.create('div', {id: `${lang}-div`})
-        proj_div.append(utils.create('h1', {
+        let proj_div = Utils.create('div', {id: `${lang}-div`})
+        proj_div.append(Utils.create('h1', {
             classList: 'text-center title',
             textContent: `${lang} Applications`,
         }))
 
         // add the projects for this ${lang}
-        let row_div = utils.create('div', {classList: 'row',});
+        let row_div = Utils.create('div', {classList: 'row',});
         for (let i = 0; i < proj.length; i++) {
             row_div.append(buildProjectCard(proj[i], lang))
         }
@@ -54,41 +53,45 @@ document.addEventListener("DOMContentLoaded", () => {
         // append everything
         proj_div.append(row_div)    // append cards to projects
         loc.append(proj_div);       // append ${lang}'s projects to loc
+
+        // enable tooltips everywhere 
+        // ref: https://getbootstrap.com/docs/5.3/components/tooltips/#enable-tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     }
 
     function buildProjectCard(proj, lang) {
         // card's column in the row
-        let col = utils.create('div', {classList: 'col-sm-12 col-lg-6'});
+        let col = Utils.create('div', {classList: 'col-sm-12 col-lg-6'});
 
-        let card = utils.create('div', {classList: 'card card-dark'});
+        let card = Utils.create('div', {classList: 'card card-dark'});
 
         // image carousel
-        let img_div = utils.create('div', {classList: 'card-img-top'});
+        let img_div = Utils.create('div', {classList: 'card-img-top'});
 
         // create only if there are images to add
-        console.log(proj);
         if (proj.imgs && proj.imgn > 0) {
             const cid = proj.name.replaceAll(' ', '-')
 
             // carousel parent div
-            let carousel_parent = utils.create('div', {classList: 'w-100 mx-auto'});
+            let carousel_parent = Utils.create('div', {classList: 'w-100 mx-auto'});
 
-            let carousel = utils.create('div', {
+            let carousel = Utils.create('div', {
                 classList: 'carousel slide',
                 id: cid,
             });
             carousel.dataset.bsRide = 'carousel';
 
             // ordered list for indicators
-            let indicators = utils.create('div', {classList: 'carousel-indicators'});
+            let indicators = Utils.create('div', {classList: 'carousel-indicators'});
 
             // inner carousel div
-            let inner_div = utils.create('div', {classList: 'carousel-inner'});
+            let inner_div = Utils.create('div', {classList: 'carousel-inner'});
 
             // loop to add all the images, indicators, etc.
             for (let j = 0; j < proj.imgn; j++) {
                 // button to move to the next slide (bottom of the carousel)
-                let btn = utils.create('button', {
+                let btn = Utils.create('button', {
                     type: 'button',
                     ariaLabel: `Slide ${j}`
                 });
@@ -100,16 +103,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 const imgid = proj.name.replaceAll(' ', '-') + '-img-' + j;
                 const imgname = proj.imgs.replace('&d', j+1);
                 const alt = imgname.replaceAll('.webp', '');
-                console.log(imgid, imgname, alt);
 
-                var items = utils.create('div', {
+                var items = Utils.create('div', {
                     classList: j == 0 ? 'carousel-item active' : 'carousel-item',
                     id: imgid,
                 })
                 items.dataset.bsInterval = CARO_INT;
 
                 // append the image
-                items.append(utils.create('img', {
+                items.append(Utils.create('img', {
                     classList: 'd-block w-100',
                     src: root.proj + imgname,
                     alt: alt,
@@ -118,11 +120,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // append captions
                 if (proj.caps && proj.caps.length > 0) {
-                    let capdiv = utils.create('div', {
+                    let capdiv = Utils.create('div', {
                         classList: 'carousel-caption d-none d-md-block'
                     })
 
-                    capdiv.append(utils.create('h5', {
+                    capdiv.append(Utils.create('h5', {
                         classList: 'text-shadow',
                         textContent: proj.caps[j]
                     }))
@@ -170,20 +172,20 @@ document.addEventListener("DOMContentLoaded", () => {
             title = "Next";
         }
         
-        output = utils.create('button', {
+        output = Utils.create('button', {
             classList: `carousel-control-${val}`,
             type: 'button',
         })
         output.dataset.bsTarget = `#${cid}`;
         output.dataset.bsSlide = val;
 
-        let span_icon = utils.create('span', {
+        let span_icon = Utils.create('span', {
             classList: `carousel-control-${val}-icon`,
             ariaHidden: true,
         })
         output.append(span_icon);
 
-        let span_hidden = utils.create('span', {
+        let span_hidden = Utils.create('span', {
             classList: 'visually-hidden',
             textContent: title
         })
@@ -194,32 +196,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // creates a card body given the project
     function createCardBody(proj) {
-        let card_body = utils.create('div', {classList: 'card-body'})
+        let card_body = Utils.create('div', {
+            classList: 'card-body',
+            id: Utils.makeID(proj.name)
+        })
 
         // append title, subtitle, and description
-        card_body.append(utils.create('h2', {
+        card_body.append(Utils.create('h2', {
             classList: 'card-title section-header',
             textContent: proj.name
         }));
 
-        card_body.append(utils.create('p', {
+        card_body.append(Utils.create('p', {
             classList: 'card-subtitle text-center grabber',
             textContent: proj.desc,
         }))
 
-        card_body.append(utils.create('p', {innerHTML: proj.long}))
+        card_body.append(Utils.create('p', {innerHTML: proj.long}))
 
         // language & library logos
-        let logos = utils.create('div', {classList: 'text-center my-4'});
+        let logos = Utils.create('div', {classList: 'text-center my-4'});
         for (let x = 0; x < proj.lang.length; x++) {
             let img = proj.lang[x];
-            logos.append(utils.create('img', {
+            
+            let logo = Utils.create('img', {
                 src: root.logo + img + '.svg',
                 alt: img,
                 title: img,
                 classList: 'lang-logo',
                 loading: 'lazy',
-            }))
+            });
+
+            // add tooltips to the logo
+            logo.setAttribute("data-bs-toggle", "tooltip")
+            logo.setAttribute("data-bs-placement", "bottom")
+            logo.setAttribute("data-bs-title", img)
+
+            logos.append(logo);
+
         }
         card_body.append(logos);
 
@@ -229,16 +243,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // creates a card footer given the project
     function createCardFooter(proj, lang) {
         // .card-body eliminates the bootstrap card-footer bkgd-color & whatnot
-        let footer = utils.create('div', {classList: 'card-body'})
+        let footer = Utils.create('div', {classList: 'card-body'})
 
         if (lang == 'Web') {
-            let a = utils.create('a', {
+            let a = Utils.create('a', {
                 classList: 'webpage-button link float-left bg-dark bg-gradient',
                 href: root.web + proj.link,
                 title: `Visit: ${proj.name}`,
                 textContent: 'Visit',
             })
-            a.append(utils.create('img', {
+            a.append(Utils.create('img', {
                 src: 'resources/external-link.svg',
                 alt: '[External Link]',
                 classList: 'btn-logo'
@@ -246,8 +260,8 @@ document.addEventListener("DOMContentLoaded", () => {
             footer.append(a);
         }
 
-        let git = utils.create('a', {href: root.git + proj.link})
-        git.append(utils.create('img', {
+        let git = Utils.create('a', {href: root.git + proj.link})
+        git.append(Utils.create('img', {
             classList: 'logo-link link float-end',
             src: `${root.logo}github.svg`,
             alt: "GitHub",

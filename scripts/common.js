@@ -7,7 +7,7 @@
 "use strict";
 
 class Utils {
-    ll = [
+    static ll = [
         {
             href: 'projects.html',
             text: '> Projects'
@@ -19,12 +19,12 @@ class Utils {
     ]
 
     // wrapper for Object.assign for easier readability
-    create(elem, options) {
+    static create(elem, options) {
         return Object.assign(document.createElement(elem), options)
     }
 
     // wrapper for querySelector
-    select(val, origin=document) {
+    static select(val, origin=document) {
         return origin.querySelector(val);
     }
 
@@ -32,7 +32,7 @@ class Utils {
      * initNavbar() -- initializes the navbar for navigating the site
      * @param {Element} header  The Element to place this in.
      */
-    initNavbar(header) {
+    static initNavbar(header) {
         // <nav>
         let nav = this.create("nav", {
             classList: 'navbar navbar-expand-lg fixed-top bg-nav-dark navbar-dark',
@@ -128,6 +128,20 @@ class Utils {
         navdiv.append(oc_div)      // link div to nav div
         nav.append(navdiv)          // nav div to nav
         header.append(nav)          // append to header
+    }
+
+    // formats a string to ensure it is suitable for a ID
+    static makeID(val, prefix='') {
+        // replace spaces with dashes
+        let id = val.replaceAll(' ', '-')
+
+        // replace dots with underscores
+        id = id.replaceAll('.', '_')
+
+        // add optional prefix
+        id = prefix+id
+
+        return id
     }
     
 }

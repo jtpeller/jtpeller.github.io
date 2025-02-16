@@ -7,9 +7,8 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', function () {
-    // init header & utils
-    const utils = new Utils();
-    utils.initNavbar(utils.select('#header'));
+    // init header & Utils
+    Utils.initNavbar(Utils.select('#header'));
 
     // chart data
     let chartData = [
@@ -34,16 +33,16 @@ document.addEventListener('DOMContentLoaded', function () {
             val: "3.0"
         },
         {
+            name: "Python",
+            val: "2.5"
+        },
+        {
             name: "MATLAB",
             val: "2.5"
         },
         {
             name: "Java",
             val: "2.0"
-        },
-        {
-            name: "Python",
-            val: "1.5"
         },
         {
             name: "Bash/Shell",
@@ -60,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ]
     
     // build chart
-    let svgdiv = utils.select('#chart-div');
+    let svgdiv = Utils.select('#chart-div');
     let svg = d3.create('svg')
     buildChart(svg, chartData)
 

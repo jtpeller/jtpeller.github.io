@@ -68,8 +68,8 @@
             "imgs": "oeis-&d.webp",
             "imgn": 3,
             "caps": ["Generating the Fibonacci Numbers", "Generating the Triangle Numbers", "Generating Sequence A000225"],
-            "desc": "The ongoing quest to program every sequence in the OEIS database (using Go)",
-            "long": "This is a console program that contains <i>hundreds of algorithms</i> to generate the sequences found in the <b>OEIS database</b>. While some are trivial, such as all 0s, others are more complicated and involve more complex algorithms. This program makes use of arbitrary precision to overcome overflow issues related to large calculations.",
+            "desc": "The ongoing quest to program the OEIS database",
+            "long": "This is a console program that contains <i>over two hundred algorithms</i> to generate the sequences found in the <b>OEIS database</b>. While some are trivial others are quite complex. Overflow issues are overcome with <b>arbitrary precision</b>.",
             "lang": ["go"]
         },
         {
@@ -78,7 +78,7 @@
             "imgs": "gosort-&d.webp",
             "imgn": 3,
             "caps": ["Sorting from a file", "Sorting 100,000 numbers", "Sorting 1,000,000 numbers"],
-            "desc": "Sorting algorithm benchmark written in Go",
+            "desc": "Benchmarks many different sorting algorithms in Go",
             "long": "This program <b>benchmarks the performance</b> of <i>22 different sorting algorithms</i>. The time to execute each of the sorting algorithms is compared. <b>Concurrency</b> is used to reduce the overall execution time of the program.",
             "lang": ["go"]
         },
@@ -88,7 +88,7 @@
             "imgs": "num2words-&d.webp",
             "imgn": 2,
             "caps": ["Testing without separators", "Testing with separators"],
-            "desc": "A Go package that converts a number to its English representation.",
+            "desc": "Converts any number to its English representation",
             "long": "I wrote a Go package that converts a number to its English representation. For example, <code>15552</code> converts to <code>fifteen thousand five hundred fifty two</code>. A <i>number of any size</i> can be converted because this package makes use of <b>arbitrary precision</b>.",
             "lang": ["go"]
         },
@@ -123,21 +123,21 @@
             "name": "gosort",
             "link": "gosort",
             "desc": "Sorting algorithms written in Go",
-            "long": "This Go library implements <i>22 different sorting algorithms</i>.",
+            "long": "This Go library implements <i>22 different sorting algorithms</i>. This includes: Bubble, Quicksort, Radix, Merge, Insertion, Shell, and my favorite, Counting Sort.",
             "lang": ["go"]
         },
         {
             "name": "csort",
             "link": "csort",
             "desc": "Sorting algorithms written in C++",
-            "long": "This <b>C++ library</b> implements several different sorting algorithms. I also wrote a repo to test this library, found here: <a href='https://github.com/jtpeller/csort_test'>Link</a>.",
+            "long": "This <b>C++ library</b> implements several different sorting algorithms. This includes: Bubble, Insertion, Quicksort, Selection, and Counting Sort. I also wrote a repo to test this library, found here: <a href='https://github.com/jtpeller/csort_test'>Link</a>.",
             "lang": ["cpp"]
         },
         {
             "name": "gobigger",
             "link": "gobigger",
-            "desc": "A Go file to make using arbitrary precision in Go a bit easier",
-            "long": "I made this after my gobig repository proved to be too inflexible. Expands upon Go's math/big library and fixes some of the issues of gobig, such as ease of use, simplified wrapper layer, and extended features.",
+            "desc": "A Go file to expand upon Go's arbitrary precision package, math/big.",
+            "long": "I made this after my gobig repository proved to be too inflexible and not useful enough. This expands upon Go's math/big package and fixes some of the issues of <a href='#gobig'>gobig</a>, such as ease of use, simplified wrapper layer, and extended features.",
             "lang": ["go"]
         },
         {
