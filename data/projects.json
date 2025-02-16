@@ -73,12 +73,12 @@
             "lang": ["go"]
         },
         {
-            "name": "gosort",
-            "link": "gosort",
+            "name": "gosort-benchmark",
+            "link": "gosort-benchmark",
             "imgs": "gosort-&d.webp",
             "imgn": 3,
             "caps": ["Sorting from a file", "Sorting 100,000 numbers", "Sorting 1,000,000 numbers"],
-            "desc": "Sorting algorithms written in Go",
+            "desc": "Sorting algorithm benchmark written in Go",
             "long": "This program <b>benchmarks the performance</b> of <i>22 different sorting algorithms</i>. The time to execute each of the sorting algorithms is compared. <b>Concurrency</b> is used to reduce the overall execution time of the program.",
             "lang": ["go"]
         },
@@ -113,10 +113,17 @@
             "lang": ["go"]
         },
         {
-            "name": "gobig",
-            "link": "gobig",
-            "desc": "A simple Go package to make using arbitrary precision in Go a bit easier",
-            "long": "When using Go's arbitrary precision packages, I found that readability plummeted when performing complex mathematical operations with big numbers. I wrote this package that wraps the built-in arbitrary precision to improve readability, maintainability, and reduce keystrokes.",
+            "name": "cpp-ds",
+            "link": "cpp-ds",
+            "desc": "Data structures written in C++",
+            "long": "This <b>C++ library</b> implements several different data structures. The repo also contains test programs to test this library.",
+            "lang": ["cpp"]
+        },
+        {
+            "name": "gosort",
+            "link": "gosort",
+            "desc": "Sorting algorithms written in Go",
+            "long": "This Go library implements <i>22 different sorting algorithms</i>.",
             "lang": ["go"]
         },
         {
@@ -125,6 +132,20 @@
             "desc": "Sorting algorithms written in C++",
             "long": "This <b>C++ library</b> implements several different sorting algorithms. I also wrote a repo to test this library, found here: <a href='https://github.com/jtpeller/csort_test'>Link</a>.",
             "lang": ["cpp"]
+        },
+        {
+            "name": "gobigger",
+            "link": "gobigger",
+            "desc": "A Go file to make using arbitrary precision in Go a bit easier",
+            "long": "I made this after my gobig repository proved to be too inflexible. Expands upon Go's math/big library and fixes some of the issues of gobig, such as ease of use, simplified wrapper layer, and extended features.",
+            "lang": ["go"]
+        },
+        {
+            "name": "gobig",
+            "link": "gobig",
+            "desc": "A simple Go package to make using arbitrary precision in Go a bit easier",
+            "long": "When using Go's arbitrary precision packages, I found that readability plummeted when performing complex mathematical operations with big numbers. I wrote this package that wraps the built-in arbitrary precision to improve readability, maintainability, and reduce keystrokes.",
+            "lang": ["go"]
         }
     ],
     "desktop":  [
