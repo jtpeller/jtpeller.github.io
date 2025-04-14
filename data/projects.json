@@ -6,7 +6,7 @@
             "desc": "Oh yay, yet another wordle-like game",
             "imgs": "verse-&d.webp",
             "imgn": 5,
-            "caps": ["Homepage", "Help Page", "Making a Guess", "Winning the Game", "I beat the bot!"],
+            "caps": ["Homepage", "Game Page", "Making a Guess", "Winning the Game", "I beat the bot!"],
             "lang": ["html", "css", "javascript", "bootstrap"],
             "long": "Verse! is a <b>guess-the-word game</b> where you try to infer the word given the clues from your last guess. The player competes with a bot I wrote, which attempts to guess the word separately using filtering techniques. I wrote this using only <i>vanilla JavaScript and Bootstrap</i>." 
         },
@@ -69,8 +69,18 @@
             "imgn": 3,
             "caps": ["Generating the Fibonacci Numbers", "Generating the Triangle Numbers", "Generating Sequence A000225"],
             "desc": "The ongoing quest to program the OEIS database",
-            "long": "This is a console program that contains <i>over two hundred algorithms</i> to generate the sequences found in the <b>OEIS database</b>. While some are trivial others are quite complex. Overflow issues are overcome with <b>arbitrary precision</b>.",
+            "long": "This is a console program that contains <i>over two hundred algorithms</i> to generate the sequences found in the <b>OEIS database</b>. The OEIS database is a massive set of integer sequences, some of which are trivial, but many are extremely complex, involving combinatorics, statistics, or other high-level mathematical concepts. Many will overflow a standard <code>int</code> or <code>float</code>, so overflow issues are overcome with <b>arbitrary precision</b>.",
             "lang": ["go"]
+        },
+        {
+            "name": "Cliques",
+            "link": "cliques",
+            "imgs": "cq-&d.webp",
+            "imgn": 2,
+            "caps": ["Executing the Program", "Cliques have been found!"],
+            "desc": "Finding words with unique letters in a word list!",
+            "long": "Cliques is a <b>Python program</b> that, given a list of words, finds a subset of those words where each letter is unique. For instance, if wanted to find cliques of words that are 5 letters long, it would attempt to find 5 different words to cover 25 of 26 letters. There is also <i>fuzzy search</i> allowing vowels to overlap exactly once, raising the chances of finding near-cliques (more exciting than zero-cliques). This was used to help build a bot strategy for my <a href='#Verse'>Verse</a> game!",
+            "lang": ["python"]
         },
         {
             "name": "gosort-benchmark",
@@ -113,8 +123,8 @@
             "lang": ["go"]
         },
         {
-            "name": "cpp-ds",
-            "link": "cpp-ds",
+            "name": "libcds",
+            "link": "libcds",
             "desc": "Data structures written in C++",
             "long": "This <b>C++ library</b> implements several different data structures. The repo also contains test programs to test this library.",
             "lang": ["cpp"]
