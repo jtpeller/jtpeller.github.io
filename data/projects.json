@@ -1,6 +1,16 @@
 {
     "web": [
         {
+            "name": "Sudoku",
+            "link": "sudoku-web",
+            "desc": "Cross-platform Sudoku Game Written in Flutter",
+            "imgs": "sudoku-&d.webp",
+            "imgn": 5,
+            "caps": ["Main Menu", "Game Page", "Options Menu", "Help Menu", "I won!"],
+            "lang": ["flutter", "dart"],
+            "long": "This implementation of sudoku is a <b>cross-platform game</b> written in <i>Flutter</i> where a 9x9 grid is filled in with the numbers 1-9, and conflicts must be avoided. Being my first Flutter project and first cross-platform game, I wrote this to learn a lot about different development platforms, a new language, and new programming skills." 
+        },
+        {
             "name": "Verse",
             "link": "verse",
             "desc": "Oh yay, yet another wordle-like game",

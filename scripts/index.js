@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `var(--bg-color)`,
         `System32`,
         `/bin/sh`,
+        `You've got mail!`,
     ];
 
     let rng = Math.floor(Math.random() * subtitles.length);

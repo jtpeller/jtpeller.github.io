@@ -20,9 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Utils.initNavbar(Utils.select('#header'));
 
     // load data for page
-    Promise.all([
-        fetch('data/projects.json')
-    ]).then(function (responses) {
+    Promise.all([fetch('data/projects.json')]).then(function (responses) {
         return Promise.all(responses.map(function(response) {
             return response.json();
         }));
@@ -145,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let temp = indicators.querySelector('button')
             temp.classList.add('active')
             temp.ariaCurrent = true;
-           
+
             // start the carousel
             document.querySelectorAll(`button[data-bs-slide-to='0']`).forEach( (elem) => elem.click() );
         }
@@ -249,6 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let a = Utils.create('a', {
                 classList: 'webpage-button link float-left bg-dark bg-gradient',
                 href: root.web + proj.link,
+                target: '_blank',
                 title: `Visit: ${proj.name}`,
                 textContent: 'Visit',
             })
@@ -260,7 +259,10 @@ document.addEventListener("DOMContentLoaded", () => {
             footer.append(a);
         }
 
-        let git = Utils.create('a', {href: root.git + proj.link})
+        let git = Utils.create('a', {
+            href: root.git + proj.link,
+            target: '_blank',
+        })
         git.append(Utils.create('img', {
             classList: 'logo-link link float-end',
             src: `${root.logo}github.svg`,
