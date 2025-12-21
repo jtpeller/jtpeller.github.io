@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
             val: "4.0"
         },
         {
+            name: "Python",
+            val: "3.5"
+        },
+        {
             name: "Bootstrap",
             val: "3.5"
         },
@@ -31,10 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             name: "C/C++",
             val: "3.0"
-        },
-        {
-            name: "Python",
-            val: "2.5"
         },
         {
             name: "MATLAB",

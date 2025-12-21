@@ -23,12 +23,12 @@
         {
             "name": "R6S Roulette",
             "link": "r6siege",
-            "desc": "A site to change how you play Rainbow Six Siege",
+            "desc": "A companion app to Tom Clancy's Rainbow Six Siege",
             "imgs": "r6s-&d.webp",
             "imgn": 6,
             "caps": ["Homepage", "Operator Roulette", "Gun Roulette", "Operator Page", "Guns Page", "More Info Page"],
             "lang": ["html", "css", "javascript", "bootstrap", "d3js"],
-            "long": "R6S Roulette is a companion web application for the video game <i>Tom Clancy's Rainbow Six Siege</i> by Ubisoft. Users can randomly select an operator or gun, filter out the full dataset via UI elements (e.g., checkboxes, dropdowns), or view information about the game." 
+            "long": "R6S Roulette is a companion web application for the video game <i>Tom Clancy's Rainbow Six Siege</i> by Ubisoft made to spice up how you play the game. Users can randomly select an operator or weapon, filter out the full dataset via UI elements (e.g., checkboxes, dropdowns), or view information about the game." 
         },
         {
             "name": "Tic-Tac-Toe",
