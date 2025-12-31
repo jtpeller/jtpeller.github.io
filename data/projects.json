@@ -1,193 +1,208 @@
-{
-    "web": [
-        {
-            "name": "Sudoku",
-            "link": "sudoku-web",
-            "desc": "Cross-platform Sudoku Game Written in Flutter",
-            "imgs": "sudoku-&d.webp",
-            "imgn": 5,
-            "caps": ["Main Menu", "Game Page", "Options Menu", "Help Menu", "I won!"],
-            "lang": ["flutter", "dart"],
-            "long": "This implementation of sudoku is a <b>cross-platform game</b> written in <i>Flutter</i> where a 9x9 grid is filled in with the numbers 1-9, and conflicts must be avoided. Being my first Flutter project and first cross-platform game, I wrote this to learn a lot about different development platforms, a new language, and new programming skills." 
-        },
-        {
-            "name": "Verse",
-            "link": "verse",
-            "desc": "Oh yay, yet another wordle-like game",
-            "imgs": "verse-&d.webp",
-            "imgn": 5,
-            "caps": ["Homepage", "Game Page", "Making a Guess", "Winning the Game", "I beat the bot!"],
-            "lang": ["html", "css", "javascript", "bootstrap"],
-            "long": "Verse! is a <b>guess-the-word game</b> where you try to infer the word given the clues from your last guess. The player competes with a bot I wrote, which attempts to guess the word separately using filtering techniques. I wrote this using only <i>vanilla JavaScript and Bootstrap</i>." 
-        },
-        {
-            "name": "R6S Roulette",
-            "link": "r6siege",
-            "desc": "A companion app to Tom Clancy's Rainbow Six Siege",
-            "imgs": "r6s-&d.webp",
-            "imgn": 6,
-            "caps": ["Homepage", "Operator Roulette", "Gun Roulette", "Operator Page", "Guns Page", "More Info Page"],
-            "lang": ["html", "css", "javascript", "bootstrap", "d3js"],
-            "long": "R6S Roulette is a companion web application for the video game <i>Tom Clancy's Rainbow Six Siege</i> by Ubisoft made to spice up how you play the game. Users can randomly select an operator or weapon, filter out the full dataset via UI elements (e.g., checkboxes, dropdowns), or view information about the game." 
-        },
-        {
-            "name": "Tic-Tac-Toe",
-            "link": "tic-tac-toe",
-            "desc": "Tic-Tac-Toe written using React",
-            "imgs": "ttt-&d.webp",
-            "imgn": 3,
-            "caps": ["Main Menu", "Playing against an Impossible AI", "Cat's Game!"],
-            "lang": ["html", "css", "javascript", "bootstrap", "react-js"],
-            "long": "This is yet another rendition of the tic-tac-toe game. My <b>first application written with ReactJS</b>, it establishes the use of ReactJS basics like <code>React.createElement</code> and <code>ReactDOM.createRoot</code> to build the site. The AI is based on the minimax algorithm."
-        },
-        {
-            "name": "Geography Quiz",
-            "link": "geography-quiz",
-            "desc": "Test your geography skills!",
-            "imgs": "geo-&d.webp",
-            "imgn": 3,
-            "caps": ["Main Menu", "Beginning the North America Quiz", "Completed the quiz"],
-            "lang": ["html", "css", "javascript", "bootstrap", "d3js"],
-            "long": "My geography quiz allows users to interact with a map of a chosen continent and select the randomly generated country. Each quiz runs through the entire continent and tracks the user's score."
-        },
-        {
-            "name": "Unit Converter",
-            "link": "unit-converter",
-            "desc": "A clean and simple unit converter",
-            "imgs": "uc-&d.webp",
-            "imgn": 2,
-            "caps": ["Converting Meters to Kilometers", "Converting Seconds to Hours"],
-            "lang": ["html", "css", "javascript", "bootstrap"],
-            "long": "This site lets users convert various unit types; including length, area, volume, mass, time, energy, and temperature. There is a formula that is shown that can be used by the user to approximate the conversion."
-        },
-        {
-            "name": "WebGL Demos",
-            "link": "webgl-demos",
-            "desc": "The landing page for my WebGL demos",
-            "imgs": "webgl-&d.webp",
-            "imgn": 5,
-            "caps": ["Landing Page", "Demo of 2D shapes & simple animation", "Demo of canvas interaction", "Demo of lighting & material properties", "Animating a figure"],
-            "lang": ["html", "css", "javascript", "bootstrap", "web-gl"],
-            "long": "These pages demonstrate my ability to use WebGL. The demos range from something simple like basic animation to more complicated demos such as lighting and shading."
-        }
-    ],
-    "console": [
-        {
-            "name": "OEIS",
-            "link": "OEIS",
-            "imgs": "oeis-&d.webp",
-            "imgn": 3,
-            "caps": ["Generating the Fibonacci Numbers", "Generating the Triangle Numbers", "Generating Sequence A000225"],
-            "desc": "The ongoing quest to program the OEIS database",
-            "long": "This is a console program that contains <i>over two hundred algorithms</i> to generate the sequences found in the <b>OEIS database</b>. The OEIS database is a massive set of integer sequences, some of which are trivial, but many are extremely complex, involving combinatorics, statistics, or other high-level mathematical concepts. Many will overflow a standard <code>int</code> or <code>float</code>, so overflow issues are overcome with <b>arbitrary precision</b>.",
-            "lang": ["go"]
-        },
-        {
-            "name": "Cliques",
-            "link": "cliques",
-            "imgs": "cq-&d.webp",
-            "imgn": 2,
-            "caps": ["Executing the Program", "Cliques have been found!"],
-            "desc": "Finding words with unique letters in a word list!",
-            "long": "Cliques is a <b>Python program</b> that, given a list of words, finds a subset of those words where each letter is unique. For instance, if wanted to find cliques of words that are 5 letters long, it would attempt to find 5 different words to cover 25 of 26 letters. There is also <i>fuzzy search</i> allowing vowels to overlap exactly once, raising the chances of finding near-cliques (more exciting than zero-cliques). This was used to help build a bot strategy for my <a href='#Verse'>Verse</a> game!",
-            "lang": ["python"]
-        },
-        {
-            "name": "gosort-benchmark",
-            "link": "gosort-benchmark",
-            "imgs": "gosort-&d.webp",
-            "imgn": 3,
-            "caps": ["Sorting from a file", "Sorting 100,000 numbers", "Sorting 1,000,000 numbers"],
-            "desc": "Benchmarks many different sorting algorithms in Go",
-            "long": "This program <b>benchmarks the performance</b> of <i>22 different sorting algorithms</i>. The time to execute each of the sorting algorithms is compared. <b>Concurrency</b> is used to reduce the overall execution time of the program.",
-            "lang": ["go"]
-        },
-        {
-            "name": "num2words",
-            "link": "num2words",
-            "imgs": "num2words-&d.webp",
-            "imgn": 2,
-            "caps": ["Testing without separators", "Testing with separators"],
-            "desc": "Converts any number to its English representation",
-            "long": "I wrote a Go package that converts a number to its English representation. For example, <code>15552</code> converts to <code>fifteen thousand five hundred fifty two</code>. A <i>number of any size</i> can be converted because this package makes use of <b>arbitrary precision</b>.",
-            "lang": ["go"]
-        },
-        {
-            "name": "Rosalind",
-            "link": "rosalind",
-            "imgs": "rosalind-&d.webp",
-            "imgn": 3,
-            "caps": ["Running some problems", "Running more problems", "Even more problems!!!"],
-            "desc": "Algorithms for problems from Rosalind",
-            "long": "<b>Rosalind</b> is a bioinformatics programming platform with numerous problems related to bioinformatics. This repo contains a few solutions that I wrote to solve these problems.",
-            "lang": ["go"]
-        },
-        {
-            "name": "Project Euler",
-            "link": "project-euler",
-            "imgs": "pe-&d.webp",
-            "imgn": 2,
-            "caps": ["Running a few algorithms", "Extremely Exciting Error Explanations!"],
-            "desc": "Solving problems from Project Euler",
-            "long": "<b>Project Euler</b> is a mathematics platform with over 900 problems. These problems range in difficulty and their solutions require designing an efficient algorithm and mathematical skills. This repo contains some solutions that I wrote to solve these problems.",
-            "lang": ["go"]
-        },
-        {
-            "name": "libcds",
-            "link": "libcds",
-            "desc": "Data structures written in C++",
-            "long": "This <b>C++ library</b> implements several different data structures. The repo also contains test programs to test this library.",
-            "lang": ["cpp"]
-        },
-        {
-            "name": "gosort",
-            "link": "gosort",
-            "desc": "Sorting algorithms written in Go",
-            "long": "This Go library implements <i>22 different sorting algorithms</i>. This includes: Bubble, Quicksort, Radix, Merge, Insertion, Shell, and my favorite, Counting Sort.",
-            "lang": ["go"]
-        },
-        {
-            "name": "csort",
-            "link": "csort",
-            "desc": "Sorting algorithms written in C++",
-            "long": "This <b>C++ library</b> implements several different sorting algorithms. This includes: Bubble, Insertion, Quicksort, Selection, and Counting Sort. I also wrote a repo to test this library, found here: <a href='https://github.com/jtpeller/csort_test'>Link</a>.",
-            "lang": ["cpp"]
-        },
-        {
-            "name": "gobigger",
-            "link": "gobigger",
-            "desc": "A Go file to expand upon Go's arbitrary precision package, math/big.",
-            "long": "I made this after my gobig repository proved to be too inflexible and not useful enough. This expands upon Go's math/big package and fixes some of the issues of <a href='#gobig'>gobig</a>, such as ease of use, simplified wrapper layer, and extended features.",
-            "lang": ["go"]
-        },
-        {
-            "name": "gobig",
-            "link": "gobig",
-            "desc": "A simple Go package to make using arbitrary precision in Go a bit easier",
-            "long": "When using Go's arbitrary precision packages, I found that readability plummeted when performing complex mathematical operations with big numbers. I wrote this package that wraps the built-in arbitrary precision to improve readability, maintainability, and reduce keystrokes.",
-            "lang": ["go"]
-        }
-    ],
-    "desktop":  [
-        {
-            "name": "Java Sudoku",
-            "link": "SudokuJava",
-            "desc": "An implementation of sudoku in Java",
-            "imgs": "jsudoku-&d.webp",
-            "imgn": 5,
-            "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "Winner!", "The options menu has options (that don't do anything)!"],
-            "long": "A <b>desktop Java application</b> I wrote in 2019 to teach myself <b>AWT/Swing</b> (along with the Tic-Tac-Toe Java program). It features a 9x9 grid and 4 difficulties. A player can erase their inputs, get hints, or reset the board.",
-            "lang": ["java"]
-        },
-        {
-            "name": "Java Tic-Tac-Toe",
-            "link": "TicTacToeJava",
-            "desc": "An implementation of tic-tac-toe in Java",
-            "imgs": "jttt-&d.webp",
-            "imgn": 4,
-            "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "It really is unbeatable..."],
-            "long": "A <b>desktop Java application</b> I wrote shortly after my Sudoku game. I wrote this to work on my <b>AWT/Swing</b> skills. It has an AI opponent, implemented based of the minimax algorithm. Difficulties are based on modifying this algorithm to make mistakes every once in a while. This is the application where I realized that I did not enjoy writing GUI desktop applications with Java.",
-            "lang": ["java"]
-        }
-    ]
-}
+[
+    {
+        "name": "Sudoku",
+        "link": "sudoku",
+        "site": "sudoku-web",
+        "desc": "Cross-platform Sudoku Game Written in Flutter",
+        "imgs": "sudoku-&d.webp",
+        "imgn": 5,
+        "caps": ["Main Menu", "Game Page", "Options Menu", "Help Menu", "I won!"],
+        "tags": ["web", "desktop", "cross-platform"],
+        "lang": ["flutter", "dart"],
+        "long": "This implementation of sudoku is a <b>cross-platform game</b> written in <i>Flutter</i> where a 9x9 grid is filled in with the numbers 1-9, and conflicts must be avoided. Being my first Flutter project and first cross-platform game, I wrote this to learn a lot about different development platforms, a new language, and new programming skills." 
+    },
+    {
+        "name": "Verse",
+        "link": "verse",
+        "desc": "Oh yay, yet another wordle-like game",
+        "imgs": "verse-&d.webp",
+        "imgn": 5,
+        "caps": ["Homepage", "Game Page", "Making a Guess", "Winning the Game", "I beat the bot!"],
+        "tags": ["web"],
+        "lang": ["html", "css", "javascript", "bootstrap"],
+        "long": "Verse! is a <b>guess-the-word game</b> where you try to infer the word given the clues from your last guess. The player competes with a bot I wrote, which attempts to guess the word separately using filtering techniques. I wrote this using only <i>vanilla JavaScript and Bootstrap</i>." 
+    },
+    {
+        "name": "R6S Roulette",
+        "link": "r6siege",
+        "desc": "A companion app to Tom Clancy's Rainbow Six Siege",
+        "imgs": "r6s-&d.webp",
+        "imgn": 6,
+        "caps": ["Homepage", "Operator Roulette", "Gun Roulette", "Operator Page", "Guns Page", "More Info Page"],
+        "tags": ["web"],
+        "lang": ["html", "css", "javascript", "bootstrap", "d3js"],
+        "long": "R6S Roulette is a companion web application for the video game <i>Tom Clancy's Rainbow Six Siege</i> by Ubisoft made to spice up how you play the game. Users can randomly select an operator or weapon, filter out the full dataset via UI elements (e.g., checkboxes, dropdowns), or view information about the game." 
+    },
+    {
+        "name": "Tic-Tac-Toe",
+        "link": "tic-tac-toe",
+        "desc": "Tic-Tac-Toe written using React",
+        "imgs": "ttt-&d.webp",
+        "imgn": 3,
+        "caps": ["Main Menu", "Playing against an Impossible AI", "Cat's Game!"],
+        "tags": ["web"],
+        "lang": ["html", "css", "javascript", "bootstrap", "react-js"],
+        "long": "This is yet another rendition of the tic-tac-toe game. My <b>first application written with ReactJS</b>, it establishes the use of ReactJS basics like <code>React.createElement</code> and <code>ReactDOM.createRoot</code> to build the site. The AI is based on the minimax algorithm."
+    },
+    {
+        "name": "Geography Quiz",
+        "link": "geography-quiz",
+        "desc": "Test your geography skills!",
+        "imgs": "geo-&d.webp",
+        "imgn": 3,
+        "caps": ["Main Menu", "Beginning the North America Quiz", "Completed the quiz"],
+        "tags": ["web"],
+        "lang": ["html", "css", "javascript", "bootstrap", "d3js"],
+        "long": "My geography quiz allows users to interact with a map of a chosen continent and select the randomly generated country. Each quiz runs through the entire continent and tracks the user's score."
+    },
+    {
+        "name": "Unit Converter",
+        "link": "unit-converter",
+        "desc": "A clean and simple unit converter",
+        "imgs": "uc-&d.webp",
+        "imgn": 2,
+        "caps": ["Converting Meters to Kilometers", "Converting Seconds to Hours"],
+        "tags": ["web"],
+        "lang": ["html", "css", "javascript", "bootstrap"],
+        "long": "This site lets users convert various unit types; including length, area, volume, mass, time, energy, and temperature. There is a formula that is shown that can be used by the user to approximate the conversion."
+    },
+    {
+        "name": "WebGL Demos",
+        "link": "webgl-demos",
+        "desc": "The landing page for my WebGL demos",
+        "imgs": "webgl-&d.webp",
+        "imgn": 5,
+        "caps": ["Landing Page", "Demo of 2D shapes & simple animation", "Demo of canvas interaction", "Demo of lighting & material properties", "Animating a figure"],
+        "tags": ["web"],
+        "lang": ["html", "css", "javascript", "bootstrap", "web-gl"],
+        "long": "These pages demonstrate my ability to use WebGL. The demos range from something simple like basic animation to more complicated demos such as lighting and shading."
+    },
+    {
+        "name": "OEIS",
+        "link": "OEIS",
+        "imgs": "oeis-&d.webp",
+        "imgn": 3,
+        "caps": ["Generating the Fibonacci Numbers", "Generating the Triangle Numbers", "Generating Sequence A000225"],
+        "desc": "The ongoing quest to program the OEIS database",
+        "tags": ["console"],
+        "lang": ["go"],
+        "long": "This is a console program that contains <i>over two hundred algorithms</i> to generate the sequences found in the <b>OEIS database</b>. The OEIS database is a massive set of integer sequences, some of which are trivial, but many are extremely complex, involving combinatorics, statistics, or other high-level mathematical concepts. Many will overflow a standard <code>int</code> or <code>float</code>, so overflow issues are overcome with <b>arbitrary precision</b>."
+    },
+    {
+        "name": "Cliques",
+        "link": "cliques",
+        "imgs": "cq-&d.webp",
+        "imgn": 2,
+        "caps": ["Executing the Program", "Cliques have been found!"],
+        "desc": "Finding words with unique letters in a word list!",
+        "tags": ["console"],
+        "lang": ["python"],
+        "long": "Cliques is a <b>Python program</b> that, given a list of words, finds a subset of those words where each letter is unique. For instance, if wanted to find cliques of words that are 5 letters long, it would attempt to find 5 different words to cover 25 of 26 letters. There is also <i>fuzzy search</i> allowing vowels to overlap exactly once, raising the chances of finding near-cliques (more exciting than zero-cliques). This was used to help build a bot strategy for my <a href='#Verse'>Verse</a> game!"
+    },
+    {
+        "name": "gosort-benchmark",
+        "link": "gosort-benchmark",
+        "imgs": "gosort-&d.webp",
+        "imgn": 3,
+        "caps": ["Sorting from a file", "Sorting 100,000 numbers", "Sorting 1,000,000 numbers"],
+        "desc": "Benchmarks many different sorting algorithms in Go",
+        "tags": ["console"],
+        "lang": ["go"],
+        "long": "This program <b>benchmarks the performance</b> of <i>22 different sorting algorithms</i>. The time to execute each of the sorting algorithms is compared. <b>Concurrency</b> is used to reduce the overall execution time of the program."
+    },
+    {
+        "name": "num2words",
+        "link": "num2words",
+        "imgs": "num2words-&d.webp",
+        "imgn": 2,
+        "caps": ["Testing without separators", "Testing with separators"],
+        "desc": "Converts any number to its English representation",
+        "tags": ["console"],
+        "lang": ["go"],
+        "long": "I wrote a Go package that converts a number to its English representation. For example, <code>15552</code> converts to <code>fifteen thousand five hundred fifty two</code>. A <i>number of any size</i> can be converted because this package makes use of <b>arbitrary precision</b>."
+    },
+    {
+        "name": "Rosalind",
+        "link": "rosalind",
+        "imgs": "rosalind-&d.webp",
+        "imgn": 3,
+        "caps": ["Running some problems", "Running more problems", "Even more problems!!!"],
+        "desc": "Algorithms for problems from Rosalind",
+        "tags": ["console"],
+        "lang": ["go"],
+        "long": "<b>Rosalind</b> is a bioinformatics programming platform with numerous problems related to bioinformatics. This repo contains a few solutions that I wrote to solve these problems."
+    },
+    {
+        "name": "Project Euler",
+        "link": "project-euler",
+        "imgs": "pe-&d.webp",
+        "imgn": 2,
+        "caps": ["Running a few algorithms", "Extremely Exciting Error Explanations!"],
+        "desc": "Solving problems from Project Euler",
+        "tags": ["console"],
+        "lang": ["go"],
+        "long": "<b>Project Euler</b> is a mathematics platform with over 900 problems. These problems range in difficulty and their solutions require designing an efficient algorithm and mathematical skills. This repo contains some solutions that I wrote to solve these problems."
+    },
+    {
+        "name": "libcds",
+        "link": "libcds",
+        "desc": "Data structures written in C++",
+        "tags": ["console"],
+        "lang": ["cpp"],
+        "long": "This <b>C++ library</b> implements several different data structures. The repo also contains test programs to test this library."
+    },
+    {
+        "name": "gosort",
+        "link": "gosort",
+        "desc": "Sorting algorithms written in Go",
+        "tags": ["console"],
+        "lang": ["go"],
+        "long": "This Go library implements <i>22 different sorting algorithms</i>. This includes: Bubble, Quicksort, Radix, Merge, Insertion, Shell, and my favorite, Counting Sort."
+    },
+    {
+        "name": "csort",
+        "link": "csort",
+        "desc": "Sorting algorithms written in C++",
+        "tags": ["console"],
+        "lang": ["cpp"],
+        "long": "This <b>C++ library</b> implements several different sorting algorithms. This includes: Bubble, Insertion, Quicksort, Selection, and Counting Sort. I also wrote a repo to test this library, found here: <a href='https://github.com/jtpeller/csort_test'>Link</a>."
+    },
+    {
+        "name": "gobigger",
+        "link": "gobigger",
+        "desc": "A Go file to expand upon Go's arbitrary precision package, math/big.",
+        "tags": ["console"],
+        "lang": ["go"],
+        "long": "I made this after my gobig repository proved to be too inflexible and not useful enough. This expands upon Go's math/big package and fixes some of the issues of <a href='#gobig'>gobig</a>, such as ease of use, simplified wrapper layer, and extended features."
+    },
+    {
+        "name": "gobig",
+        "link": "gobig",
+        "desc": "A simple Go package to make using arbitrary precision in Go a bit easier",
+        "tags": ["console"],
+        "lang": ["go"],
+        "long": "When using Go's arbitrary precision packages, I found that readability plummeted when performing complex mathematical operations with big numbers. I wrote this package that wraps the built-in arbitrary precision to improve readability, maintainability, and reduce keystrokes."
+    },
+    {
+        "name": "Java Sudoku",
+        "link": "SudokuJava",
+        "desc": "An implementation of sudoku in Java",
+        "imgs": "jsudoku-&d.webp",
+        "imgn": 5,
+        "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "Winner!", "The options menu has options (that don't do anything)!"],
+        "tags": ["desktop"],
+        "lang": ["java"],
+        "long": "A <b>desktop Java application</b> I wrote in 2019 to teach myself <b>AWT/Swing</b> (along with the Tic-Tac-Toe Java program). It features a 9x9 grid and 4 difficulties. A player can erase their inputs, get hints, or reset the board."
+    },
+    {
+        "name": "Java Tic-Tac-Toe",
+        "link": "TicTacToeJava",
+        "desc": "An implementation of tic-tac-toe in Java",
+        "imgs": "jttt-&d.webp",
+        "imgn": 4,
+        "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "It really is unbeatable..."],
+        "tags": ["desktop"],
+        "lang": ["java"],
+        "long": "A <b>desktop Java application</b> I wrote shortly after my Sudoku game. I wrote this to work on my <b>AWT/Swing</b> skills. It has an AI opponent, implemented based of the minimax algorithm. Difficulties are based on modifying this algorithm to make mistakes every once in a while. This is the application where I realized that I did not enjoy writing GUI desktop applications with Java."
+    }
+]

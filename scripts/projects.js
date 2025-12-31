@@ -8,70 +8,71 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const CARO_INT = 5000;      // interval for carousel transition
-    const langs = ["Web", "Console", "Desktop"];
     const root = {
         web: 'https://jtpeller.github.io/',
         git: 'https://github.com/jtpeller/',
         logo: 'resources/logos/',
-        proj: `resources/`,     // this will be updated later
+        proj: `resources/projects`,     // this will be updated later
     }
 
-    // start with navbar
+    // Start with navbar
     Utils.initNavbar(Utils.select('#header'));
 
-    // load data for page
+    // Load data for page
     Promise.all([fetch('data/projects.json')]).then(function (responses) {
         return Promise.all(responses.map(function(response) {
             return response.json();
         }));
     }).then(function (values) {
-        for (var i = 0; i < langs.length; i++) {
-            let lang = langs[i]
-            initPage(values[0][lang.toLowerCase()], lang, Utils.select('#main'));
-        }
+        initPage(values[0], Utils.select('#main'));
     });
 
-    function initPage(proj, lang, loc) {
-        // update project root
-        root.proj = `resources/${lang.toLowerCase()}/`
-
-        // project div for ${lang} and its title
-        let proj_div = Utils.create('div', {id: `${lang}-div`})
-        proj_div.append(Utils.create('h1', {
+    function initPage(projects, loc) {
+        // Add a title for the projects
+        loc.append(Utils.create('h1', {
             classList: 'text-center title',
-            textContent: `${lang} Applications`,
+            textContent: `jtpeller's Projects`,
         }))
 
-        // add the projects for this ${lang}
+        // Create the main project div which holds the project cards
+        let proj_div = Utils.create('div', {id: `project-cards-div`})
+
+        // Create all the project cards in a new div
         let row_div = Utils.create('div', {classList: 'row',});
-        for (let i = 0; i < proj.length; i++) {
-            row_div.append(buildProjectCard(proj[i], lang))
+        for (let i = 0; i < projects.length; i++) {
+            // Update the project root to point to its image folder.
+            root.proj = `resources/projects/${projects[i].link}/`
+
+            // Build the project card and append it to this div.
+            row_div.append(buildProjectCard(projects[i]))
         }
 
-        // append everything
-        proj_div.append(row_div)    // append cards to projects
-        loc.append(proj_div);       // append ${lang}'s projects to loc
+        // Append everything
+        proj_div.append(row_div)    // Append cards to projects div
+        loc.append(proj_div);       // Append this projects div to the provided location
 
-        // enable tooltips everywhere 
+        // Enable tooltips everywhere 
         // ref: https://getbootstrap.com/docs/5.3/components/tooltips/#enable-tooltips
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     }
 
-    function buildProjectCard(proj, lang) {
-        // card's column in the row
+    function buildProjectCard(proj) {
+        // This div is the Bootstrap column which enables 2 cards per row in a wide screen
+        // and only 1 in a smaller screen.
         let col = Utils.create('div', {classList: 'col-sm-12 col-lg-6'});
 
+        // This is the div which holds the card and sizes it appropriately.
         let card = Utils.create('div', {classList: 'card card-dark'});
 
-        // image carousel
+        // Image carousel for all the images for a project.
         let img_div = Utils.create('div', {classList: 'card-img-top'});
 
-        // create only if there are images to add
+        // Only populate this image div if there are images.
         if (proj.imgs && proj.imgn > 0) {
             const cid = proj.name.replaceAll(' ', '-')
 
-            // carousel parent div
+            // Carousel parent div
             let carousel_parent = Utils.create('div', {classList: 'w-100 mx-auto'});
 
             let carousel = Utils.create('div', {
@@ -80,15 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             carousel.dataset.bsRide = 'carousel';
 
-            // ordered list for indicators
+            // Ordered list for indicators
             let indicators = Utils.create('div', {classList: 'carousel-indicators'});
 
-            // inner carousel div
+            // Inner carousel div
             let inner_div = Utils.create('div', {classList: 'carousel-inner'});
 
-            // loop to add all the images, indicators, etc.
+            // Loop to add all the images, indicators, etc.
             for (let j = 0; j < proj.imgn; j++) {
-                // button to move to the next slide (bottom of the carousel)
+                // Button to move to the next slide (bottom of the carousel)
                 let btn = Utils.create('button', {
                     type: 'button',
                     ariaLabel: `Slide ${j}`
@@ -97,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.dataset.bsSlideTo = j;
                 indicators.append(btn);
 
-                // add inner slides/imgs
+                // Add inner slides/imgs
                 const imgid = proj.name.replaceAll(' ', '-') + '-img-' + j;
                 const imgname = proj.imgs.replace('&d', j+1);
                 const alt = imgname.replaceAll('.webp', '');
@@ -108,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 items.dataset.bsInterval = CARO_INT;
 
-                // append the image
+                // Append the image
                 items.append(Utils.create('img', {
                     classList: 'd-block w-100',
                     src: root.proj + imgname,
@@ -116,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     loading: 'lazy'
                 }))
 
-                // append captions
+                // Append captions
                 if (proj.caps && proj.caps.length > 0) {
                     let capdiv = Utils.create('div', {
                         classList: 'carousel-caption d-none d-md-block'
@@ -131,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 inner_div.append(items)     // add items to inner_div
             }
 
-            // append inner div, indicators, prev/next btns, carousel, and img_div
+            // Append inner div, indicators, prev/next btns, carousel, and img_div
             carousel.append(indicators);                    // indicators
             carousel.append(inner_div);                     // inner div
             carousel.append(createPrevOrNext(true, cid))    // prev btn
@@ -139,20 +140,20 @@ document.addEventListener("DOMContentLoaded", () => {
             carousel_parent.append(carousel);               // carousel < carousel_parent
             img_div.append(carousel_parent);                // carousel_parent < img_div
 
-            // ensure first button is active for inner/indicators
+            // Ensure first button is active for inner/indicators
             let temp = indicators.querySelector('button')
             temp.classList.add('active')
             temp.ariaCurrent = true;
 
-            // start the carousel
+            // Start the carousel
             document.querySelectorAll(`button[data-bs-slide-to='0']`).forEach( (elem) => elem.click() );
         }
 
-        // create card body
+        // Create card body
         let card_body = createCardBody(proj);
-        let card_footer = createCardFooter(proj, lang);
+        let card_footer = createCardFooter(proj);
 
-        // append everything
+        // Append everything
         col.append(card);
         card.append(img_div);
         card.append(card_body);
@@ -160,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return col;
     }
 
-    // creates the previous or next button for the carousel
+    // Creates the previous or next button for the carousel
     function createPrevOrNext(isPrev, cid) {
         let output;
         let val = 'prev'
@@ -192,14 +193,14 @@ document.addEventListener("DOMContentLoaded", () => {
         return output;
     }
 
-    // creates a card body given the project
+    // Creates a card body given the project
     function createCardBody(proj) {
         let card_body = Utils.create('div', {
             classList: 'card-body',
             id: Utils.makeID(proj.name)
         })
 
-        // append title, subtitle, and description
+        // Append title, subtitle, and description
         card_body.append(Utils.create('h2', {
             classList: 'card-title section-header',
             textContent: proj.name
@@ -212,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         card_body.append(Utils.create('p', {innerHTML: proj.long}))
 
-        // language & library logos
+        // Language & library logos
         let logos = Utils.create('div', {classList: 'text-center my-4'});
         for (let x = 0; x < proj.lang.length; x++) {
             let img = proj.lang[x];
@@ -239,14 +240,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // creates a card footer given the project
-    function createCardFooter(proj, lang) {
+    function createCardFooter(proj) {
         // .card-body eliminates the bootstrap card-footer bkgd-color & whatnot
         let footer = Utils.create('div', {classList: 'card-body'})
 
-        if (lang == 'Web') {
+        if (proj.tags.includes('web')) {
+            let web_link = proj.site === undefined ? proj.link : proj.site;
             let a = Utils.create('a', {
                 classList: 'webpage-button link float-left bg-dark bg-gradient',
-                href: root.web + proj.link,
+                href: root.web + web_link,
                 target: '_blank',
                 title: `Visit: ${proj.name}`,
                 textContent: 'Visit',
