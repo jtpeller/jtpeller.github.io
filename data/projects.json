@@ -60,8 +60,8 @@
         "link": "unit-converter",
         "desc": "A clean and simple unit converter",
         "imgs": "uc-&d.webp",
-        "imgn": 2,
-        "caps": ["Converting Meters to Kilometers", "Converting Seconds to Hours"],
+        "imgn": 3,
+        "caps": ["Converting Meters to Kilometers", "Many units are supported", "Celsius to Fahrenheit"],
         "tags": ["web"],
         "lang": ["html", "css", "javascript", "bootstrap"],
         "long": "This site lets users convert various unit types; including length, area, volume, mass, time, energy, and temperature. There is a formula that is shown that can be used by the user to approximate the conversion."
