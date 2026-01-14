@@ -7,7 +7,7 @@
         "imgs": "sudoku-&d.webp",
         "imgn": 5,
         "caps": ["Main Menu", "Game Page", "Options Menu", "Help Menu", "I won!"],
-        "tags": ["web", "desktop", "cross-platform"],
+        "tags": ["web", "desktop", "cross-platform", "featured"], 
         "lang": ["flutter", "dart"],
         "long": "This implementation of sudoku is a <b>cross-platform game</b> written in <i>Flutter</i> where a 9x9 grid is filled in with the numbers 1-9, and conflicts must be avoided. Being my first Flutter project and first cross-platform game, I wrote this to learn a lot about different development platforms, a new language, and new programming skills." 
     },
@@ -18,7 +18,7 @@
         "imgs": "verse-&d.webp",
         "imgn": 5,
         "caps": ["Homepage", "Game Page", "Making a Guess", "Winning the Game", "I beat the bot!"],
-        "tags": ["web"],
+        "tags": ["web", "featured"],
         "lang": ["html", "css", "javascript", "bootstrap"],
         "long": "Verse! is a <b>guess-the-word game</b> where you try to infer the word given the clues from your last guess. The player competes with a bot I wrote, which attempts to guess the word separately using filtering techniques. I wrote this using only <i>vanilla JavaScript and Bootstrap</i>." 
     },
@@ -195,14 +195,14 @@
         "long": "A <b>desktop Java application</b> I wrote in 2019 to teach myself <b>AWT/Swing</b> (along with the Tic-Tac-Toe Java program). It features a 9x9 grid and 4 difficulties. A player can erase their inputs, get hints, or reset the board."
     },
     {
-        "name": "Java Tic-Tac-Toe",
-        "link": "TicTacToeJava",
-        "desc": "An implementation of tic-tac-toe in Java",
-        "imgs": "jttt-&d.webp",
-        "imgn": 4,
-        "caps": ["Main Menu", "Choose your difficulty...", "Beginning the game", "It really is unbeatable..."],
-        "tags": ["desktop"],
-        "lang": ["java"],
-        "long": "A <b>desktop Java application</b> I wrote shortly after my Sudoku game. I wrote this to work on my <b>AWT/Swing</b> skills. It has an AI opponent, implemented based of the minimax algorithm. Difficulties are based on modifying this algorithm to make mistakes every once in a while. This is the application where I realized that I did not enjoy writing GUI desktop applications with Java."
+        "name": "Nebulous Color Themes",
+        "link": "nebulous-color-themes",
+        "desc": "Published color-theme pack for Visual Studio Code.",
+        "imgs": "nct-&d.webp",
+        "imgn": 1,
+        "caps": ["Shiny logo!"],
+        "tags": ["extension", "featured"],
+        "lang": ["json", "vscode"],
+        "long": "A <b>Visual Studio Code Extension</b> I wrote because I wanted my own theme for VSCode. After staring at so many different themes, it should at least appeal to you. So, I made this pack of themes as my first VSCode Extension."
     }
 ]
