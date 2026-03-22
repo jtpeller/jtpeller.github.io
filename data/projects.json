@@ -1,7 +1,7 @@
 [
     {
         "name": "Sudoku",
-        "link": "sudoku",
+        "repo": "sudoku",
         "site": "sudoku-web",
         "desc": "Cross-platform Sudoku Game Written in Flutter",
         "imgs": "sudoku-&d.webp",
@@ -13,18 +13,18 @@
     },
     {
         "name": "Verse",
-        "link": "verse",
+        "repo": "verse",
         "desc": "Oh yay, yet another wordle-like game",
         "imgs": "verse-&d.webp",
         "imgn": 5,
         "caps": ["Homepage", "Game Page", "Making a Guess", "Winning the Game", "I beat the bot!"],
         "tags": ["web", "featured"],
         "lang": ["html", "css", "javascript", "bootstrap"],
-        "long": "Verse! is a <b>guess-the-word game</b> where you try to infer the word given the clues from your last guess. The player competes with a bot I wrote, which attempts to guess the word separately using filtering techniques. I wrote this using only <i>vanilla JavaScript and Bootstrap</i>." 
+        "long": "Verse! is a <b>guess-the-word game</b> where you try to infer the word given the clues from your last guess. The player competes with a bot I wrote, which attempts to guess the word separately using extremely effective filtering techniques, helping it achieve an impressive average guess rate of ~3.6 on words of 5 letters. I wrote this using only <i>vanilla JavaScript and Bootstrap</i>." 
     },
     {
         "name": "R6S Roulette",
-        "link": "r6siege",
+        "repo": "r6siege",
         "desc": "A companion app to Tom Clancy's Rainbow Six Siege",
         "imgs": "r6s-&d.webp",
         "imgn": 6,
@@ -35,7 +35,7 @@
     },
     {
         "name": "Tic-Tac-Toe",
-        "link": "tic-tac-toe",
+        "repo": "tic-tac-toe",
         "desc": "Tic-Tac-Toe written using React",
         "imgs": "ttt-&d.webp",
         "imgn": 3,
@@ -46,7 +46,7 @@
     },
     {
         "name": "Geography Quiz",
-        "link": "geography-quiz",
+        "repo": "geography-quiz",
         "desc": "Test your geography skills!",
         "imgs": "geo-&d.webp",
         "imgn": 3,
@@ -57,7 +57,7 @@
     },
     {
         "name": "Unit Converter",
-        "link": "unit-converter",
+        "repo": "unit-converter",
         "desc": "A clean and simple unit converter",
         "imgs": "uc-&d.webp",
         "imgn": 3,
@@ -68,7 +68,7 @@
     },
     {
         "name": "WebGL Demos",
-        "link": "webgl-demos",
+        "repo": "webgl-demos",
         "desc": "The landing page for my WebGL demos",
         "imgs": "webgl-&d.webp",
         "imgn": 5,
@@ -79,7 +79,7 @@
     },
     {
         "name": "OEIS",
-        "link": "OEIS",
+        "repo": "OEIS",
         "imgs": "oeis-&d.webp",
         "imgn": 3,
         "caps": ["Generating the Fibonacci Numbers", "Generating the Triangle Numbers", "Generating Sequence A000225"],
@@ -90,7 +90,7 @@
     },
     {
         "name": "Cliques",
-        "link": "cliques",
+        "repo": "cliques",
         "imgs": "cq-&d.webp",
         "imgn": 2,
         "caps": ["Executing the Program", "Cliques have been found!"],
@@ -101,7 +101,7 @@
     },
     {
         "name": "gosort-benchmark",
-        "link": "gosort-benchmark",
+        "repo": "gosort-benchmark",
         "imgs": "gosort-&d.webp",
         "imgn": 3,
         "caps": ["Sorting from a file", "Sorting 100,000 numbers", "Sorting 1,000,000 numbers"],
@@ -112,7 +112,7 @@
     },
     {
         "name": "num2words",
-        "link": "num2words",
+        "repo": "num2words",
         "imgs": "num2words-&d.webp",
         "imgn": 2,
         "caps": ["Testing without separators", "Testing with separators"],
@@ -123,7 +123,7 @@
     },
     {
         "name": "Rosalind",
-        "link": "rosalind",
+        "repo": "rosalind",
         "imgs": "rosalind-&d.webp",
         "imgn": 3,
         "caps": ["Running some problems", "Running more problems", "Even more problems!!!"],
@@ -134,7 +134,7 @@
     },
     {
         "name": "Project Euler",
-        "link": "project-euler",
+        "repo": "project-euler",
         "imgs": "pe-&d.webp",
         "imgn": 2,
         "caps": ["Running a few algorithms", "Extremely Exciting Error Explanations!"],
@@ -145,7 +145,7 @@
     },
     {
         "name": "libcds",
-        "link": "libcds",
+        "repo": "libcds",
         "desc": "Data structures written in C++",
         "tags": ["console"],
         "lang": ["cpp"],
@@ -153,7 +153,7 @@
     },
     {
         "name": "gosort",
-        "link": "gosort",
+        "repo": "gosort",
         "desc": "Sorting algorithms written in Go",
         "tags": ["console"],
         "lang": ["go"],
@@ -161,7 +161,7 @@
     },
     {
         "name": "csort",
-        "link": "csort",
+        "repo": "csort",
         "desc": "Sorting algorithms written in C++",
         "tags": ["console"],
         "lang": ["cpp"],
@@ -169,7 +169,7 @@
     },
     {
         "name": "gobigger",
-        "link": "gobigger",
+        "repo": "gobigger",
         "desc": "A Go file to expand upon Go's arbitrary precision package, math/big.",
         "tags": ["console"],
         "lang": ["go"],
@@ -177,7 +177,7 @@
     },
     {
         "name": "gobig",
-        "link": "gobig",
+        "repo": "gobig",
         "desc": "A simple Go package to make using arbitrary precision in Go a bit easier",
         "tags": ["console"],
         "lang": ["go"],
@@ -185,7 +185,7 @@
     },
     {
         "name": "Java Sudoku",
-        "link": "SudokuJava",
+        "repo": "SudokuJava",
         "desc": "An implementation of sudoku in Java",
         "imgs": "jsudoku-&d.webp",
         "imgn": 5,
@@ -196,7 +196,8 @@
     },
     {
         "name": "Nebulous Color Themes",
-        "link": "nebulous-color-themes",
+        "repo": "nebulous-color-themes",
+        "site": "https://marketplace.visualstudio.com/items?itemName=jtpeller.nebulous-color-themes",
         "desc": "Published color-theme pack for Visual Studio Code.",
         "imgs": "nct-&d.webp",
         "imgn": 1,
@@ -204,5 +205,17 @@
         "tags": ["extension", "featured"],
         "lang": ["json", "vscode"],
         "long": "A <b>Visual Studio Code Extension</b> I wrote because I wanted my own theme for VSCode. After staring at so many different themes, it should at least appeal to you. So, I made this pack of themes as my first VSCode Extension."
+    },
+    {
+        "name": "Notes Markdown Highlighter",
+        "repo": "nmd-highlighter",
+        "site": "https://marketplace.visualstudio.com/items?itemName=jtpeller.nmd-highlighter",
+        "desc": "Custom Highlighter and Command Extension for VSCode.",
+        "imgs": "nmdh-&d.webp",
+        "imgn": 1,
+        "caps": ["Shiny logo!"],
+        "tags": ["extension", "featured"],
+        "lang": ["typescript", "json", "vscode"],
+        "long": "Another <b>Visual Studio Code Extension</b> I wrote because I wanted to move away from OneNote for my notes. This way, all notes can be highlighted in a particular way, which helps make notes easier to read and maintain."
     }
 ]

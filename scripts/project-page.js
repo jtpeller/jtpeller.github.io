@@ -76,7 +76,7 @@ class ProjectPage {
         // Build all the featured classes.
         for (let i = 0; i < this.featured.length; i++) {
             // Create the column for this project list.
-            let col = Utils.create('div', { classList: 'col-sm-12 col-md-6 col-lg-4', });
+            let col = Utils.create('div', { classList: 'col-md-12 col-lg-6', });
 
             // Build the project card in this col.
             this.featured[i].buildCardDOM(col);
@@ -156,7 +156,7 @@ class ProjectPage {
             // Build the project object.
             let proj = new Project(
                 data[i].name,   /* title */
-                data[i].link,   /* link */
+                data[i].repo,   /* repo */
                 data[i].desc,   /* desc */
                 data[i].tags,   /* tags */
                 data[i].lang,   /* lang */

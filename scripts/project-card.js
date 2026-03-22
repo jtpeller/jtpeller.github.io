@@ -7,16 +7,23 @@
 "use strict";
 
 class Project {
-    constructor(title, link, desc, tags, lang, long, paths, site = "", imgs = "", imgn = 0, caps = []) {
+    constructor(title, repo, desc, tags, lang, long, paths, site = "", imgs = "", imgn = 0, caps = []) {
         // Save everything.
         this.title = title;
-        this.link = link;
+        this.repo = repo;
+        this.site = site;
+
+        // Ensure that web links are populated even when not provided,
+        // since it would be silly to provide the site if it's identical
+        // to the repo suffix.
+        if (tags.includes("web") && (this.site == "" || this.site == undefined)) {
+            this.site = repo;
+        }
         this.desc = desc;
         this.tags = tags;
         this.lang = lang;
         this.long = long;
         this.paths = paths;
-        this.site = site;
         this.imgs = imgs;
         this.imgn = imgn;
         this.caps = caps;
@@ -86,7 +93,7 @@ class Project {
                 // Append the image
                 items.append(Utils.create('img', {
                     classList: 'd-block w-100',
-                    src: this.paths.proj + `/${this.link}/` + imgname,
+                    src: this.paths.proj + `/${this.repo}/` + imgname,
                     alt: alt,
                     loading: 'lazy'
                 }))
@@ -216,11 +223,22 @@ class Project {
         // .card-body eliminates the bootstrap card-footer bkgd-color & whatnot
         let footer = Utils.create('div', { classList: 'card-body' })
 
-        if (this.tags.includes('web')) {
-            let web_link = this.site === undefined ? this.link : this.site;
+        // Determine how the visit link should be defined.
+        let visit_link = undefined;
+        if (this.tags.includes("web")) {
+            let site_link = this.site == undefined ? this.repo : this.site;
+            visit_link = this.paths.web + site_link;
+
+        }
+        else if (this.site) {
+            visit_link = this.site;
+        }
+
+        // Create the visit link, but only if it was defined.
+        if (visit_link) {
             let a = Utils.create('a', {
                 classList: 'webpage-button link float-left bg-dark bg-gradient',
-                href: this.paths.web + web_link,
+                href: visit_link,
                 target: '_blank',
                 title: `Visit: ${this.title}`,
                 textContent: 'Visit',
@@ -233,8 +251,9 @@ class Project {
             footer.append(a);
         }
 
+        // Create the repo link.
         let git = Utils.create('a', {
-            href: this.paths.git + this.link,
+            href: this.paths.git + this.repo,
             target: '_blank',
         })
         git.append(Utils.create('img', {
