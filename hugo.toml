@@ -1,14 +1,14 @@
 # The URL of your site (Update this to your GitHub Pages URL)
 baseURL = 'https://jtpeller.github.io/'
 locale = 'en-us'
-title = 'Jeremy Pellerino | Portfolio'
+title = 'jtpeller | Homepage'
 # theme = 'my-theme'     # Name of the folder in /themes/
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 
 [params]
   description = 'Personal Portfolio and Project Gallery'
-  author = 'Jeremy Pellerino'
+  author = 'jtpeller'
 
 # Hugo looks for content in the /content directory
 [content]

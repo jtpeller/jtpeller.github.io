@@ -2,10 +2,13 @@
 
 <html lang="en-us">
 
+<head>
+    <title>jtpeller | Resume</title>
+</head>
+
 {{ partial "head.html "}}
 
 <head>
-    <title>{{.Title}}</title>
     {{ $contentStyle := resources.Get "css/content.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $contentStyle.RelPermalink }}" integrity="{{ $contentStyle.Data.Integrity }}">
     <script src='https://d3js.org/d3.v7.min.js'></script>
