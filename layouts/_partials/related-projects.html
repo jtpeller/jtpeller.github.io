@@ -1,0 +1,13 @@
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+  <section class="related-projects">
+    <ul class="list-group">
+      {{ range . }}
+        <li class="list-group-item bg-transparent border-accent">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a> -- 
+          <span class="meta">{{ .Params.grabber }}</span>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

@@ -1,0 +1,7 @@
+<div class="my-4">
+    <ul>
+        {{ range $index, $value := .Params.skills }}
+            <li>{{$value}}</li>
+        {{ end }}
+    </ul>
+</div>

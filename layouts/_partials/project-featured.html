@@ -1,0 +1,20 @@
+<section class="featured-projects mb-5">
+    <div class="row">
+        {{ range where .Pages "Params.tags" "intersect" (slice "featured") }}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 border-featured shadow-featured">
+                <div class="card-body">
+                    <span class="badge badge-text bg-featured mb-2">Featured</span>
+                    <h5 class="card-title">{{ .Title }}</h5>
+                    <p class="card-text">{{ .Params.grabber }}</p>
+                    <div class="text-center">
+                        <a href="#{{ .Params.repo }}" class="btn btn-outline-featured btn-sm">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ else }}
+        <p class="text-muted col-12">No featured projects found.</p>
+        {{ end }}
+    </div>
+</section>

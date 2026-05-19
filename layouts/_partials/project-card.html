@@ -1,0 +1,38 @@
+<div class="col-sm-12 col-lg-6">
+    <div class='card {{ if not (in .Params.tags "featured") }} border-accent shadow-accent {{ else }} border-featured shadow-featured {{ end }}'>
+        {{ if gt .Params.image_count 0}}
+        <div class="card-img-top">
+            {{ partial "project-accordion.html" . }}
+        </div>
+        {{ end }}
+        <div class="card-body" id="{{.Title}}">
+            <h2 class="card-title section-header">
+                {{ if .Params.site }}
+                    <a href="{{.Params.site}}" title="Visit Me!">
+                    {{ .Title }}
+                    </a>
+                {{else}}
+                {{.Title}}
+                {{end}}
+            </h2>
+            <p class="card-subtitle text-center grabber">{{ .Params.grabber }}</p>
+            <p>{{ .Content }}</p>
+
+            {{ partial "project-languages.html" . }}
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6 my-auto">
+                <a href="https://github.com/jtpeller/{{ .Params.repo }}" target="_blank">
+                    <img class="logo-link link float-start" src="/img/logos/github.svg" alt="GitHub" title="Project Repo on GitHub" loading="lazy"/>
+                </a>
+                </div>
+                <div class="col-6 my-auto">
+                <a class='btn {{ if not (in .Params.tags "featured") }} btn-outline-accent {{ else }} btn-outline-featured {{end}} float-end' href="/portfolio/{{ .Params.repo }}/" target="_blank" title="View Project: {{ .Title }}">
+                    More Info &#187;
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

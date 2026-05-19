@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="container">
+    <nav class='text-light' aria-label='breadcrumb'>
+        <ol class='breadcrumb'>
+            <li class='breadcrumb-item' aria-current='page'><a href='/'>Home</a></li>
+            <li class='breadcrumb-item' aria-current='page'><a href='/portfolio/#{{.Params.repo}}'>Projects</a></li>
+            <li class='breadcrumb-item active' aria-current='page'>{{.Params.title}}</li>
+        </ol>
+    </nav>
+    <h1 class='text-center title'>{{ .Title }}</h1>
+    <div class="project-content">
+        <h5 class='text-center mb-4'>{{.Params.grabber}}</h5>
+        {{ partial "project-accordion.html" . }}
+
+        <p>
+        {{.Content}}
+        </p>
+
+        <h4 class="section-header">Languages</h4>
+        <p>This project makes use of the following languages!</p>
+        {{ partial "project-languages.html" . }}
+
+        <h4 class="section-header">Skills</h4>
+        <p>During the development of this project, I gained or enhanced the following skills:
+        {{ partial "project-skills.html" . }}
+
+        <h4 class="section-header">See Also</h4>
+        <p>Take a look at some other projects using these languages!</p>
+        {{ partial "related-projects.html" .}}
+    </div>
+</div>
+{{ end }}

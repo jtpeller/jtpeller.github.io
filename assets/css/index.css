@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+footer {
+    opacity: 0;
+    animation: fadeIn3 1s ease 1;
+    animation-delay: 1.75s;
+    animation-fill-mode: forwards;
+}
+
+.banner {
+    padding: 125px;
+    padding-bottom: 10px;
+
+    transition: ease all 0.5s;
+}
+
+.main {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    display: block;
+    font-size: 4vw;
+    text-align: center;
+    margin: auto;
+
+    padding: 0;
+    opacity: 0;
+    
+    animation: fadeIn 1s ease-in-out 1;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+
+    transition: color 200ms ease-in-out;
+    transition: ease all .5s;
+}
+
+.nav-btn:hover {
+    color: var(--accent-color) !important;
+}
+
+.subtitle {
+    position: absolute;
+    left: -80px;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 1000;
+    text-align: center;
+
+    color: var(--accent-color);
+    animation: fadeIn2 1s ease-in-out 1,
+        flashy 1.2s ease-in-out infinite;
+    animation-composition: replace, add;
+    animation-delay: 250ms, 250ms;
+    animation-fill-mode: forwards;
+
+    transition: ease font-size .5s;
+}
+
+.title-box {
+    position: relative;
+}
+
+.title-card {
+    font-size: 56px;
+    margin: 0;    
+    opacity: 0;
+
+    white-space: nowrap;
+
+    animation: fadeIn 1000ms ease-in-out 1;
+    animation-delay: 250ms;
+    animation-fill-mode: forwards;
+
+    transition: ease all .5s;
+}
+
+.title-box .title-card::after {
+    position: relative;
+
+    content: "";
+    aspect-ratio: 3/4;
+    background: var(--text-color);
+    display: inline-block;
+    margin: auto;
+    
+    margin-left: 10px;
+
+    animation: cursor-blink 2s ease-in infinite;
+    animation-delay: 1s;
+    
+    transition: ease all .5s;
+}
+
+/* QUERIES */
+/* Desktop */
+@media only screen and (min-width: 1025px) {
+    .banner { padding-top: 200px; }
+    .title-card { font-size: 128px; }
+    .subtitle { font-size: 20px; }
+    .title-box .title-card::after { width: 100px; }
+    .nav-btn { font-size: 40px; }
+}
+
+/* Laptop, Small Screens */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .banner { padding-top: 175px; }
+    .subtitle { font-size: 18px; }
+    .title-card { font-size: 72px; }
+    .title-box .title-card::after { width: 60px; }
+    .nav-btn { font-size: 30px; }
+}
+
+/* Tablet */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .banner { padding-top: 150px; }
+    .subtitle { font-size: 15px; }
+    .title-card { font-size: 48px; }
+    .title-box .title-card::after { width: 42px; }
+    .nav-btn { font-size: 25px; }
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+    .banner { padding-top: 200px; }
+    .subtitle { font-size: 12px; }
+    .title-card { font-size: 32px; }
+    .title-box .title-card::after { width: 32px; }
+    .nav-btn { font-size: 20px; }
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn2 {
+    0% {
+        transform: translateY(20px) rotate(-30deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) rotate(-30deg);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn3 {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes cursor-blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes flashy {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}

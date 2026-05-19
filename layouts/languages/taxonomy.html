@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<body>
+    {{ partial "navbar.html" . }}
+    <div class="container"><h1 class="text-center title mb-1">Languages</h1>
+    <p class="text-center grabber">
+        I have worked with several different languages. While many are used day-to-day in my professional career,
+        many are demonstrated through my own personal projects.
+    </p>
+        <section class="breakdown">
+            {{ range $term, $taxonomy := .Site.Taxonomies.languages.ByCount }}
+            <div class="card mb-4 border-accent shadow-accent">
+                <div class="card-body">
+                    <h3 class="section-header">
+                        {{ $taxonomy.Page.Data.Term }}
+                        <span class="float-end badge bg-featured badge-text">{{ .Count }}</span>
+                    </h3>
+                    <p class="text-center grabber mb-1">My experience is demonstrated by...</p>
+                    <ul class="list-group border-0">
+                        {{ range $taxonomy.Pages }}
+                        <li class="list-group-item bg-force">
+                            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                            <span>-- {{.Params.grabber}}</span>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+            {{ end }}
+        </section>
+    </div>
+</body>
+
+</html>
+

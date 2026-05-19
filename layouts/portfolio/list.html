@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="container" id="main">
+    <h1 class="text-center title">Featured</h1>
+    <p class='text-center grabber'>These are projects that I am currently most proud to have created</p>
+    {{ partial "project-featured.html" . }}
+    <hr>
+    <h1 class="text-center title">All Projects</h1>
+    <p class='text-center grabber'>All the projects that I have created are listed below!</p>
+    <div id="project-cards-div">
+        <div class="row">
+            {{ range .Pages.ByWeight }}
+                {{ partial "project-card.html" . }}
+        {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+{{ partial "head.html" . }}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="jtpeller" />
+    <meta name="description" content="The homepage of jtpeller, yet another software developer who wrote a website." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="Dw3Yl4eJDb5i4uuXvrqf_ucDg_5oBkxz5ov4nrac3Os" />
+
+    {{ $indexStyle := resources.Get "css/index.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $indexStyle.RelPermalink }}" integrity="{{ $indexStyle.Data.Integrity }}">
+    {{ $script := resources.Get "js/index.js" | minify | fingerprint }}
+    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+</head>
+
+<body>
+    {{ partial "navbar.html" . }}
+
+    <div class="main">
+        <div class="banner">
+            <span class="title-box">
+                <div class="subtitle" id="subtitle"></div>
+                <h1 class="title-card">jtpeller</h1>
+            </span>
+        </div>
+        <br>
+        <div>
+            <a class='nav-btn link' href="portfolio">> Portfolio</a>
+            <a class='nav-btn link' href="resume">> Resume</a>
+            <a class='nav-btn link' href="skills">> Skills</a>
+            <a class='nav-btn link' href="languages">> Languages</a>
+        </div>
+    </div>
+    
+    {{partial "footer.html" .}}
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<header class='navbar bg-force navbar-expand-lg sticky-top'>
+    <nav class='container-xxl bd-gutter flex-wrap flex-lg-nowrap' aria-label='Main navigation'>
+        <a class='navbar-brand link d-lg-none' href='{{ absURL "/" }}'>jtpeller</a>
+        <div class="ms-auto d-flex align-items-center">
+            <button id="theme-toggle" class="btn btn-link nav-link p-0 me-3" type="button">
+                <span id="theme-icon">🌓</span>
+            </button>
+        </div>
+        <button class='navbar-toggler' type='button' aria-controls='navbar-content' aria-expended='false' aria-label='Toggle navigation'
+            data-bs-toggle='offcanvas' data-bs-target='#offcanvas-content'>
+            <span class='navbar-toggler-icon'></span>
+        </button>
+        <div class='offcanvas offcanvas-end' id='offcanvas-content' aria-labelled-by='offcanvas-navbar-label'>
+            <div class='offcanvas-header'>
+                <a class='offcanvas-title navbar-brand link' href='/' id='offcanvas-navbar-label'>jtpeller</a>
+                <div class="ms-auto d-flex align-items-center">
+                    <button id="theme-toggle" class="btn btn-link nav-link p-0 me-3" type="button">
+                        <span id="theme-icon">🌓</span>
+                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+            </div>
+            <div class='offcanvas-body'>
+                <ul class='navbar-nav mx-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link'
+                            href='{{ relURL "/" }}'>jtpeller</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link {{ if (in .RelPermalink "/portfolio") }}text-accent{{ end }}'
+                            aria-current='{{ if (in .RelPermalink "/portfolio") }}page{{ end }}'
+                            href='{{ relURL "/portfolio" }}'>Portfolio</a>
+                    </li><li class='nav-item'>
+                        <a class='nav-link {{ if (in .RelPermalink "/resume") }}text-accent{{ end }}'
+                            aria-current='{{ if (in .RelPermalink "/resume") }}page{{ end }}'
+                            href='{{ relURL "/resume" }}'>Resume</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link {{ if (in .RelPermalink "/skills") }}text-accent{{ end }}'
+                            aria-current='{{ if (in .RelPermalink "/skills") }}page{{ end }}'
+                            href='{{ relURL "/skills" }}'>Skills</a>
+                    </li>
+                    
+                    <li class='nav-item'>
+                        <a class='nav-link {{ if (in .RelPermalink "/languages") }}text-accent{{ end }}'
+                            aria-current='{{ if (in .RelPermalink "/languages") }}page{{ end }}'
+                            href='{{ relURL "/languages" }}'>Languages</a>
+                    </li>
+                </ul>
+            </div>
+            <div class='d-flex'>
+
+            </div>
+        </div>
+    </nav>
+</header>

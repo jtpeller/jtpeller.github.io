@@ -1,0 +1,49 @@
+# The URL of your site (Update this to your GitHub Pages URL)
+baseURL = 'https://jtpeller.github.io/'
+locale = 'en-us'
+title = 'Jeremy Pellerino | Portfolio'
+# theme = 'my-theme'     # Name of the folder in /themes/
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+
+[params]
+  description = 'Personal Portfolio and Project Gallery'
+  author = 'Jeremy Pellerino'
+
+# Hugo looks for content in the /content directory
+[content]
+  [content.projects]
+    path = 'content/portfolio'
+
+# Taxonomies allow categorization and filtering.
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+  language = 'languages'
+  skill = 'skills'
+
+# Build settings for GitHub Pages compatibility
+[build]
+  writeStats = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # Allows raw HTML in Markdown (for Bootstrap logic)
+
+# Help build related projects
+[related]
+  includeNewer = true    # Include projects published after the current one
+  toLower = true         # Treat "Python" and "python" as the same
+
+  [[related.indices]]
+    name = "languages"   # Projects with the same language get a high score
+    weight = 100
+
+  [[related.indices]]
+    name = "skills"      # Shared skills also contribute to the score
+    weight = 60
+
+  [[related.indices]]
+    name = "tags"        # Tags contribute less than core languages/skills
+    weight = 20

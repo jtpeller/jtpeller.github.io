@@ -1,0 +1,9 @@
+<div class="text-center my-4">
+    {{ range $index, $value := .Params.languages }}
+        {{ $source := (printf "/img/logos/%s.svg" $value) | relURL }}
+        <img src="{{ $source }}" alt="{{.}}" class="lang-logo"
+            loading="lazy" data-bs-toggle="tooltip" data-bs-placement="bottom"
+            data-bs-title="{{.}}" aria-label="{{.}}" 
+            data-bs-original-title="{{.}}"/>
+    {{ end }}
+</div>
