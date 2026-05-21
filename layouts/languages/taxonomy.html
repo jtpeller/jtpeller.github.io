@@ -19,6 +19,13 @@
             <div class="card mb-4 border-accent shadow-accent">
                 <div class="card-body">
                     <h3 class="section-header">
+                        <span>
+                            {{ with $taxonomy.Page.Data.Term }}
+                            {{ $source := (printf "/img/logos/%s.svg" .)}}
+                            <img src="{{ $source | lower }}" alt="{{.}}" class="lang-logo" loading="lazy" data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" data-bs-title="{{.}}" aria-label="{{.}}" data-bs-original-title="{{.}}" />
+                            {{ end }}
+                        </span>
                         {{ $taxonomy.Page.Data.Term }}
                         <span class="float-end badge bg-featured badge-text">{{ .Count }}</span>
                     </h3>
@@ -36,6 +43,12 @@
             {{ end }}
         </section>
     </div>
+    <script>
+        // Enable tooltips everywhere 
+        // ref: https://getbootstrap.com/docs/5.3/components/tooltips/#enable-tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 
 </html>
