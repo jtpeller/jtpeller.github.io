@@ -3,6 +3,10 @@
 
 <head>
     <title>jtpeller | Languages</title>
+    {{ with resources.Get "css/languages.css" }}
+    {{ $style := . | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+    {{ end }}
 </head>
 
 {{ partial "head.html" . }}
@@ -10,13 +14,35 @@
 <body>
     {{ partial "navbar.html" . }}
     <div class="container"><h1 class="text-center title mb-1">Languages</h1>
-    <p class="text-center grabber">
-        I have worked with several different languages. While many are used day-to-day in my professional career,
-        many are demonstrated through my own personal projects.
-    </p>
+        <p class="text-center grabber">
+            These are the languages I have personally used throughout my career and personal projects.
+        </p>
+
+        <!-- Language Overview Cards -->
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3 mb-5 justify-content-center">
+            {{ range .Site.Taxonomies.languages.ByCount }}
+            <div class="col">
+                <a href="#{{ .Page.Data.Term | urlize }}" class="text-decoration-none text-dark">
+                    <div class="card h-100 border-accent shadow-accent text-center language-overview-card">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-3">
+                            {{ $source := (printf "/img/logos/%s.svg" .Page.Data.Term)}}
+                            <img src="{{ $source | lower }}" alt="{{ .Page.Data.Term }}" class="lang-logo mb-2" loading="lazy">
+                            <h6 class="card-title mb-1">{{ .Page.Data.Term }}</h6>
+                            <span class="badge rounded-pill bg-featured badge-text">{{ .Count }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+        <hr>
         <section class="breakdown">
+        <p class="text-center grabber">
+            I have worked with several different languages. While many are used day-to-day in my professional career,
+            many are demonstrated through my own personal projects.
+        </p>
             {{ range $term, $taxonomy := .Site.Taxonomies.languages.ByCount }}
-            <div class="card mb-4 border-accent shadow-accent">
+            <div id="{{ $taxonomy.Page.Data.Term | urlize }}" class="card mb-4 border-accent shadow-accent">
                 <div class="card-body">
                     <h3 class="section-header">
                         <span>
@@ -52,4 +78,3 @@
 </body>
 
 </html>
-

@@ -1,0 +1,14 @@
+.language-overview-card {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+.language-overview-card:hover {
+    transform: translateY(-8px);
+    /* Enhances the existing shadow-accent depth on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+.language-overview-card .lang-logo {
+    transition: transform 0.3s ease;
+}
+.language-overview-card:hover .lang-logo {
+    transform: scale(1.1);
+}
