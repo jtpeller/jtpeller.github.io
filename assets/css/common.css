@@ -36,11 +36,16 @@ h1 {
     border-bottom: 1px solid grey;
 }
 
+/* COLORING */
+
 .active {
     color: var(--accent-color);
 }
 
-/* COLORING */
+.active-nav-item {
+    color: var(--accent-color) !important;
+    border-bottom: 2px solid var(--accent-color) !important;
+}
 
 .border-featured {
     border-color: var(--secondary-color) !important;
@@ -82,10 +87,6 @@ h1 {
 
 .text-featured {
     color: var(--secondary-color) !important;
-}
-
-.text-accent {
-    color: var(--accent-color) !important;
 }
 
 .shadow-accent {

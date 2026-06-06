@@ -27,22 +27,22 @@
                             href='{{ relURL "/" }}'>jtpeller</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link {{ if (in .RelPermalink "/portfolio") }}text-accent{{ end }}'
+                        <a class='nav-link {{ if (in .RelPermalink "/portfolio") }}active-nav-item{{ end }}'
                             aria-current='{{ if (in .RelPermalink "/portfolio") }}page{{ end }}'
                             href='{{ relURL "/portfolio" }}'>Portfolio</a>
                     </li><li class='nav-item'>
-                        <a class='nav-link {{ if (in .RelPermalink "/resume") }}text-accent{{ end }}'
+                        <a class='nav-link {{ if (in .RelPermalink "/resume") }}active-nav-item{{ end }}'
                             aria-current='{{ if (in .RelPermalink "/resume") }}page{{ end }}'
                             href='{{ relURL "/resume" }}'>Resume</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link {{ if (in .RelPermalink "/skills") }}text-accent{{ end }}'
+                        <a class='nav-link {{ if (in .RelPermalink "/skills") }}active-nav-item{{ end }}'
                             aria-current='{{ if (in .RelPermalink "/skills") }}page{{ end }}'
                             href='{{ relURL "/skills" }}'>Skills</a>
                     </li>
                     
                     <li class='nav-item'>
-                        <a class='nav-link {{ if (in .RelPermalink "/languages") }}text-accent{{ end }}'
+                        <a class='nav-link {{ if (in .RelPermalink "/languages") }}active-nav-item{{ end }}'
                             aria-current='{{ if (in .RelPermalink "/languages") }}page{{ end }}'
                             href='{{ relURL "/languages" }}'>Languages</a>
                     </li>
