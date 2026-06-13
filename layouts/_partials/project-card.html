@@ -8,7 +8,7 @@
         <div class="card-body" id="{{.Title}}">
             <h2 class="card-title section-header">
                 {{ if .Params.site }}
-                    <a href="{{.Params.site}}" title="Visit Me!">
+                    <a href="{{.Params.site}}" title="Visit Me!" target="_blank">
                     {{ .Title }}
                     </a>
                 {{else}}
@@ -28,7 +28,7 @@
                 </a>
                 </div>
                 <div class="col-6 my-auto">
-                <a class='btn {{ if not (in .Params.tags "featured") }} btn-outline-accent {{ else }} btn-outline-featured {{end}} float-end' href="/portfolio/{{ .Params.repo | lower}}/" target="_blank" title="View Project: {{ .Title }}">
+                <a class='btn {{ if not (in .Params.tags "featured") }} btn-outline-accent {{ else }} btn-outline-featured {{end}} float-end' href="/portfolio/{{ .Params.repo | lower}}/" title="View Project: {{ .Title }}">
                     More Info &#187;
                 </a>
                 </div>

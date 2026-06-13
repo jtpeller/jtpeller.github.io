@@ -134,6 +134,18 @@ h1 {
     filter: invert(0) brightness(2);
 }
 
+.inline-logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: auto;
+    filter: invert(1) brightness(2);
+}
+
+[data-bs-theme='dark'] .inline-logo {
+    filter: invert(0) brightness(2);
+}
+
 .btn-logo {
     width: 20px;
     margin: 0px 0px 5px 15px;

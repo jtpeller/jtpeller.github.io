@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="container">
+<div class="container mb-5">
     <nav class='text-light' aria-label='breadcrumb'>
         <ol class='breadcrumb'>
             <li class='breadcrumb-item' aria-current='page'><a href='/'>Home</a></li>
@@ -7,7 +7,15 @@
             <li class='breadcrumb-item active' aria-current='page'>{{.Params.title}}</li>
         </ol>
     </nav>
-    <h1 class='text-center title'>{{ .Title }}</h1>
+    <h1 class='text-center title'>
+        {{ if .Params.site }}
+            <a href="{{.Params.site}}" title="Visit Me!" target="_blank">
+            {{ .Title }}
+            </a>
+        {{ else }}
+        {{ .Title }}
+        {{ end }}
+    </h1>
     <div class="project-content">
         <h5 class='text-center mb-4'>{{.Params.grabber}}</h5>
         {{ partial "project-accordion.html" . }}
@@ -25,6 +33,18 @@
         {{ partial "project-skills.html" . }}
 
         <h4 class="section-header">See Also</h4>
+        {{ if ".Params.repo" }}
+        <p class="text-center my-3">
+            <i>Check out the source code on </i>
+            <a class="link" href="https://github.com/jtpeller/{{ .Params.repo }}" target="_blank">
+                <span>
+                <img class="inline-logo fill-color" src="/img/logos/github.svg" alt="GitHub" title="Project Repo on GitHub"
+                    loading="lazy" />
+                </span>
+            </a>
+        </p>
+        {{ end }}
+
         <p>Take a look at some other projects using these languages!</p>
         {{ partial "related-projects.html" .}}
     </div>
