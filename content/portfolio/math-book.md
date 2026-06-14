@@ -3,7 +3,7 @@ title: Math Book
 repo: math-book
 weight: 3
 date: 2025-04-23
-site: https://jtpeller.github.io/math-book-web
+site: https://jtpeller.github.io/math-book
 grabber: A comprehensive mathematics textbook, free for all!
 image_count: 6
 captions:
@@ -20,6 +20,8 @@ languages:
     - Markdown
     - LaTeX
     - HTML5
+    - CSS3
+    - Hugo
 skills:
     - Mathematics
     - Teaching
