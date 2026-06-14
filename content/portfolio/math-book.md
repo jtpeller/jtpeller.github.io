@@ -22,6 +22,7 @@ languages:
     - HTML5
     - CSS3
     - Hugo
+    - Bootstrap
 skills:
     - Mathematics
     - Teaching

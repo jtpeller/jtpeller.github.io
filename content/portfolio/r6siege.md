@@ -19,7 +19,6 @@ languages:
     - HTML5
     - CSS3
     - JavaScript
-libraries:
     - Bootstrap
     - D3js
 skills:

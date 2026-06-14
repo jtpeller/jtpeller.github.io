@@ -16,7 +16,6 @@ languages:
     - HTML5
     - CSS3
     - JavaScript
-libraries:
     - Bootstrap
 skills:
     - Interface Design

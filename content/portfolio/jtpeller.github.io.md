@@ -13,7 +13,7 @@ languages:
     - CSS3
     - JavaScript
     - Bootstrap
-    - d3js
+    - D3js
     - Hugo
 skills:
     - Static-Site Generation

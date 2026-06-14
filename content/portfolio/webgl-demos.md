@@ -18,7 +18,6 @@ languages:
     - HTML5
     - CSS3
     - JavaScript
-libraries:
     - Bootstrap
     - Web-GL
 skills:
