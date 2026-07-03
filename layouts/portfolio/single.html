@@ -9,9 +9,9 @@
     </nav>
     <h1 class='text-center title'>
         {{ if .Params.site }}
-            <a href="{{.Params.site}}" title="Visit Me!" target="_blank">
+        <a href="{{.Params.site}}" title="Visit Me!" target="_blank">
             {{ .Title }}
-            </a>
+        </a>
         {{ else }}
         {{ .Title }}
         {{ end }}
@@ -21,7 +21,7 @@
         {{ partial "project-accordion.html" . }}
 
         <p>
-        {{.Content}}
+            {{.Content}}
         </p>
 
         <h4 class="section-header">Languages</h4>
@@ -30,7 +30,7 @@
 
         <h4 class="section-header">Skills</h4>
         <p>During the development of this project, I gained or enhanced the following skills:
-        {{ partial "project-skills.html" . }}
+            {{ partial "project-skills.html" . }}
 
         <h4 class="section-header">See Also</h4>
         {{ if ".Params.repo" }}
@@ -38,8 +38,8 @@
             <i>Check out the source code on </i>
             <a class="link" href="https://github.com/jtpeller/{{ .Params.repo }}" target="_blank">
                 <span>
-                <img class="inline-logo fill-color" src="/img/logos/github.svg" alt="GitHub" title="Project Repo on GitHub"
-                    loading="lazy" />
+                    <img class="inline-logo fill-color" src="/img/logos/github.svg" alt="GitHub"
+                        title="Project Repo on GitHub" loading="lazy" />
                 </span>
             </a>
         </p>

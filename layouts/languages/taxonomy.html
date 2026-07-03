@@ -13,9 +13,13 @@
 
 <body>
     {{ partial "navbar.html" . }}
-    <div class="container"><h1 class="text-center title mb-1">Languages</h1>
+    <div class="container">
+        <h1 class="text-center title mb-1">Languages</h1>
         <p class="text-center grabber">
-            These are the languages I have personally used throughout my career and personal projects.
+            I have worked with many languages over my learning and professional career.
+            <br /><br />
+            Highlighted below are all the languages I have used in my personal projects,
+            along with a count of how many projects feature their usage!
         </p>
 
         <!-- Language Overview Cards -->
@@ -26,7 +30,8 @@
                     <div class="card h-100 border-accent shadow-accent text-center language-overview-card">
                         <div class="card-body d-flex flex-column align-items-center justify-content-center p-3">
                             {{ $source := (printf "/img/logos/%s.svg" .Page.Data.Term)}}
-                            <img src="{{ $source | lower }}" alt="{{ .Page.Data.Term }}" class="lang-logo mb-2" loading="lazy">
+                            <img src="{{ $source | lower }}" alt="{{ .Page.Data.Term }}" class="lang-logo mb-2"
+                                loading="lazy">
                             <h6 class="card-title mb-1">{{ .Page.Data.Term }}</h6>
                             <span class="badge rounded-pill bg-featured badge-text">{{ .Count }}</span>
                         </div>
@@ -37,10 +42,6 @@
         </div>
         <hr>
         <section class="breakdown">
-        <p class="text-center grabber">
-            I have worked with several different languages. While many are used day-to-day in my professional career,
-            many are demonstrated through my own personal projects.
-        </p>
             {{ range $term, $taxonomy := .Site.Taxonomies.languages.ByCount }}
             <div id="{{ $taxonomy.Page.Data.Term | urlize }}" class="card mb-4 border-accent shadow-accent">
                 <div class="card-body">
@@ -48,14 +49,17 @@
                         <span>
                             {{ with $taxonomy.Page.Data.Term }}
                             {{ $source := (printf "/img/logos/%s.svg" .)}}
-                            <img src="{{ $source | lower }}" alt="{{.}}" class="lang-logo" loading="lazy" data-bs-toggle="tooltip"
-                                data-bs-placement="bottom" data-bs-title="{{.}}" aria-label="{{.}}" data-bs-original-title="{{.}}" />
+                            <img src="{{ $source | lower }}" alt="{{.}}" class="lang-logo" loading="lazy"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{.}}"
+                                aria-label="{{.}}" data-bs-original-title="{{.}}" />
                             {{ end }}
                         </span>
                         {{ $taxonomy.Page.Data.Term }}
                         <span class="float-end badge bg-featured badge-text">{{ .Count }}</span>
                     </h3>
-                    <p class="text-center grabber mb-1">My experience is demonstrated by...</p>
+                    {{ with $taxonomy.Page.Data.Term }}
+                    <p class="text-center grabber mb-1">My experience with {{ . }} is demonstrated by...</p>
+                    {{ end }}
                     <ul class="list-group border-0">
                         {{ range $taxonomy.Pages }}
                         <li class="list-group-item bg-force">

@@ -4,15 +4,18 @@
         <div class="carousel-indicators">
             {{ range $index, $value := .Params.captions }}
             <button type="button" aria-label="Slide {{$index}}" data-bs-target="#{{$.Params.repo}}"
-                data-bs-slide-to="{{$index}}" {{if eq $index 0}} class="active btn-outline-primary" aria-current="true" {{else}} class="btn-outline-primary" {{end}}  >
+                data-bs-slide-to="{{$index}}" {{if eq $index 0}} class="active btn-outline-primary" aria-current="true"
+                {{else}} class="btn-outline-primary" {{end}}>
             </button>
             {{ end }}
         </div>
         {{ end }}
         <div class="carousel-inner">
             {{ range .Params.image_count }}
-            <div {{if eq . 0}} class="carousel-item active" {{else}} class="carousel-item" {{end}} id="{{$.Params.repo}}-img-0" data-bs-interval="5000">
-                <img class="d-block w-100" src="/img/portfolio/{{($.Params.repo) | lower}}/img-{{.}}.webp" alt="{{$.Title}}: Image {{ . }}" loading="lazy"/>
+            <div {{if eq . 0}} class="carousel-item active" {{else}} class="carousel-item" {{end}}
+                id="{{$.Params.repo}}-img-0" data-bs-interval="5000">
+                <img class="d-block w-100" src="/img/portfolio/{{($.Params.repo) | lower}}/img-{{.}}.webp"
+                    alt="{{$.Title}}: Image {{ . }}" loading="lazy" />
                 <div class="carousel-caption d-none d-md-block">
                     <h5 class="text-shadow">{{ (index $.Params.captions .)}}</h5>
                 </div>
@@ -20,7 +23,7 @@
             {{ end }}
         </div>
         {{ if gt .Params.image_count 1 }}
-        <button class="carousel-control-prev" type="button" data-bs-target="#{{.Params.repo}}" data-bs-slide="prev" >
+        <button class="carousel-control-prev" type="button" data-bs-target="#{{.Params.repo}}" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>

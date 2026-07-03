@@ -6,8 +6,8 @@
                 <span id="theme-icon">🌓</span>
             </button>
         </div>
-        <button class='navbar-toggler' type='button' aria-controls='navbar-content' aria-expended='false' aria-label='Toggle navigation'
-            data-bs-toggle='offcanvas' data-bs-target='#offcanvas-content'>
+        <button class='navbar-toggler' type='button' aria-controls='navbar-content' aria-expended='false'
+            aria-label='Toggle navigation' data-bs-toggle='offcanvas' data-bs-target='#offcanvas-content'>
             <span class='navbar-toggler-icon'></span>
         </button>
         <div class='offcanvas offcanvas-end' id='offcanvas-content' aria-labelled-by='offcanvas-navbar-label'>
@@ -23,14 +23,14 @@
             <div class='offcanvas-body'>
                 <ul class='navbar-nav mx-auto mb-2 mb-lg-0'>
                     <li class='nav-item'>
-                        <a class='nav-link'
-                            href='{{ relURL "/" }}'>jtpeller</a>
+                        <a class='nav-link' href='{{ relURL "/" }}'>jtpeller</a>
                     </li>
                     <li class='nav-item'>
                         <a class='nav-link {{ if (in .RelPermalink "/portfolio") }}active-nav-item{{ end }}'
                             aria-current='{{ if (in .RelPermalink "/portfolio") }}page{{ end }}'
                             href='{{ relURL "/portfolio" }}'>Portfolio</a>
-                    </li><li class='nav-item'>
+                    </li>
+                    <li class='nav-item'>
                         <a class='nav-link {{ if (in .RelPermalink "/resume") }}active-nav-item{{ end }}'
                             aria-current='{{ if (in .RelPermalink "/resume") }}page{{ end }}'
                             href='{{ relURL "/resume" }}'>Resume</a>
@@ -40,7 +40,7 @@
                             aria-current='{{ if (in .RelPermalink "/skills") }}page{{ end }}'
                             href='{{ relURL "/skills" }}'>Skills</a>
                     </li>
-                    
+
                     <li class='nav-item'>
                         <a class='nav-link {{ if (in .RelPermalink "/languages") }}active-nav-item{{ end }}'
                             aria-current='{{ if (in .RelPermalink "/languages") }}page{{ end }}'

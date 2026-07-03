@@ -1,24 +1,24 @@
 <div class="container mt-5">
-  <div class="row">
-    {{ range .Site.Params.projects }}
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <img src="{{ (index .images 0).url  | relURL }}" class="card-img-top" alt="{{ .title }}">
-        
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">{{ .title }}</h5>
-          <p class="card-text">{{ .grabber }}</p>
-          
-          <div class="mt-auto">
-            {{ range .languages }}
-              <span class="badge bg-secondary small">{{ .lang }}</span>
-            {{ end }}
-            <hr>
-            <a href="{{ relURL .url }}" class="btn btn-primary w-100">View Project</a>
-          </div>
+    <div class="row">
+        {{ range .Site.Params.projects }}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ (index .images 0).url  | relURL }}" class="card-img-top" alt="{{ .title }}">
+
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ .title }}</h5>
+                    <p class="card-text">{{ .grabber }}</p>
+
+                    <div class="mt-auto">
+                        {{ range .languages }}
+                        <span class="badge bg-secondary small">{{ .lang }}</span>
+                        {{ end }}
+                        <hr>
+                        <a href="{{ relURL .url }}" class="btn btn-primary w-100">View Project</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        {{ end }}
     </div>
-    {{ end }}
-  </div>
 </div>
