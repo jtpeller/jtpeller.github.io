@@ -7,9 +7,10 @@ site: https://jtpeller.github.io/geography-quiz
 grabber: Test your geography skills!
 image_count: 3
 captions:
-    - Main Menu
-    - Beginning the North America Quiz
+    - Main Menu show scores!
+    - Working on the Asia Quiz
     - All Done!
+    - Explorer Mode!
 tags:
     - web
 languages: 
